@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>masterfzb 的个人主页</title>
+  <meta name="description" content="masterfzb 的个人主页 —— 项目与联系方式" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="name">masterfzb</h1>
+      <p class="tagline">后端开发 / 爬虫 & 测试工具 / Python 工程运维</p>
+      <nav class="social">
+        <a href="https://github.com/masterfzb" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="card">
+      <h2>关于我</h2>
+      <p>我叫 masterfzb，本科为电气工程及其自动化（上海海事大学）。目前从事后端与工具开发，擅长 Python、爬虫、自动化测试与运维。工作中经常接手遗留或“烂尾”项目，善于快速定位并修复问题、编写小工具提高团队效率。</p>
+    </section>
+
+    <section id="projects" class="card">
+      <h2>项目与工作经历</h2>
+      <div id="projects-grid" class="grid"></div>
+    </section>
+
+    <section id="experience" class="card">
+      <h2>工作经历（摘要）</h2>
+      <ul class="timeline">
+        <li><strong>广发证券</strong> · 后端开发（2023-05 ~ 至今） — 使用 Python + Django 负责后端开发与维护，数据库任务（SQL/ORM）、功能测试、源码调试与解决 Git 版本混乱问题，编写工具提升团队效率。</li>
+        <li><strong>畅春互联</strong> · Python 工程师（2021-11 ~ 2023-01） — 完成中国电子官网爬虫并在项目中使用朴素贝叶斯算法，开发安卓动态检测工具并完成安卓13相关运维，独立实现鸿蒙系统 fuzzing 测试工具。</li>
+        <li><strong>荣耀</strong> · 手机测试（2021-04 ~ 2021-07） — 修改测试参数并生成能耗/性能报告，为手表测试调整参数。</li>
+        <li><strong>宝信软件</strong> · 组态工程师（2019-01 ~ 2020-01） — 地铁自动化项目画面制作、现场部署、点位核对，擅长接手大型烂尾项目并快速找出问题与解决方案。</li>
+        <li><strong>INTAMSYS（实习）</strong> · 电气工程师（2018-04 ~ 2018-06） — CAD 绘图、配件统计与现场拆解记录。</li>
+      </ul>
+    </section>
+
+    <section id="education" class="card">
+      <h2>教育背景</h2>
+      <p>上海海事大学 — 电气工程及其自动化，本科（2014-09 ~ 2018-06）</p>
+      <p>专业成绩：GPA 3.66/5（专业前50%）</p>
+      <p>主修课程：计算机系统结构、C 语言、电路原理、数字电子电路等</p>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>技能</h2>
+      <div class="skill-list">
+        <p><strong>编程与框架：</strong>Python、Django、Scrapy、PyQt、部分 C++ 编译与组件配置</p>
+        <p><strong>工具与平台：</strong>SQL、ORM、Linux、git、vsn、Jupyter、模型训练（vits）、Stable Diffusion</p>
+        <p><strong>测试与安全：</strong>Fuzzing 工具开发、安卓动态检测、运维脚本</p>
+        <p><strong>AI 与模型：</strong>在项目中内嵌简单 AI 算法（如朴素贝叶斯），使用大模型 API 辅助代码生成与接口集成</p>
+        <p><strong>语言：</strong>英语（CET-6，阅读与写作良好）</p>
+      </div>
+    </section>
+
+    <section id="honors" class="card">
+      <h2>荣誉与证书</h2>
+      <ul>
+        <li>英语六级（CET-6）</li>
+        <li>全国计算机二级通过</li>
+        <li>大学物理与电路原理满分</li>
+        <li>大学物理竞赛上海赛区二等奖</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>联系我</h2>
+      <p>GitHub：<a href="https://github.com/masterfzb" target="_blank" rel="noopener">github.com/masterfzb</a></p>
+      <p>电子邮件：<a href="mailto:1310347817@qq.com">1310347817@qq.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> masterfzb</p>
+    </div>
+  </footer>
+
+  <script>
+    // 填充年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 从 projects.json 加载并渲染项目卡片
+    async function loadProjects() {
+      try {
+        const res = await fetch('projects.json', {cache: "no-store"});
+        const projects = await res.json();
+        const grid = document.getElementById('projects-grid');
+        if (!projects || projects.length === 0) {
+          grid.innerHTML = '<p>还没有项目，编辑 projects.json 添加项目条目。</p>';
+          return;
+        }
+        projects.sort((a,b) => (b.pinned?1:0) - (a.pinned?1:0));
+        grid.innerHTML = projects.map(p => {
+          return `
+            <article class="proj">
+              <h3 class="proj-title"><a href="${p.link || '#'}" target="_blank" rel="noopener">${p.name}</a>${p.pinned?'<span class="badge">置顶</span>':''}</h3>
+              <p class="proj-desc">${p.description || ''}</p>
+              <p class="proj-meta">
+                ${p.tech && p.tech.length ? '<strong>技术：</strong>' + p.tech.join(' · ') : ''}
+              </p>
+            </article>
+          `;
+        }).join('');
+      } catch (err) {
+        console.error('加载 projects.json 出错：', err);
+        document.getElementById('projects-grid').innerHTML = '<p>加载项目数据失败，请检查 projects.json。</p>';
+      }
+    }
+
+    loadProjects();
+  </script>
+</body>
+</html>
