@@ -1,0 +1,32 @@
+[
+  {
+    "name": "中国电子官网爬虫",
+    "description": "为中国电子官网编写的定向爬虫，负责数据抓取、清洗与入库，并在项目中使用朴素贝叶斯进行简单分类/分析任务。",
+    "tech": ["Python", "Scrapy", "朴素贝叶斯", "SQL"],
+    "pinned": true
+  },
+  {
+    "name": "安卓手机软件动态检测工具",
+    "description": "用于安卓应用的动态检测与分析，完成与安卓13 相关的兼容性与运维调整，支持生成检测报告。",
+    "tech": ["Python", "Android", "动态分析"],
+    "pinned": true
+  },
+  {
+    "name": "鸿蒙系统 Fuzzing 测试工具",
+    "description": "独立开发的鸿蒙系统 fuzzing 测试工具，用于发现系统或应用中的异常行为与漏洞，提升测试覆盖率。",
+    "tech": ["Fuzzing", "Python", "测试工具"],
+    "pinned": false
+  },
+  {
+    "name": "广发证券 后端与工具开发",
+    "description": "在广发证券参与后端开发与维护，使用 Python + Django 完成接口与数据库相关功能，编写补丁、修复源码问题，并为同事解决 Git 版本混乱、编写提升效率的小工具。",
+    "tech": ["Python", "Django", "SQL", "Git"],
+    "pinned": true
+  },
+  {
+    "name": "组态工程与地铁控制项目（宝信软件）",
+    "description": "参与多项地铁自动化项目（苏州三号线、乌鲁木齐 TCC、上海 C3 等），负责画面制作、点位核对、现场部署与程序卡片制作，善于快速定位现场复杂问题并给出解决方案。",
+    "tech": ["组态", "自动化", "Excel / BAT 脚本"],
+    "pinned": false
+  }
+]
