@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>masterfzb - 后端开发者</title>
+    <title>masterfzb - 个人主页</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
@@ -371,6 +371,48 @@
             color: var(--dark);
         }
         
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+        
+        .page-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            color: var(--dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .page-btn.active {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -441,6 +483,15 @@
             .project-item {
                 padding: 1.2rem;
             }
+            
+            .pagination {
+                gap: 0.5rem;
+            }
+            
+            .page-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -460,6 +511,11 @@
                 font-size: 0.8rem;
                 padding: 0.4rem 0.8rem;
             }
+            
+            .page-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -468,145 +524,190 @@
     
     <div class="container">
         <div class="hero-section">
-            <h1>Hi there, I'm masterfzb 👋</h1>
-            <div class="subtitle">Backend Developer / Tooling & Automation Enthusiast</div>
+            <h1>个人主页</h1>
+            <div class="subtitle">masterfzb | AI工程师</div>
             
             <blockquote>
                 <p>《林无静木，川无停流》</p>
             </blockquote>
             
-            <p>我是一名专注于构建可靠、高效的后端系统与自动化工具的开发者。拥有从金融大数据到安全测试的跨领域实战经验，擅长使用Python解决复杂的工程问题，并对将前沿AI技术（如大语言模型）工程化落地有浓厚兴趣和实践。</p>
+            <p>我是一名热爱前沿技术与专注于构建可靠、高效的后端系统与自动化工具的开发者。从金融大数据到安全测试，我在多个领域积累了丰富的实战经验。期待与您的交流与合作。</p>
         </div>
         
         <div class="divider"></div>
         
-        <h2>🛠️ 技术栈与技能</h2>
+        <!-- 分页导航 -->
+        <div class="pagination">
+            <button class="page-btn active" data-page="experience">工作经历</button>
+            <button class="page-btn" data-page="projects">项目展示</button>
+            <button class="page-btn" data-page="other">大学经历</button>
+        </div>
         
-        <div class="skill-category">
-            <h4>编程语言</h4>
-            <div class="tech-stack">
-                <span class="tech-item">Python</span>
-                <span class="tech-item">SQL</span>
+        <!-- 工作经历分页 -->
+        <div class="page-content active" id="experience">
+            <h2>💼 工作经验</h2>
+            
+            <div class="experience-item">
+                <h3>🏦 广发证券 | 金融大数据及后端研发</h3>
+                <div class="experience-date">2023.05 - 2026.03</div>
+                <ul>
+                    <li><strong>金融工程项目后端及大数据开发</strong>：设计并开发证券业务后端系统，基于Python+Django+redis实现高并发API接口。独立完成核心模块代码开发与系统维护，日均处理百万级数据请求。</li>
+                    <li><strong>SQL动态生成工具</strong>：研发SQL动态生成工具，结合ORM与原生SQL实现灵活数据库操作，强化数据库能力及计算精度。</li>
+                    <li><strong>技术攻关</strong>：通过源码级分析修复代码缺陷，优化第三方依赖包本地化，解决内存泄漏等性能瓶颈问题。</li>
+                    <li><strong>Git协作规范</strong>：制定Git协作规范并维护git项目，解决多团队并行开发的版本问题。</li>
+                    <li><strong>人工智能指数预测系统</strong>：设计提示词工程体系，基于本地通义灵码大模型构建泛用性提示词模板，自动化解析1734个指数文件，获取指数的指标需求与算法。</li>
+                    <li><strong>指标-数据库映射系统</strong>：通过大模型将模型输出的数据标准要求对接本地的Oracle/MySQL数据库，以获取对应要求数据。</li>
+                    <li><strong>计算预测引擎</strong>：基于指数算法与要求的数据，编写Python量化计算模块得出预测结果并与真实结果比对，在新版要求出现后自动生成预测结果。</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 畅春互联 | Python开发</h3>
+                <div class="experience-date">2021.10 - 2023.02</div>
+                <ul>
+                    <li><strong>中国电子官网智能爬虫系统</strong>：设计多线程分布式爬虫架构，突破反爬机制实现全部数据完整抓取。创新应用朴素贝叶斯算法实现网页信息自动分类（语义解析准确率90%，比人工准确率分析高70%）。</li>
+                    <li><strong>移动端安全检测体系</strong>：主导安卓动态检测工具重构以支持Android 13新权限机制与跨平台兼容(Android/HarmonyOS)。研发鸿蒙系统首款Fuzzing测试工具，通过指令变异引擎发现系统级漏洞。</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>📱 荣耀 | Python测试工程师</h3>
+                <div class="experience-date">2021.04 - 2021.08</div>
+                <ul>
+                    <li>根据需求修改手机测试的相关参数并得到对应能耗、性能反应等多项指标的测试报告，包括针对后续的荣耀手表测试的部分参数调整。</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>💻 宝信软件 | 组态工程师</h3>
+                <div class="experience-date">2019.01 - 2020.02</div>
+                <ul>
+                    <li><strong>苏州地铁三号线项目</strong>：画面制作，修改，核对；现场装机，配置icv环境及点位核对。对现场复杂环境的问题做判断并找解决方案。</li>
+                    <li><strong>乌鲁木齐地铁TCC项目</strong>：核对厂家点类表及现场部署工作，使用excel公式及bat简化工作流程。</li>
+                    <li><strong>上海地铁C3项目</strong>：制作十六号线地铁车站的程控卡片（包括画面及控制程序/点类表。作用是控制地铁来往时开关的打开闭合顺序）。</li>
+                </ul>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <h2>📚 教育背景</h2>
+            <div class="experience-item">
+                <h3>上海海事大学 | 电气工程及其自动化专业</h3>
+                <div class="experience-date">2014.09 - 2018.06</div>
+                <ul>
+                    <li>专业成绩：GPA 3.66/5 (专业前50%)</li>
+                    <li>主修课程：计算机系统结构，C语言，电路原理，数字电子电路，深度学习</li>
+                </ul>
             </div>
         </div>
         
-        <div class="skill-category">
-            <h4>后端开发</h4>
-            <div class="tech-stack">
-                <span class="tech-item">Django</span>
-                <span class="tech-item">Redis</span>
-                <span class="tech-item">高并发设计</span>
-                <span class="tech-item">系统重构</span>
+        <!-- 项目展示分页 -->
+        <div class="page-content" id="projects">
+            <h2>🛠️ 技能特长</h2>
+            
+            <div class="skill-category">
+                <h4>编程开发</h4>
+                <div class="tech-stack">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">Scrapy</span>
+                    <span class="tech-item">PyQT</span>
+                    <span class="tech-item">GitHub</span>
+                    <span class="tech-item">C++</span>
+                    <span class="tech-item">SQL</span>
+                    <span class="tech-item">Linux</span>
+                    <span class="tech-item">SVN</span>
+                    <span class="tech-item">Git</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>智能系统开发</h4>
+                <div class="tech-stack">
+                    <span class="tech-item">机器学习</span>
+                    <span class="tech-item">朴素贝叶斯</span>
+                    <span class="tech-item">VITS语音模型</span>
+                    <span class="tech-item">Stable Diffusion</span>
+                    <span class="tech-item">大模型接口</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>工程实施能力</h4>
+                <div class="tech-stack">
+                    <span class="tech-item">Python多版本环境</span>
+                    <span class="tech-item">软件全生命周期</span>
+                    <span class="tech-item">基础调试</span>
+                    <span class="tech-item">大模型环境部署</span>
+                    <span class="tech-item">OpenClaw</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>专业素养</h4>
+                <div class="tech-stack">
+                    <span class="tech-item">技术文档</span>
+                    <span class="tech-item">跨文化协作</span>
+                    <span class="tech-item">英语工作场景</span>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <h2>🚀 项目经验</h2>
+            
+            <div class="project-item">
+                <div class="project-title">复杂系统重构</div>
+                <ul>
+                    <li><strong>描述</strong>：多次成功接手遗留系统改造项目，擅长在缺乏文档的工程中快速建立问题定位机制，精准识别核心缺陷并设计可持续改进方案。典型案例：在分布式架构改造中，通过逆向分析梳理出关键数据链路异常点，重构核心通信模块解决历史性故障。</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">全流程开发能力</div>
+                <ul>
+                    <li><strong>描述</strong>：独立负责多个大型项目从架构设计到生产部署的全周期开发，善于将模糊业务需求转化为可执行技术方案。开发自动化代码生成工具，显著减少重复性编码工作，确保核心业务逻辑的规范性和可维护性。算法实践：在Jupyter Notebook验证知乎/B站学习的算法思路，本地化推演huggingface的小型AI模型。数据工程：开发自适应网络爬虫框架（合规数据获取）。</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">智能运维体系</div>
+                <ul>
+                    <li><strong>描述</strong>：构建智能化的异常检测机制，通过动态分析技术建立问题模式库，大幅缩短故障排查周期。设计自适应的版本管理方案，有效解决多团队协作的版本控制难题，确保复杂工程的持续集成能力。</li>
+                </ul>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">前沿技术探索</div>
+                <ul>
+                    <li><strong>描述</strong>：在智能预测系统中创新应用大模型技术，设计多阶段的数据处理管道，实现复杂业务指标的自动化分析与趋势预测。主导新一代移动端测试工具研发，突破系统兼容性技术瓶颈，建立跨平台自动化测试体系。大模型本地化部署与应用：成功在Linux环境配置部署OpenClaw镜像；在Mac Mini上基于Ollama与OpenClaw部署GPT-SoVITS项目，并编写Skill实现分角色有声书制作。</li>
+                </ul>
             </div>
         </div>
         
-        <div class="skill-category">
-            <h4>数据处理与AI</h4>
-            <div class="tech-stack">
-                <span class="tech-item">爬虫(Scrapy)</span>
-                <span class="tech-item">大模型(LLM)应用</span>
-                <span class="tech-item">提示词工程</span>
-                <span class="tech-item">机器学习</span>
+        <!-- 大学经历分页 -->
+        <div class="page-content" id="other">
+            <h2>🎓 实习经历</h2>
+            
+            <div class="experience-item">
+                <h3>🏭 INTAMSYS 3D打印公司 | 电气工程师</h3>
+                <div class="experience-date">2018.04 - 2018.06</div>
+                <ul>
+                    <li>拆卸与组装，维护电气设备，编写与维护3D打印技术设计文档。</li>
+                </ul>
             </div>
-        </div>
-        
-        <div class="skill-category">
-            <h4>工程与运维</h4>
-            <div class="tech-stack">
-                <span class="tech-item">Git</span>
-                <span class="tech-item">Linux</span>
-                <span class="tech-item">Docker</span>
-                <span class="tech-item">自动化测试</span>
-                <span class="tech-item">性能优化</span>
+            
+            <div class="divider"></div>
+            
+            <h2>🏆 荣誉证书</h2>
+            
+            <div class="experience-item">
+                <ul>
+                    <li>英语六级，听说读写能力良好，能流利的用英语进行日常交流，能快速浏览英文文档和书籍。</li>
+                    <li>通过全国计算机二级考试，熟练运用office等常用的办公软件。</li>
+                    <li>大学物理及电路原理满分。</li>
+                    <li>大学物理竞赛上海赛区二等奖。</li>
+                </ul>
             </div>
-        </div>
-        
-        <div class="skill-category">
-            <h4>领域知识</h4>
-            <div class="tech-stack">
-                <span class="tech-item">金融科技</span>
-                <span class="tech-item">移动安全</span>
-                <span class="tech-item">自动化测试</span>
-            </div>
-        </div>
-        
-        <div class="divider"></div>
-        
-        <h2>💼 主要经历</h2>
-        
-        <div class="experience-item">
-            <h3>🏦 广发证券 | 金融大数据及后端研发</h3>
-            <div class="experience-date">2023.05 - 2026.03</div>
-            <ul>
-                <li><strong>高并发后端系统</strong>：主导设计并开发基于 Python+Django+Redis 的证券业务系统，日均稳定处理百万级请求。</li>
-                <li><strong>AI驱动量化分析</strong>：构建基于大语言模型（通义灵码）的提示词工程与数据处理管道，实现金融指数分析的自动化，覆盖从需求解析、数据映射到量化计算的全流程。</li>
-                <li><strong>工程效能提升</strong>：深入源码层解决性能瓶颈，设计团队Git协作规范，并开发内部效率工具。</li>
-            </ul>
-        </div>
-        
-        <div class="experience-item">
-            <h3>🔧 畅春互联 | Python 开发</h3>
-            <div class="experience-date">2021.10 - 2023.02</div>
-            <ul>
-                <li><strong>智能爬虫系统</strong>：设计分布式爬虫架构，并集成朴素贝叶斯算法实现网页内容的智能分类，准确率达90%。</li>
-                <li><strong>安全测试工具链</strong>：主导重构安卓动态检测工具以适应新系统；从零研发鸿蒙系统首款Fuzzing测试工具，用于发现系统级漏洞。</li>
-            </ul>
-        </div>
-        
-        <div class="experience-item">
-            <h3>📱 荣耀 | Python测试工程师</h3>
-            <div class="experience-date">2021.04 - 2021.08</div>
-            <ul>
-                <li>负责手机及智能穿戴设备的自动化测试参数配置与性能分析报告生成。</li>
-            </ul>
-        </div>
-        
-        <div class="divider"></div>
-        
-        <h2>🚀 精选项目</h2>
-        
-        <div class="project-item">
-            <div class="project-title">中国电子官网智能爬虫系统</div>
-            <ul>
-                <li><strong>描述</strong>：一个高性能、可扩展的定向爬虫，用于数据抓取与结构化。创新性地引入朴素贝叶斯算法对抓取内容进行实时自动分类。</li>
-                <li><strong>技术</strong>：<code>Python</code> · <code>Scrapy</code> · <code>朴素贝叶斯</code> · <code>分布式</code></li>
-            </ul>
-        </div>
-        
-        <div class="project-item">
-            <div class="project-title">鸿蒙系统 Fuzzing 测试工具</div>
-            <ul>
-                <li><strong>描述</strong>：独立研发的鸿蒙（HarmonyOS）系统模糊测试工具，通过指令变异引擎主动挖掘系统和应用层的潜在漏洞，提升安全测试覆盖率。</li>
-                <li><strong>技术</strong>：<code>Python</code> · <code>Fuzzing</code> · <code>HarmonyOS</code> · <code>安全测试</code></li>
-            </ul>
-        </div>
-        
-        <div class="project-item">
-            <div class="project-title">金融指数 AI 预测引擎</div>
-            <ul>
-                <li><strong>描述</strong>：将大语言模型与量化分析结合的实践项目。利用LLM自动化解析海量文档中的规则，并驱动后端计算引擎生成预测数据。</li>
-                <li><strong>技术</strong>：<code>Python</code> · <code>LLM</code> · <code>Prompt Engineering</code> · <code>Django</code> · <code>量化分析</code></li>
-            </ul>
-        </div>
-        
-        <div class="project-item">
-            <div class="project-title">安卓应用动态检测平台</div>
-            <ul>
-                <li><strong>描述</strong>：用于安卓应用动态行为分析与安全检测的工具，完成了对Android 13新权限模型的兼容性重构。</li>
-                <li><strong>技术</strong>：<code>Python</code> · <code>Android</code> · <code>动态分析</code> · <code>逆向工程</code></li>
-            </ul>
-        </div>
-        
-        <div class="divider"></div>
-        
-        <h2>📚 教育背景</h2>
-        <div class="experience-item">
-            <h3>上海海事大学 | 电气工程及其自动化</h3>
-            <div class="experience-date">2014 - 2018</div>
-            <ul>
-                <li>GPA: 3.66/5 (专业前50%)</li>
-                <li>主修课程：深度学习、计算机系统结构、C语言、电路原理</li>
-            </ul>
         </div>
         
         <div class="divider"></div>
@@ -617,25 +718,53 @@
     </div>
     
     <script>
-        // 添加滚动动画效果
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // 分页功能
+        const pageBtns = document.querySelectorAll('.page-btn');
+        const pageContents = document.querySelectorAll('.page-content');
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
-                }
+        pageBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetPage = this.getAttribute('data-page');
+                
+                // 更新按钮状态
+                pageBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 更新内容显示
+                pageContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(targetPage).classList.add('active');
+                
+                // 重新初始化观察器
+                initObserver();
             });
-        }, observerOptions);
-        
-        // 观察所有需要动画的元素
-        document.querySelectorAll('.experience-item, .project-item, .skill-category').forEach(el => {
-            el.style.opacity = '0';
-            observer.observe(el);
         });
+        
+        // 初始化观察器
+        function initObserver() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有需要动画的元素
+            document.querySelectorAll('.experience-item, .project-item, .skill-category').forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        }
+        
+        // 初始化
+        initObserver();
         
         // 添加技术标签的交互效果
         document.querySelectorAll('.tech-item').forEach(item => {
