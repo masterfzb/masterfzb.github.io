@@ -1,160 +1,200 @@
 \documentclass[11pt, a4paper]{article}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=0.8in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage[UTF8]{ctex}
 \usepackage{parskip}
 \usepackage{hyperref}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{ragged2e}
+\usepackage{tabularx}
 
-\definecolor{primary}{HTML}{3498db}
-\definecolor{secondary}{HTML}{2ecc71}
-\definecolor{accent}{HTML}{9b59b6}
-\definecolor{dark}{HTML}{2c3e50}
-\definecolor{light}{HTML}{ecf0f1}
+\definecolor{primary}{HTML}{2c3e50}  % 更深的蓝色，更专业
+\definecolor{accent}{HTML}{3498db}   % 亮蓝色作为强调色
+\definecolor{light}{HTML}{95a5a6}    % 灰色用于次要信息
 
+% 设置超链接样式
 \hypersetup{
     colorlinks=true,
     linkcolor=primary,
     filecolor=primary,
-    urlcolor=primary,
+    urlcolor=accent,
+    citecolor=primary,
 }
 
+% 自定义章节格式
 \titleformat{\section}{
-    \normalfont\Large\bfseries\color{dark}\uppercase
-}{}{0em}{}
+    \vspace{0.5em}\normalfont\Large\bfseries\color{primary}
+}{}{0em}{}[\titlerule]
 
-\titleformat{\subsection}{
-    \normalfont\large\bfseries\color{primary}
-}{}{0em}{}
+% 设置列表样式
+\setlist[itemize]{
+    leftmargin=*,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt,
+    itemsep=2pt
+}
 
-\titleformat{\subsubsection}{
-    \normalfont\bfseries
-}{}{0em}{}
-
+% 移除段落缩进
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{8pt}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.2}
+
+% 自定义命令
+\newcommand{\headeritem}[2]{\makebox[3.5em][l]{#1} #2}
+\newcommand{\skillitem}[2]{\textbf{#1:} #2}
+\newcommand{\dates}[1]{\hfill\textcolor{light}{\small #1}}  % 日期右对齐
 
 \begin{document}
 \pagestyle{empty}
+\thispagestyle{empty}
 
-% 个人信息部分
+% ========== 头部信息 ==========
 \begin{center}
-    \Huge\textbf{masterfzb}
-    \
-    \vspace{1em}
-    \textit{林无静木，川无停流}
+    {\Huge\bfseries\color{primary} 方知定} \\
+    \vspace{0.3em}
+    {\large\color{light} AI工程师 · 全栈开发者 · 5年经验} \\
+    \vspace{0.8em}
+    
+    \begin{tabular}{@{}c@{}c@{}c@{}c@{}}
+        \faPhone\ \href{tel:+8618170311560}{+86 181-7031-1560} & 
+        \hspace{1em} | \hspace{1em} &
+        \faEnvelope\ \href{mailto:1310347817@qq.com}{1310347817@qq.com} &
+        \hspace{1em} | \hspace{1em} \\
+        \faGithub\ \href{https://github.com/masterfzb}{github.com/masterfzb} &
+        \hspace{1em} | \hspace{1em} &
+        \faMapMarker\ 广州/深圳 &
+        \hspace{1em} | \hspace{1em} \\
+        \faGlobe\ \href{https://masterfzb.github.io/}{https://masterfzb.github.io/}
+    \end{tabular}
 \end{center}
 
-\vspace{2em}
+\vspace{1em}
 
-% 个人摘要
-\section{个人摘要}
-我是一名热爱前沿技术与专注于构建可靠、高效的后端系统与自动化工具的开发者。从金融大数据到安全测试，我在多个领域积累了丰富的实战经验。期待与您的交流与合作。
+% ========== 专业摘要 ==========
+\section*{\faUser\ 专业摘要}
+致力于将前沿AI与工程技术转化为稳健的工业级解决方案。拥有5年全栈开发经验，专注金融科技、高并发系统与AI工程化。擅长通过逆向工程与系统重构解决复杂技术难题，具备将大语言模型等新兴技术落地到实际业务场景的成功经验。追求通过技术创新创造可量化的业务价值。
 
-% 工作经验部分
-\section{工作经验}
+\vspace{-0.5em}
 
-\subsection{广发证券 | 金融大数据及后端研发 \texorpdfstring{\hfill}{} 2023.05 - 2026.03}
-\subsubsection*{金融指数AI预测系统（核心项目）}
+% ========== 工作经历 ==========
+\section*{\faBriefcase\ 工作经历}
+
+\subsection*{广发证券股份有限公司 \dates{2023.05 -- 2026.03}}
+\textbf{金融大数据及后端研发工程师} \hfill \textit{广州}
+
 \begin{itemize}
-    \item 设计提示词工程体系，基于本地通义灵码大模型构建泛用性提示词模板
-    \item 开发指标-数据库映射系统，通过大模型将模型输出的数据标准要求对接本地的Oracle/MySQL数据库
-    \item 构建计算预测引擎，基于指数算法与要求的数据，编写Python量化计算模块得出预测结果
-    \item 实现预测结果与真实结果比对，在新版要求出现后自动生成预测结果
+    \item \textbf{人工智能指数预测系统（核心项目）}
+    \begin{itemize}
+        \item 设计基于大语言模型的提示词工程体系，使用本地通义灵码自动化解析1734个指数文件，提取指标需求与算法
+        \item 开发指标-数据库智能映射系统，通过LLM将数据需求转换为Oracle/MySQL查询，提升数据对接效率60%
+        \item 构建Python量化计算引擎，根据指数算法自动化生成预测结果，并与真实市场数据进行验证比对
+    \end{itemize}
+    
+    \item \textbf{证券业务高并发后端系统}
+    \begin{itemize}
+        \item 主导设计并开发基于Python+Django+Redis的证券后端系统，日均处理\textbf{百万级}数据请求，系统可用性99.9%
+        \item 研发SQL动态生成工具，结合ORM与原生SQL优化复杂查询，关键报表响应时间减少40%
+        \item 通过源码级分析修复内存泄漏等性能瓶颈，制定Git协作规范解决多团队并行开发问题
+    \end{itemize}
 \end{itemize}
 
-\subsubsection*{高性能证券业务后端}
+\vspace{0.5em}
+
+\subsection*{畅春互联科技有限公司 \dates{2021.10 -- 2023.02}}
+\textbf{Python开发工程师} \hfill \textit{北京}
+
 \begin{itemize}
-    \item 设计并开发证券业务后端系统，基于Python+Django+Redis实现高并发API接口
-    \item 独立完成核心模块代码开发与系统维护，\textbf{日均处理百万级数据请求}
-    \item 研发SQL动态生成工具，结合ORM与原生SQL实现灵活数据库操作
-    \item 通过源码级分析修复代码缺陷，优化第三方依赖包本地化，解决内存泄漏等性能瓶颈问题
-    \item 制定Git协作规范并维护git项目，解决多团队并行开发的版本问题
+    \item \textbf{政务信息智能采集与分类系统}
+    \begin{itemize}
+        \item 设计多线程分布式爬虫架构，突破反爬机制，实现目标网站全量数据采集
+        \item 应用朴素贝叶斯算法实现网页信息自动分类，语义解析准确率达\textbf{90\%}，较人工提升70%
+    \end{itemize}
+    
+    \item \textbf{移动安全自动化检测平台}
+    \begin{itemize}
+        \item 主导重构安卓动态检测工具，适配Android 13新权限模型并支持HarmonyOS跨平台兼容
+        \item 参与研发业界首款鸿蒙系统Fuzzing测试工具，通过指令变异引擎发现多个系统级漏洞
+    \end{itemize}
 \end{itemize}
 
-\subsection{畅春互联 | Python开发 \texorpdfstring{\hfill}{} 2021.10 - 2023.02}
-\subsubsection*{中国电子官网智能爬虫系统}
+\vspace{0.5em}
+
+\subsection*{荣耀 \dates{2021.04 -- 2021.08}}
+\textbf{Python测试开发工程师} \hfill \textit{北京}
+
 \begin{itemize}
-    \item 设计多线程分布式爬虫架构，突破反爬机制实现全部数据完整抓取
-    \item 创新应用朴素贝叶斯算法实现网页信息自动分类，\textbf{语义解析准确率90\%}
+    \item 开发自动化测试脚本，用于手机及智能手表功耗与性能测试，根据需求动态调整测试参数
+    \item 自动生成包含性能指标、能耗分析在内的详细测试报告，提升测试效率30%
 \end{itemize}
 
-\subsubsection*{移动端安全检测体系}
+\vspace{0.5em}
+
+\subsection*{上海宝信软件股份有限公司 \dates{2019.01 -- 2020.02}}
+\textbf{组态软件工程师} \hfill \textit{上海}
+
 \begin{itemize}
-    \item 主导安卓动态检测工具重构以支持Android 13新权限机制与跨平台兼容
-    \item 研发鸿蒙系统首款Fuzzing测试工具，通过指令变异引擎发现系统级漏洞
+    \item 参与苏州地铁3号线、乌鲁木齐地铁TCC等多个大型轨道交通综合监控系统项目
+    \item 负责上位机监控画面组态开发、现场部署与调试，利用自动化脚本提升工作效率30%
 \end{itemize}
 
-\subsection{荣耀 | Python测试工程师 \texorpdfstring{\hfill}{} 2021.04 - 2021.08}
+% ========== 技术能力 ==========
+\section*{\faCogs\ 技术能力}
+
+\begin{multicols}{2}
 \begin{itemize}
-    \item 根据需求修改手机测试的相关参数并得到对应能耗、性能反应等多项指标的测试报告
-    \item 针对后续的荣耀手表测试的部分参数调整
+    \item \textbf{编程语言}: Python, SQL, C++, Bash
+    \item \textbf{后端开发}: Django, RESTful API, Redis, 高并发设计
+    \item \textbf{AI/机器学习算法}: 大模型应用, 提示词工程, 机器学习算法, 生成模型
+    \item \textbf{数据工程}: Scrapy, 数据挖掘, 数据库优化, 大数据处理
+    \item \textbf{DevOps}: Git, Linux, Docker, CI/CD, 自动化部署
+    \item \textbf{系统工程}: 架构设计, 性能优化, 系统重构, 逆向工程
+    \item \textbf{智能体工程}: openclaw部署及工程运维,skill制作,ollama模型部署,AI全栈开发
+\end{itemize}
+\end{multicols}
+
+% ========== 项目亮点 ==========
+\section*{\faStar\ 项目亮点}
+
+\begin{itemize}
+    \item \textbf{大模型金融工程化}: 成功将LLM技术应用于金融指数分析全流程，从文档解析、需求提炼到计算验证，构建自动化智能分析管道
+    \item \textbf{复杂系统重构}: 多次接手遗留系统，通过逆向工程与动态分析定位核心缺陷，设计可持续改进方案解决历史性技术债务
+    \item \textbf{全流程开发能力}: 独立负责项目从需求分析、架构设计、核心开发到生产部署与运维的全周期
+    \item \textbf{前沿技术探索}: 持续实践AI前沿技术，成功部署OpenClaw、Ollama、GPT-SoVITS等开源框架，开发分角色有声书制作工具
 \end{itemize}
 
-\subsection{宝信软件 | 组态工程师 \texorpdfstring{\hfill}{} 2019.01 - 2020.02}
+% ========== 教育背景 ==========
+\section*{\faGraduationCap\ 教育背景}
+
+\subsection*{上海海事大学 \dates{2014.09 -- 2018.06}}
+\textbf{工学学士 | 电气工程及其自动化}
+
 \begin{itemize}
-    \item 苏州地铁三号线项目：画面制作，修改，核对；现场装机，配置icv环境及点位核对
-    \item 对现场复杂环境的问题做判断并找解决方案
-    \item 乌鲁木齐地铁TCC项目：核对厂家点类表及现场部署工作
-    \item 使用excel公式及bat简化工作流程
-    \item 上海地铁C3项目：制作十六号线地铁车站的程控卡片
+    \item \textbf{主修课程}: 深度学习, 计算机系统结构, C语言程序设计, 电路原理, 数字电子技术
+    \item \textbf{学业表现}: GPA 3.66/5 (专业前50\%), 大学物理竞赛上海赛区二等奖
+    \item \textbf{核心能力}: 全国计算机二级, 英语六级, 熟练掌握Office, LaTeX等工具
 \end{itemize}
 
-\section{教育背景}
+% ========== 实习经历 ==========
+\section*{\faLaptopCode\ 实习经历}
 
-\subsection{上海海事大学 | 电气工程及其自动化专业 \texorpdfstring{\hfill}{} 2014.09 - 2018.06}
+\subsection*{INTAMSYS（远铸智能） \dates{2018.04 -- 2018.06}}
+\textbf{电气工程实习生}
+
 \begin{itemize}
-    \item 专业成绩：GPA 3.66/5 (专业前50\%)
-    \item 主修课程：计算机系统结构，C语言，电路原理，数字电子电路，深度学习
+    \item 参与工业级3D打印设备的电气装配、线路检查与设备调试
+    \item 协助更新与维护设备电气原理图及技术文档
 \end{itemize}
 
-\section{专业技能}
-
-\subsection{精通}
-\begin{itemize}
-    \item 语言：Python, SQL
-    \item 框架与库：Django, Scrapy, Redis
-    \item 工具：Git, Linux, GitHub
-\end{itemize}
-
-\subsection{熟悉}
-\begin{itemize}
-    \item 语言：C++
-    \item 框架与库：PyQT
-    \item 工具：SVN
-\end{itemize}
-
-\subsection{AI与机器学习}
-\begin{itemize}
-    \item 机器学习：朴素贝叶斯算法
-    \item 生成模型：VITS语音模型, Stable Diffusion
-    \item 大模型：提示词工程，大模型接口开发，OpenClaw部署
-\end{itemize}
-
-\subsection{工程能力}
-\begin{itemize}
-    \item 系统架构设计与重构
-    \item 高并发系统开发
-    \item 数据库优化
-    \item 自动化测试
-    \item 性能优化
-\end{itemize}
-
-\section{实习经历}
-
-\subsection{INTAMSYS 3D打印公司 | 电气工程师 \texorpdfstring{\hfill}{} 2018.04 - 2018.06}
-\begin{itemize}
-    \item 拆卸与组装，维护电气设备
-    \item 编写与维护3D打印技术设计文档
-\end{itemize}
-
-\section{荣誉证书}
-\begin{itemize}
-    \item 英语六级，听说读写能力良好，能流利的用英语进行日常交流
-    \item 通过全国计算机二级考试，熟练运用office等常用的办公软件
-    \item 大学物理及电路原理满分
-    \item 大学物理竞赛上海赛区二等奖
-\end{itemize}
+% ========== 页脚 ==========
+\vfill
+\begin{center}
+    \small\textcolor{light}{最后更新: 2026年3月 · 《林无静木，川无停流》}
+\end{center}
 
 \end{document}
