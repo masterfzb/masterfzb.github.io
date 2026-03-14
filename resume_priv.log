@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  14 MAR 2026 20:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.14)  14 MAR 2026 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,7 +820,7 @@ File: UTF8.enc 2021/10/16 4.8.5
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/cjk/UTF8\UTF8.chr
 File: UTF8.chr 2021/10/16 4.8.5
 )
-No file resume_priv.aux.
+(resume_priv.aux)
 \openout1 = `resume_priv.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -905,6 +905,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -956,12 +957,14 @@ ii
 \everyMPtoPDFconversion=\toks26
 )
 Package hyperref Info: Link coloring ON on input line 53.
+ (resume_priv.out) (resume_priv.out)
 \@outlinefile=\write3
 \openout3 = `resume_priv.out'.
 
 LaTeX Font Info:    Trying to load font information for C70+rm on input line 59
 .
- (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/fd\c70rm.fd
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/fd\c70rm.fd
 File: c70rm.fd 2022/07/14 v2.5.10 Chinese font definition (CTEX)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -989,13 +992,13 @@ LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <10.95> n
 ot available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
 n input line 69.
-Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 73.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree3 on i
 nput line 80.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\ufontaweso
 mefree3.fd)
+Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
+quanjiao) on input line 81.
 LaTeX Font Info:    Trying to load font information for U+fontawesomefree0 on i
 nput line 86.
 
@@ -1019,57 +1022,50 @@ KTeX/fonts/enc/dvips/fontawesome5/fa5free0.enc}]
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/07/14>
  ***********
-
-
-Package rerunfilecheck Warning: File `resume_priv.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `resume_priv.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `resume_priv.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 17776 strings out of 467870
- 317149 string characters out of 5418355
- 729003 words of memory out of 5000000
- 46101 multiletter control sequences out of 15000+600000
- 689370 words of font info for 261 fonts, out of 8000000 for 9000
+ 17786 strings out of 467870
+ 317428 string characters out of 5418355
+ 728992 words of memory out of 5000000
+ 46104 multiletter control sequences out of 15000+600000
+ 689100 words of font info for 260 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,6n,92p,1202b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1000.pk><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/F
-onts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/W
-indows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.t
+1000.pk><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/F
+onts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/W
+indows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.t
 tf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/
 simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Window
-s/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C
-:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhe
-i.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fon
-ts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Win
-dows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc
+s/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C
+:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsu
+n.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fon
+ts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Win
+dows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc
 ><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/si
-mhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/
-Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/
-Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.
+msun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/
+Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/
+Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.
 ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts
-/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windo
-ws/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><
+/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windo
+ws/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><
 C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/sims
 un.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fo
-nts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Wi
+nts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Wi
 ndows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.tt
 f><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
-imhei.ttf><C:/Windows/Fonts/simhei.ttf> <C:\Users\Admin\AppData\Local\MiKTeX\fo
-nts/pk/ljfour/jknappen/ec/dpi657\tcrm1000.pk><C:/Windows/Fonts/simkai.ttf><C:/W
-indows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.t
+imhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf> <C:\Users\
+Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi657\tcrm1000.pk><C:/W
+indows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.t
 tf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/
 simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Window
 s/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C
 :/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhe
 i.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fon
 ts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Win
-dows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc
+dows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc
 ><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/si
 msun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/
 Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/
@@ -1080,25 +1076,25 @@ ws/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><
 C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/sims
 un.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fo
 nts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Wi
-ndows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.tt
-f><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/s
-imsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows
+ndows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.tt
+c><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/s
+imhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows
 /Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:
-/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc> <C:\Users\Admin\AppData
-\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Windows/Fonts/
-simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Window
-s/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C
-:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5/Fon
-tAwesome5Brands-Regular.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/fontawesome5/FontAwesome5Free-Solid.pfb><C:/Users/Admin/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Admin/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Use
-rs/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr12.pfb>
-Output written on resume_priv.pdf (3 pages, 730192 bytes).
+/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun
+.ttc><C:/Windows/Fonts/simsun.ttc> <C:\Users\Admin\AppData\Local\MiKTeX\fonts/p
+k/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Windows/Fonts/simsun.ttc><C:/Window
+s/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C
+:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Users/Admin/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regul
+ar.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawe
+some5/FontAwesome5Free-Solid.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Admin/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Admin/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Admin/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on resume_priv.pdf (3 pages, 735603 bytes).
 PDF statistics:
- 676 PDF objects out of 1000 (max. 8388607)
+ 684 PDF objects out of 1000 (max. 8388607)
  4 named destinations out of 1000 (max. 500000)
  297 words of extra memory for PDF output out of 10000 (max. 10000000)
 
