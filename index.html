@@ -1,76 +1,651 @@
-# Hi there, I'm masterfzb 👋
-
-**Backend Developer / Tooling & Automation Enthusiast**
-
-> *《林无静木，川无停流》*
-
-我是一名专注于构建可靠、高效的后端系统与自动化工具的开发者。拥有从金融大数据到安全测试的跨领域实战经验，擅长使用Python解决复杂的工程问题，并对将前沿AI技术（如大语言模型）工程化落地有浓厚兴趣和实践。
-
----
-
-## 🛠️ 技术栈与技能
-
-**编程语言:** `Python` · `SQL`
-**后端开发:** `Django` · `Redis` · `高并发设计` · `系统重构`
-**数据处理与AI:** `爬虫(Scrapy)` · `大模型(LLM)应用` · `提示词工程` · `机器学习`
-**工程与运维:** `Git` · `Linux` · `Docker` · `自动化测试` · `性能优化`
-**领域知识:** `金融科技` · `移动安全` · `自动化测试`
-
----
-
-## 💼 主要经历
-
-### 🏦 广发证券 | 金融大数据及后端研发
-*2023.05 - 2026.03*
-
-- **高并发后端系统**：主导设计并开发基于 Python+Django+Redis 的证券业务系统，日均稳定处理百万级请求。
-- **AI驱动量化分析**：构建基于大语言模型（通义灵码）的提示词工程与数据处理管道，实现金融指数分析的自动化，覆盖从需求解析、数据映射到量化计算的全流程。
-- **工程效能提升**：深入源码层解决性能瓶颈，设计团队Git协作规范，并开发内部效率工具。
-
-### 🔧 畅春互联 | Python 开发
-*2021.10 - 2023.02*
-
-- **智能爬虫系统**：设计分布式爬虫架构，并集成朴素贝叶斯算法实现网页内容的智能分类，准确率达90%。
-- **安全测试工具链**：主导重构安卓动态检测工具以适应新系统；从零研发鸿蒙系统首款Fuzzing测试工具，用于发现系统级漏洞。
-
-### 📱 荣耀 | Python测试工程师
-*2021.04 - 2021.08*
-- 负责手机及智能穿戴设备的自动化测试参数配置与性能分析报告生成。
-
----
-
-## 🚀 精选项目
-
-### [中国电子官网智能爬虫系统](https://github.com/masterfzb/your-repo-link)
-- **描述**：一个高性能、可扩展的定向爬虫，用于数据抓取与结构化。创新性地引入朴素贝叶斯算法对抓取内容进行实时自动分类。
-- **技术**：`Python` · `Scrapy` · `朴素贝叶斯` · `分布式`
-
-### [鸿蒙系统 Fuzzing 测试工具](https://github.com/masterfzb/your-repo-link)
-- **描述**：独立研发的鸿蒙（HarmonyOS）系统模糊测试工具，通过指令变异引擎主动挖掘系统和应用层的潜在漏洞，提升安全测试覆盖率。
-- **技术**：`Python` · `Fuzzing` · `HarmonyOS` · `安全测试`
-
-### [金融指数 AI 预测引擎](https://github.com/masterfzb/your-repo-link)
-- **描述**：将大语言模型与量化分析结合的实践项目。利用LLM自动化解析海量文档中的规则，并驱动后端计算引擎生成预测数据。
-- **技术**：`Python` · `LLM` · `Prompt Engineering` · `Django` · `量化分析`
-
-### [安卓应用动态检测平台](https://github.com/masterfzb/your-repo-link)
-- **描述**：用于安卓应用动态行为分析与安全检测的工具，完成了对Android 13新权限模型的兼容性重构。
-- **技术**：`Python` · `Android` · `动态分析` · `逆向工程`
-
----
-
-## 📚 教育背景
-**上海海事大学** - 电气工程及其自动化 (2014 - 2018)
-- GPA: 3.66/5 (专业前50%)
-- 主修课程：深度学习、计算机系统结构、C语言、电路原理
-
----
-
-## 📈 我的动态
-
-<!-- 这里可以放置GitHub Stats、最近博客文章或动态 -->
-<!-- 例如：![masterfzb's GitHub stats](https://github-readme-stats.vercel.app/api?username=masterfzb&show_icons=true&theme=radical) -->
-
----
-
-*这份档案持续演进，正如代码与系统。*
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>masterfzb - 后端开发者</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --accent: #9b59b6;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f2f5;
+            overflow-x: hidden;
+        }
+        
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--dark);
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--light);
+            position: relative;
+            animation: fadeInLeft 0.6s ease-out;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        h2:hover::after {
+            width: 120px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.8rem 0 0.8rem;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            color: var(--primary);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #666;
+            background-color: rgba(52, 152, 219, 0.05);
+            border-radius: 0 8px 8px 0;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--light), transparent);
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 2px solid var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .divider::after {
+            content: '✨';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+            background: var(--gradient);
+            color: white;
+        }
+        
+        ul {
+            margin-left: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+        
+        li::before {
+            content: '▹';
+            position: absolute;
+            left: -1.2rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .experience-date {
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+        }
+        
+        .project-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .project-title a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .project-title a:hover {
+            color: var(--primary);
+        }
+        
+        .project-title a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .project-title a:hover::after {
+            width: 100%;
+        }
+        
+        .project-tech {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--light);
+            color: #777;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 1px solid var(--light);
+            border-radius: 50%;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        code {
+            background-color: #f8f9fa;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 2rem 0;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .hero-section h1 {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .skill-category {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-category h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .experience-item,
+            .project-item {
+                padding: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .tech-item {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <div class="container">
+        <div class="hero-section">
+            <h1>Hi there, I'm masterfzb 👋</h1>
+            <div class="subtitle">Backend Developer / Tooling & Automation Enthusiast</div>
+            
+            <blockquote>
+                <p>《林无静木，川无停流》</p>
+            </blockquote>
+            
+            <p>我是一名专注于构建可靠、高效的后端系统与自动化工具的开发者。拥有从金融大数据到安全测试的跨领域实战经验，擅长使用Python解决复杂的工程问题，并对将前沿AI技术（如大语言模型）工程化落地有浓厚兴趣和实践。</p>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h2>🛠️ 技术栈与技能</h2>
+        
+        <div class="skill-category">
+            <h4>编程语言</h4>
+            <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">SQL</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h4>后端开发</h4>
+            <div class="tech-stack">
+                <span class="tech-item">Django</span>
+                <span class="tech-item">Redis</span>
+                <span class="tech-item">高并发设计</span>
+                <span class="tech-item">系统重构</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h4>数据处理与AI</h4>
+            <div class="tech-stack">
+                <span class="tech-item">爬虫(Scrapy)</span>
+                <span class="tech-item">大模型(LLM)应用</span>
+                <span class="tech-item">提示词工程</span>
+                <span class="tech-item">机器学习</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h4>工程与运维</h4>
+            <div class="tech-stack">
+                <span class="tech-item">Git</span>
+                <span class="tech-item">Linux</span>
+                <span class="tech-item">Docker</span>
+                <span class="tech-item">自动化测试</span>
+                <span class="tech-item">性能优化</span>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h4>领域知识</h4>
+            <div class="tech-stack">
+                <span class="tech-item">金融科技</span>
+                <span class="tech-item">移动安全</span>
+                <span class="tech-item">自动化测试</span>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h2>💼 主要经历</h2>
+        
+        <div class="experience-item">
+            <h3>🏦 广发证券 | 金融大数据及后端研发</h3>
+            <div class="experience-date">2023.05 - 2026.03</div>
+            <ul>
+                <li><strong>高并发后端系统</strong>：主导设计并开发基于 Python+Django+Redis 的证券业务系统，日均稳定处理百万级请求。</li>
+                <li><strong>AI驱动量化分析</strong>：构建基于大语言模型（通义灵码）的提示词工程与数据处理管道，实现金融指数分析的自动化，覆盖从需求解析、数据映射到量化计算的全流程。</li>
+                <li><strong>工程效能提升</strong>：深入源码层解决性能瓶颈，设计团队Git协作规范，并开发内部效率工具。</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <h3>🔧 畅春互联 | Python 开发</h3>
+            <div class="experience-date">2021.10 - 2023.02</div>
+            <ul>
+                <li><strong>智能爬虫系统</strong>：设计分布式爬虫架构，并集成朴素贝叶斯算法实现网页内容的智能分类，准确率达90%。</li>
+                <li><strong>安全测试工具链</strong>：主导重构安卓动态检测工具以适应新系统；从零研发鸿蒙系统首款Fuzzing测试工具，用于发现系统级漏洞。</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <h3>📱 荣耀 | Python测试工程师</h3>
+            <div class="experience-date">2021.04 - 2021.08</div>
+            <ul>
+                <li>负责手机及智能穿戴设备的自动化测试参数配置与性能分析报告生成。</li>
+            </ul>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h2>🚀 精选项目</h2>
+        
+        <div class="project-item">
+            <div class="project-title">中国电子官网智能爬虫系统</div>
+            <ul>
+                <li><strong>描述</strong>：一个高性能、可扩展的定向爬虫，用于数据抓取与结构化。创新性地引入朴素贝叶斯算法对抓取内容进行实时自动分类。</li>
+                <li><strong>技术</strong>：<code>Python</code> · <code>Scrapy</code> · <code>朴素贝叶斯</code> · <code>分布式</code></li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-title">鸿蒙系统 Fuzzing 测试工具</div>
+            <ul>
+                <li><strong>描述</strong>：独立研发的鸿蒙（HarmonyOS）系统模糊测试工具，通过指令变异引擎主动挖掘系统和应用层的潜在漏洞，提升安全测试覆盖率。</li>
+                <li><strong>技术</strong>：<code>Python</code> · <code>Fuzzing</code> · <code>HarmonyOS</code> · <code>安全测试</code></li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-title">金融指数 AI 预测引擎</div>
+            <ul>
+                <li><strong>描述</strong>：将大语言模型与量化分析结合的实践项目。利用LLM自动化解析海量文档中的规则，并驱动后端计算引擎生成预测数据。</li>
+                <li><strong>技术</strong>：<code>Python</code> · <code>LLM</code> · <code>Prompt Engineering</code> · <code>Django</code> · <code>量化分析</code></li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-title">安卓应用动态检测平台</div>
+            <ul>
+                <li><strong>描述</strong>：用于安卓应用动态行为分析与安全检测的工具，完成了对Android 13新权限模型的兼容性重构。</li>
+                <li><strong>技术</strong>：<code>Python</code> · <code>Android</code> · <code>动态分析</code> · <code>逆向工程</code></li>
+            </ul>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h2>📚 教育背景</h2>
+        <div class="experience-item">
+            <h3>上海海事大学 | 电气工程及其自动化</h3>
+            <div class="experience-date">2014 - 2018</div>
+            <ul>
+                <li>GPA: 3.66/5 (专业前50%)</li>
+                <li>主修课程：深度学习、计算机系统结构、C语言、电路原理</li>
+            </ul>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="footer">
+            <p>这份档案持续演进，正如代码与系统。</p>
+        </div>
+    </div>
+    
+    <script>
+        // 添加滚动动画效果
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+        
+        // 观察所有需要动画的元素
+        document.querySelectorAll('.experience-item, .project-item, .skill-category').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+        
+        // 添加技术标签的交互效果
+        document.querySelectorAll('.tech-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.animation = 'pulse 0.5s ease-in-out';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
