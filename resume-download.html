@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历下载</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --accent: #9b59b6;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f2f5;
+            overflow-x: hidden;
+        }
+        
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .back-link {
+            margin-bottom: 1.5rem;
+        }
+        
+        .back-link a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #f0f8ff;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .back-link a:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateX(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        .download-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .instructions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .instructions h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            margin-left: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light);
+            color: #777;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .download-btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <div class="container">
+        <div class="back-link">
+            <a href="index.html">← 返回主页</a>
+        </div>
+        <h1>简历下载</h1>
+        
+        <div class="download-section">
+            <h2>下载选项</h2>
+            <p>请选择您需要的简历格式：</p>
+            <a href="resume.tex" class="download-btn" download>📄 下载 LaTeX 源文件</a>
+            <a href="resume.pdf" class="download-btn" download>📄 下载 PDF 格式简历</a>
+            <p><em>提示：请将生成的 PDF 文件命名为 "resume.pdf" 并上传到网站根目录，以便用户可以直接下载。</em></p>
+        </div>
+        
+        <div class="instructions">
+            <h3>如何生成 PDF 格式简历</h3>
+            <p>要将 LaTeX 源文件编译为 PDF 格式，您需要在本地安装 LaTeX 编译工具。以下是详细步骤：</p>
+            <ol>
+                <li><strong>安装 LaTeX 发行版</strong>：
+                    <ul>
+                        <li>Windows：下载并安装 <a href="https://miktex.org/download" target="_blank">MiKTeX</a></li>
+                        <li>Mac：下载并安装 <a href="https://www.tug.org/mactex/" target="_blank">MacTeX</a></li>
+                        <li>Linux：使用包管理器安装 TeX Live，例如 <code>sudo apt-get install texlive-full</code></li>
+                    </ul>
+                </li>
+                <li><strong>下载 LaTeX 源文件</strong>：点击上面的 "下载 LaTeX 源文件" 按钮</li>
+                <li><strong>编译生成 PDF</strong>：
+                    <ul>
+                        <li>使用命令行：在文件所在目录执行 <code>pdflatex resume.tex</code></li>
+                        <li>使用 LaTeX 编辑器：如 TeXmaker、TeXstudio 等打开文件并编译，确保使用 pdflatex 编译器</li>
+                    </ul>
+                </li>
+                <li><strong>查看生成的 PDF</strong>：编译完成后，会在同一目录生成 <code>resume.pdf</code> 文件</li>
+                <li><strong>上传 PDF 文件</strong>：将生成的 <code>resume.pdf</code> 文件上传到网站根目录，以便其他用户可以直接下载</li>
+            </ol>
+            <p><strong>注意事项：</strong></p>
+            <ul>
+                <li>如果使用 MiKTeX，首次编译时可能会自动下载缺少的包，请保持网络连接</li>
+                <li>如果遇到字体相关错误，可以尝试更新 MiKTeX 或使用其他 LaTeX 发行版</li>
+                <li>如果编译失败，可以尝试使用在线 LaTeX 编译器，如 <a href="https://www.overleaf.com/" target="_blank">Overleaf</a></li>
+                <li>本简历使用了 ctex 包来处理中文，确保您的 LaTeX 发行版已经安装了相关包</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 masterfzb 个人主页</p>
+        </div>
+    </div>
+</body>
+</html>
