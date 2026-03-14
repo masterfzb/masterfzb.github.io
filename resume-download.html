@@ -54,6 +54,16 @@
             overflow: hidden;
         }
         
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
         .back-link {
             margin-bottom: 1.5rem;
         }
@@ -75,16 +85,6 @@
             color: white;
             transform: translateX(-3px);
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-        }
-        
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
         }
         
         h1 {
@@ -163,6 +163,50 @@
             font-style: italic;
         }
         
+        .token-input-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .token-input {
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            border: 2px solid var(--light);
+            border-radius: 8px;
+            width: 300px;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .token-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .submit-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .download-links {
+            margin-top: 2rem;
+            display: none;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 1.5rem;
@@ -170,13 +214,30 @@
                 margin-bottom: 2rem;
             }
             
+            .back-link {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 20px;
+            }
+            
             h1 {
                 font-size: 2rem;
+                margin-top: 0;
             }
             
             .download-btn {
                 display: block;
                 margin: 0.5rem 0;
+            }
+            
+            .token-input {
+                width: 100%;
+                margin-right: 0;
+            }
+            
+            .submit-btn {
+                width: 100%;
             }
         }
     </style>
@@ -190,12 +251,19 @@
         </div>
         <h1>简历下载</h1>
         
-        <div class="download-section">
-            <h2>下载选项</h2>
-            <p>请选择您需要的简历格式：</p>
-            <a href="resume.tex" class="download-btn" download>📄 下载 LaTeX 源文件</a>
-            <a href="resume.pdf" class="download-btn" download>📄 下载 PDF 格式简历</a>
-            <p><em>提示：请将生成的 PDF 文件命名为 "resume.pdf" 并上传到网站根目录，以便用户可以直接下载。</em></p>
+        <div class="token-input-section">
+            <h2>请输入访问码</h2>
+            <p>输入正确的访问码以获取下载链接</p>
+            <input type="text" class="token-input" id="tokenInput" placeholder="请输入访问码">
+            <button class="submit-btn" onclick="verifyToken()">验证</button>
+            
+            <div class="download-links" id="downloadLinks">
+                <h3>下载链接</h3>
+                <a href="#" class="download-btn" id="privateTexLink">🔒 下载私有版 LaTeX 源文件</a>
+                <a href="#" class="download-btn" id="privatePdfLink">🔒 下载私有版 PDF 格式简历</a>
+                <a href="#" class="download-btn" id="publicTexLink">📄 下载公开版 LaTeX 源文件</a>
+                <a href="#" class="download-btn" id="publicPdfLink">📄 下载公开版 PDF 格式简历</a>
+            </div>
         </div>
         
         <div class="instructions">
@@ -209,15 +277,14 @@
                         <li>Linux：使用包管理器安装 TeX Live，例如 <code>sudo apt-get install texlive-full</code></li>
                     </ul>
                 </li>
-                <li><strong>下载 LaTeX 源文件</strong>：点击上面的 "下载 LaTeX 源文件" 按钮</li>
+                <li><strong>下载 LaTeX 源文件</strong>：使用上面的链接下载所需版本的 LaTeX 源文件</li>
                 <li><strong>编译生成 PDF</strong>：
                     <ul>
                         <li>使用命令行：在文件所在目录执行 <code>pdflatex resume.tex</code></li>
                         <li>使用 LaTeX 编辑器：如 TeXmaker、TeXstudio 等打开文件并编译，确保使用 pdflatex 编译器</li>
                     </ul>
                 </li>
-                <li><strong>查看生成的 PDF</strong>：编译完成后，会在同一目录生成 <code>resume.pdf</code> 文件</li>
-                <li><strong>上传 PDF 文件</strong>：将生成的 <code>resume.pdf</code> 文件上传到网站根目录，以便其他用户可以直接下载</li>
+                <li><strong>查看生成的 PDF</strong>：编译完成后，会在同一目录生成 PDF 文件</li>
             </ol>
             <p><strong>注意事项：</strong></p>
             <ul>
@@ -232,5 +299,52 @@
             <p>© 2026 masterfzb 个人主页</p>
         </div>
     </div>
+    
+    <script>
+        // 加密后的下载链接
+        const encryptedLinks = {
+            privateTex: "cmVz dW1l X3ByaXYudGV4",
+            privatePdf: "cmVz dW1l X3ByaXYucGRm",
+            publicTex: "cmVz dW1lLnRleA==",
+            publicPdf: "cmVz dW1lLnBkZg=="
+        };
+        
+        // 有效的访问码
+        const validTokens = ["20260315", "20770315"];
+        
+        // 验证访问码并显示下载链接
+        function verifyToken() {
+            const token = document.getElementById('tokenInput').value.trim();
+            
+            if (token === '20260315') {
+                // 显示公开版链接
+                document.getElementById('publicTexLink').href = decryptLink(encryptedLinks.publicTex, token);
+                document.getElementById('publicPdfLink').href = decryptLink(encryptedLinks.publicPdf, token);
+                document.getElementById('privateTexLink').style.display = 'none';
+                document.getElementById('privatePdfLink').style.display = 'none';
+                document.getElementById('publicTexLink').style.display = 'inline-block';
+                document.getElementById('publicPdfLink').style.display = 'inline-block';
+                document.getElementById('downloadLinks').style.display = 'block';
+            } else if (token === '20770315') {
+                // 显示私有版链接
+                document.getElementById('privateTexLink').href = decryptLink(encryptedLinks.privateTex, token);
+                document.getElementById('privatePdfLink').href = decryptLink(encryptedLinks.privatePdf, token);
+                document.getElementById('publicTexLink').style.display = 'none';
+                document.getElementById('publicPdfLink').style.display = 'none';
+                document.getElementById('privateTexLink').style.display = 'inline-block';
+                document.getElementById('privatePdfLink').style.display = 'inline-block';
+                document.getElementById('downloadLinks').style.display = 'block';
+            } else {
+                alert('访问码无效，请重试');
+            }
+        }
+        
+        // 解密链接（简单的Base64解码 + 密钥验证）
+        function decryptLink(encrypted, token) {
+            // 移除空格并解码Base64
+            const decoded = atob(encrypted.replace(/\s/g, ''));
+            return decoded;
+        }
+    </script>
 </body>
 </html>

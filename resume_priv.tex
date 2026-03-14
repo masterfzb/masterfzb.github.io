@@ -1,0 +1,160 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[UTF8]{ctex}
+\usepackage{parskip}
+\usepackage{hyperref}
+
+\definecolor{primary}{HTML}{3498db}
+\definecolor{secondary}{HTML}{2ecc71}
+\definecolor{accent}{HTML}{9b59b6}
+\definecolor{dark}{HTML}{2c3e50}
+\definecolor{light}{HTML}{ecf0f1}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    filecolor=primary,
+    urlcolor=primary,
+}
+
+\titleformat{\section}{
+    \normalfont\Large\bfseries\color{dark}\uppercase
+}{}{0em}{}
+
+\titleformat{\subsection}{
+    \normalfont\large\bfseries\color{primary}
+}{}{0em}{}
+
+\titleformat{\subsubsection}{
+    \normalfont\bfseries
+}{}{0em}{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+
+\begin{document}
+\pagestyle{empty}
+
+% 个人信息部分
+\begin{center}
+    \Huge\textbf{masterfzb}
+    \
+    \vspace{1em}
+    \textit{林无静木，川无停流}
+\end{center}
+
+\vspace{2em}
+
+% 个人摘要
+\section{个人摘要}
+我是一名热爱前沿技术与专注于构建可靠、高效的后端系统与自动化工具的开发者。从金融大数据到安全测试，我在多个领域积累了丰富的实战经验。期待与您的交流与合作。
+
+% 工作经验部分
+\section{工作经验}
+
+\subsection{广发证券 | 金融大数据及后端研发 \texorpdfstring{\hfill}{} 2023.05 - 2026.03}
+\subsubsection*{金融指数AI预测系统（核心项目）}
+\begin{itemize}
+    \item 设计提示词工程体系，基于本地通义灵码大模型构建泛用性提示词模板
+    \item 开发指标-数据库映射系统，通过大模型将模型输出的数据标准要求对接本地的Oracle/MySQL数据库
+    \item 构建计算预测引擎，基于指数算法与要求的数据，编写Python量化计算模块得出预测结果
+    \item 实现预测结果与真实结果比对，在新版要求出现后自动生成预测结果
+\end{itemize}
+
+\subsubsection*{高性能证券业务后端}
+\begin{itemize}
+    \item 设计并开发证券业务后端系统，基于Python+Django+Redis实现高并发API接口
+    \item 独立完成核心模块代码开发与系统维护，\textbf{日均处理百万级数据请求}
+    \item 研发SQL动态生成工具，结合ORM与原生SQL实现灵活数据库操作
+    \item 通过源码级分析修复代码缺陷，优化第三方依赖包本地化，解决内存泄漏等性能瓶颈问题
+    \item 制定Git协作规范并维护git项目，解决多团队并行开发的版本问题
+\end{itemize}
+
+\subsection{畅春互联 | Python开发 \texorpdfstring{\hfill}{} 2021.10 - 2023.02}
+\subsubsection*{中国电子官网智能爬虫系统}
+\begin{itemize}
+    \item 设计多线程分布式爬虫架构，突破反爬机制实现全部数据完整抓取
+    \item 创新应用朴素贝叶斯算法实现网页信息自动分类，\textbf{语义解析准确率90\%}
+\end{itemize}
+
+\subsubsection*{移动端安全检测体系}
+\begin{itemize}
+    \item 主导安卓动态检测工具重构以支持Android 13新权限机制与跨平台兼容
+    \item 研发鸿蒙系统首款Fuzzing测试工具，通过指令变异引擎发现系统级漏洞
+\end{itemize}
+
+\subsection{荣耀 | Python测试工程师 \texorpdfstring{\hfill}{} 2021.04 - 2021.08}
+\begin{itemize}
+    \item 根据需求修改手机测试的相关参数并得到对应能耗、性能反应等多项指标的测试报告
+    \item 针对后续的荣耀手表测试的部分参数调整
+\end{itemize}
+
+\subsection{宝信软件 | 组态工程师 \texorpdfstring{\hfill}{} 2019.01 - 2020.02}
+\begin{itemize}
+    \item 苏州地铁三号线项目：画面制作，修改，核对；现场装机，配置icv环境及点位核对
+    \item 对现场复杂环境的问题做判断并找解决方案
+    \item 乌鲁木齐地铁TCC项目：核对厂家点类表及现场部署工作
+    \item 使用excel公式及bat简化工作流程
+    \item 上海地铁C3项目：制作十六号线地铁车站的程控卡片
+\end{itemize}
+
+\section{教育背景}
+
+\subsection{上海海事大学 | 电气工程及其自动化专业 \texorpdfstring{\hfill}{} 2014.09 - 2018.06}
+\begin{itemize}
+    \item 专业成绩：GPA 3.66/5 (专业前50\%)
+    \item 主修课程：计算机系统结构，C语言，电路原理，数字电子电路，深度学习
+\end{itemize}
+
+\section{专业技能}
+
+\subsection{精通}
+\begin{itemize}
+    \item 语言：Python, SQL
+    \item 框架与库：Django, Scrapy, Redis
+    \item 工具：Git, Linux, GitHub
+\end{itemize}
+
+\subsection{熟悉}
+\begin{itemize}
+    \item 语言：C++
+    \item 框架与库：PyQT
+    \item 工具：SVN
+\end{itemize}
+
+\subsection{AI与机器学习}
+\begin{itemize}
+    \item 机器学习：朴素贝叶斯算法
+    \item 生成模型：VITS语音模型, Stable Diffusion
+    \item 大模型：提示词工程，大模型接口开发，OpenClaw部署
+\end{itemize}
+
+\subsection{工程能力}
+\begin{itemize}
+    \item 系统架构设计与重构
+    \item 高并发系统开发
+    \item 数据库优化
+    \item 自动化测试
+    \item 性能优化
+\end{itemize}
+
+\section{实习经历}
+
+\subsection{INTAMSYS 3D打印公司 | 电气工程师 \texorpdfstring{\hfill}{} 2018.04 - 2018.06}
+\begin{itemize}
+    \item 拆卸与组装，维护电气设备
+    \item 编写与维护3D打印技术设计文档
+\end{itemize}
+
+\section{荣誉证书}
+\begin{itemize}
+    \item 英语六级，听说读写能力良好，能流利的用英语进行日常交流
+    \item 通过全国计算机二级考试，熟练运用office等常用的办公软件
+    \item 大学物理及电路原理满分
+    \item 大学物理竞赛上海赛区二等奖
+\end{itemize}
+
+\end{document}
