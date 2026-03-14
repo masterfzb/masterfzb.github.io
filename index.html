@@ -314,6 +314,21 @@
             position: relative;
         }
         
+        .token-easter-egg {
+            font-size: 0.8rem;
+            color: #999;
+            font-style: normal;
+        }
+        
+        .transparent-token {
+            color: transparent;
+            transition: color 0.1s ease;
+        }
+        
+        .transparent-token:hover {
+            color: #999;
+        }
+        
         .footer::before {
             content: '';
             position: absolute;
@@ -707,13 +722,14 @@
                     <li>大学物理及电路原理满分。</li>
                     <li>大学物理竞赛上海赛区二等奖。</li>
                 </ul>
+                <p class="token-easter-egg"><span class="transparent-token">20770315</span></p>
             </div>
         </div>
         
         <div class="divider"></div>
         
         <div class="footer">
-            <p>这份档案持续演进，正如代码与系统。</p>
+            <p>这份档案持续演进，正如代码与系统。<span class="token-easter-egg"> | 20260315</span></p>
             <p><a href="resume-download.html">📄 下载简历</a></p>
         </div>
     </div>
