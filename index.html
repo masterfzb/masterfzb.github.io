@@ -1,225 +1,76 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技术档案 | 专注于AI与系统工程</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-        }
+# Hi there, I'm masterfzb 👋
 
-        body {
-            background-color: #f5f5f7;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+**Backend Developer / Tooling & Automation Enthusiast**
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e1e1e8;
-        }
+> *《林无静木，川无停流》*
 
-        h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
+我是一名专注于构建可靠、高效的后端系统与自动化工具的开发者。拥有从金融大数据到安全测试的跨领域实战经验，擅长使用Python解决复杂的工程问题，并对将前沿AI技术（如大语言模型）工程化落地有浓厚兴趣和实践。
 
-        .tagline {
-            font-size: 1.1em;
-            color: #7f8c8d;
-            font-style: italic;
-        }
+---
 
-        section {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+## 🛠️ 技术栈与技能
 
-        section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-        }
+**编程语言:** `Python` · `SQL`
+**后端开发:** `Django` · `Redis` · `高并发设计` · `系统重构`
+**数据处理与AI:** `爬虫(Scrapy)` · `大模型(LLM)应用` · `提示词工程` · `机器学习`
+**工程与运维:** `Git` · `Linux` · `Docker` · `自动化测试` · `性能优化`
+**领域知识:** `金融科技` · `移动安全` · `自动化测试`
 
-        h2 {
-            color: #3498db;
-            border-left: 5px solid #3498db;
-            padding-left: 15px;
-            margin-bottom: 20px;
-            font-size: 1.6em;
-        }
+---
 
-        h3 {
-            color: #2c3e50;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            font-size: 1.2em;
-        }
+## 💼 主要经历
 
-        .job-header, .edu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 5px;
-        }
+### 🏦 广发证券 | 金融大数据及后端研发
+*2023.05 - 2026.03*
 
-        .company, .school {
-            font-weight: bold;
-            color: #2c3e50;
-        }
+- **高并发后端系统**：主导设计并开发基于 Python+Django+Redis 的证券业务系统，日均稳定处理百万级请求。
+- **AI驱动量化分析**：构建基于大语言模型（通义灵码）的提示词工程与数据处理管道，实现金融指数分析的自动化，覆盖从需求解析、数据映射到量化计算的全流程。
+- **工程效能提升**：深入源码层解决性能瓶颈，设计团队Git协作规范，并开发内部效率工具。
 
-        .period, .gpa {
-            color: #7f8c8d;
-            font-size: 0.95em;
-        }
+### 🔧 畅春互联 | Python 开发
+*2021.10 - 2023.02*
 
-        ul {
-            padding-left: 20px;
-            margin-bottom: 10px;
-        }
+- **智能爬虫系统**：设计分布式爬虫架构，并集成朴素贝叶斯算法实现网页内容的智能分类，准确率达90%。
+- **安全测试工具链**：主导重构安卓动态检测工具以适应新系统；从零研发鸿蒙系统首款Fuzzing测试工具，用于发现系统级漏洞。
 
-        li {
-            margin-bottom: 8px;
-        }
+### 📱 荣耀 | Python测试工程师
+*2021.04 - 2021.08*
+- 负责手机及智能穿戴设备的自动化测试参数配置与性能分析报告生成。
 
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-        }
+---
 
-        .skill-tag {
-            background: #e8f4fc;
-            color: #2980b9;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
+## 🚀 精选项目
 
-        .skill-tag.ai {
-            background: #f0e6f6;
-            color: #8e44ad;
-        }
+### [中国电子官网智能爬虫系统](https://github.com/masterfzb/your-repo-link)
+- **描述**：一个高性能、可扩展的定向爬虫，用于数据抓取与结构化。创新性地引入朴素贝叶斯算法对抓取内容进行实时自动分类。
+- **技术**：`Python` · `Scrapy` · `朴素贝叶斯` · `分布式`
 
-        .skill-tag.infra {
-            background: #e6f7e9;
-            color: #27ae60;
-        }
+### [鸿蒙系统 Fuzzing 测试工具](https://github.com/masterfzb/your-repo-link)
+- **描述**：独立研发的鸿蒙（HarmonyOS）系统模糊测试工具，通过指令变异引擎主动挖掘系统和应用层的潜在漏洞，提升安全测试覆盖率。
+- **技术**：`Python` · `Fuzzing` · `HarmonyOS` · `安全测试`
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            color: #95a5a6;
-            font-size: 0.9em;
-            border-top: 1px solid #e1e1e8;
-        }
+### [金融指数 AI 预测引擎](https://github.com/masterfzb/your-repo-link)
+- **描述**：将大语言模型与量化分析结合的实践项目。利用LLM自动化解析海量文档中的规则，并驱动后端计算引擎生成预测数据。
+- **技术**：`Python` · `LLM` · `Prompt Engineering` · `Django` · `量化分析`
 
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            .job-header, .edu-header {
-                flex-direction: column;
-            }
-            .period, .gpa {
-                margin-top: 5px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>技术档案</h1>
-        <p class="tagline">致力于将前沿AI与工程技术转化为稳健的工业级解决方案</p>
-    </header>
+### [安卓应用动态检测平台](https://github.com/masterfzb/your-repo-link)
+- **描述**：用于安卓应用动态行为分析与安全检测的工具，完成了对Android 13新权限模型的兼容性重构。
+- **技术**：`Python` · `Android` · `动态分析` · `逆向工程`
 
-    <main>
-        <section id="education">
-            <h2>教育背景</h2>
-            <div class="edu-header">
-                <span class="school">上海海事大学 | 电气工程及其自动化专业</span>
-                <span class="period">2014-09 ~ 2018-06</span>
-            </div>
-            <p><strong>专业成绩：</strong>GPA 3.66/5 (专业前50%)</p>
-            <p><strong>主修课程：</strong>计算机系统结构，C语言，电路原理，数字电子电路，深度学习。</p>
-        </section>
+---
 
-        <section id="experience">
-            <h2>工作经历</h2>
+## 📚 教育背景
+**上海海事大学** - 电气工程及其自动化 (2014 - 2018)
+- GPA: 3.66/5 (专业前50%)
+- 主修课程：深度学习、计算机系统结构、C语言、电路原理
 
-            <article>
-                <div class="job-header">
-                    <span class="company">广发证券 | 金融大数据及后端研发</span>
-                    <span class="period">2023-05 ~ 2026-03</span>
-                </div>
-                <ul>
-                    <li><strong>金融工程项目开发：</strong>基于Python+Django+Redis设计开发高并发证券后端系统，日均处理百万级请求。主导性能优化与核心模块重构。</li>
-                    <li><strong>人工智能指数预测系统：</strong>构建基于大语言模型(通义灵码)的提示词工程体系，自动化解析千份文件，并开发指标-数据库映射系统与量化计算引擎，实现从需求到预测的全流程自动化。</li>
-                </ul>
-            </article>
+---
 
-            <article>
-                <div class="job-header">
-                    <span class="company">畅春互联 | Python开发</span>
-                    <span class="period">2021-10 ~ 2023-02</span>
-                </div>
-                <ul>
-                    <li><strong>智能爬虫系统：</strong>设计多线程分布式爬虫架构，并创新应用朴素贝叶斯算法实现网页信息自动分类，语义解析准确率达90%。</li>
-                    <li><strong>安全检测工具研发：</strong>主导安卓动态检测工具重构以兼容新系统；研发鸿蒙系统首款Fuzzing测试工具，发现系统级漏洞。</li>
-                </ul>
-            </article>
+## 📈 我的动态
 
-            <article>
-                <div class="job-header">
-                    <span class="company">荣耀 | Python测试工程师</span>
-                    <span class="period">2021-04 ~ 2021-08</span>
-                </div>
-                <p>负责移动终端设备（手机/手表）的自动化测试参数调整与性能报告生成。</p>
-            </article>
+<!-- 这里可以放置GitHub Stats、最近博客文章或动态 -->
+<!-- 例如：![masterfzb's GitHub stats](https://github-readme-stats.vercel.app/api?username=masterfzb&show_icons=true&theme=radical) -->
 
-        </section>
+---
 
-        <section id="skills">
-            <h2>核心技术栈</h2>
-            <div class="skills-container">
-                <span class="skill-tag">Python (Django, Scrapy)</span>
-                <span class="skill-tag ai">大模型应用 (LLM)</span>
-                <span class="skill-tag ai">提示词工程</span>
-                <span class="skill-tag ai">机器学习 (Scikit-learn)</span>
-                <span class="skill-tag">SQL / 数据库优化</span>
-                <span class="skill-tag">Redis</span>
-                <span class="skill-tag infra">Git / 版本控制</span>
-                <span class="skill-tag infra">Linux / Docker</span>
-                <span class="skill-tag ai">AI模型本地化部署</span>
-                <span class="skill-tag">系统重构与逆向工程</span>
-                <span class="skill-tag">高并发系统设计</span>
-                <span class="skill-tag">全流程开发</span>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>《林无静木，川无停流》</p>
-    </footer>
-</body>
-</html>
+*这份档案持续演进，正如代码与系统。*
