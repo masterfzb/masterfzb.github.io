@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepBlue - 项目详情</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --accent: #9b59b6;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f2f5;
+            overflow-x: hidden;
+        }
+        
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        .back-link {
+            margin-bottom: 2rem;
+        }
+        
+        .back-link a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #f0f8ff;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .back-link a:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateX(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.8rem;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        .project-info {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .project-info ul {
+            margin-left: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-info li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .screenshots {
+            margin: 2rem 0;
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .screenshot-item {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .screenshot-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border: 1px solid #ddd;
+        }
+        
+        .screenshot-item p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* 照片窗口样式 */
+        .photo-window {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .photo-window.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .photo-window img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .photo-window .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .photo-window .close-btn:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+        
+        .private-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0.5rem 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light);
+            color: #777;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <div class="container">
+        <div class="back-link">
+            <a href="index.html">← 返回主页</a>
+        </div>
+        
+        <h1>DeepBlue</h1>
+        <p class="private-badge">私人项目，未开放</p>
+        
+        <div class="project-info">
+            <h2>项目简介</h2>
+            <p>DeepBlue是一个局域网内允许多用户使用ollama模型创建智能体交流的项目，包含完整的前端和后端。</p>
+            
+            <h3>项目特点</h3>
+            <ul>
+                <li>支持多用户在局域网内共享和使用ollama模型</li>
+                <li>完整的智能体创建和管理功能</li>
+                <li>临时权限管理系统</li>
+                <li>用户配置和设备信息管理</li>
+                <li>系统信息监控和管理</li>
+            </ul>
+            
+            <h3>技术栈</h3>
+            <ul>
+                <li>前端：HTML5, CSS3, JavaScript</li>
+                <li>后端：Python</li>
+                <li>AI模型：Ollama</li>
+                <li>网络：局域网通信</li>
+            </ul>
+            
+            <h3>项目链接</h3>
+            <p><a href="https://github.com/masterfzb/deepblue_theworld" target="_blank">https://github.com/masterfzb/deepblue_theworld</a></p>
+        </div>
+        
+        <div class="screenshots">
+            <h2>项目截图</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-item">
+                    <img src="deepblue/临时权限管理.png" alt="临时权限管理">
+                    <p>临时权限管理</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="deepblue/智能体对话模块.png" alt="智能体对话模块">
+                    <p>智能体对话模块</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="deepblue/智能体配置.png" alt="智能体配置">
+                    <p>智能体配置</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="deepblue/用户配置.png" alt="用户配置">
+                    <p>用户配置</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="deepblue/系统信息管理.png" alt="系统信息管理">
+                    <p>系统信息管理</p>
+                </div>
+                <div class="screenshot-item">
+                    <img src="deepblue/设备信息管理.png" alt="设备信息管理">
+                    <p>设备信息管理</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 masterfzb 个人主页</p>
+        </div>
+    </div>
+    
+    <!-- 照片窗口 -->
+    <div class="photo-window" id="photoWindow">
+        <span class="close-btn" onclick="closePhotoWindow()">&times;</span>
+        <img id="photoWindowImg" src="" alt="项目照片">
+    </div>
+    
+    <script>
+        // 项目照片数组
+        const projectPhotos = [
+            'deepblue/临时权限管理.png',
+            'deepblue/智能体对话模块.png',
+            'deepblue/智能体配置.png',
+            'deepblue/用户配置.png',
+            'deepblue/系统信息管理.png',
+            'deepblue/设备信息管理.png'
+        ];
+        
+        // 随机显示照片窗口
+        function showRandomPhoto() {
+            const randomIndex = Math.floor(Math.random() * projectPhotos.length);
+            const randomPhoto = projectPhotos[randomIndex];
+            
+            document.getElementById('photoWindowImg').src = randomPhoto;
+            document.getElementById('photoWindow').classList.add('active');
+        }
+        
+        // 关闭照片窗口
+        function closePhotoWindow() {
+            document.getElementById('photoWindow').classList.remove('active');
+        }
+        
+        // 点击照片窗口外部关闭
+        document.getElementById('photoWindow').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePhotoWindow();
+            }
+        });
+        
+        // 页面加载时显示随机照片
+        window.onload = function() {
+            showRandomPhoto();
+        };
+        
+        // 键盘ESC键关闭照片窗口
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePhotoWindow();
+            }
+        });
+    </script>
+</body>
+</html>
