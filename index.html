@@ -554,7 +554,7 @@
         <!-- 分页导航 -->
         <div class="pagination">
             <button class="page-btn active" data-page="experience">工作经历</button>
-            <button class="page-btn" data-page="projects">项目展示</button>
+            <button class="page-btn" data-page="personal">个人项目</button>
             <button class="page-btn" data-page="other">大学经历</button>
         </div>
         
@@ -616,8 +616,36 @@
             </div>
         </div>
         
-        <!-- 项目展示分页 -->
-        <div class="page-content" id="projects">
+
+        
+        <!-- 个人项目分页 -->
+        <div class="page-content" id="personal">
+            <h2>🌟 个人项目</h2>
+            
+            <a href="deepblue.html" style="text-decoration: none; color: inherit;">
+                <div class="project-item" style="cursor: pointer; transition: all 0.3s ease;">
+                    <div class="project-title" style="color: var(--primary);">DeepBlue - 智能体交流系统</div>
+                    <ul>
+                        <li><strong>描述</strong>：局域网内允许多用户使用ollama模型创建智能体交流的项目，包含完整的前端和后端。支持多用户共享和使用ollama模型，具备智能体创建和管理、临时权限管理、用户配置和设备信息管理等功能。</li>
+                        <li><strong>技术栈</strong>：前端（HTML5, CSS3, JavaScript）、后端（Python）、AI模型（Ollama）、网络（局域网通信）</li>
+                        <li><strong>项目链接</strong>：<a href="https://github.com/masterfzb/deepblue_theworld" target="_blank" style="color: var(--primary);">https://github.com/masterfzb/deepblue_theworld</a>（私人项目，未开放）</li>
+                    </ul>
+                </div>
+            </a>
+            
+            <a href="openclaw_ollama.html" style="text-decoration: none; color: inherit;">
+                <div class="project-item" style="cursor: pointer; transition: all 0.3s ease;">
+                    <div class="project-title" style="color: var(--primary);">OpenClaw Ollama - 本地AI模型API服务</div>
+                    <ul>
+                        <li><strong>描述</strong>：本地部署ollama为openclaw提供api的方案，提供用户注册和云端api校验功能。对话记录会被存在本地sql里，支持完整的用户管理和数据存储。</li>
+                        <li><strong>技术栈</strong>：Python、Ollama、OpenClaw、SQLite、API开发</li>
+                        <li><strong>项目链接</strong>：<a href="https://github.com/masterfzb/ollama_openclaw" target="_blank" style="color: var(--primary);">https://github.com/masterfzb/ollama_openclaw</a>（私人项目，无法直接访问）</li>
+                    </ul>
+                </div>
+            </a>
+            
+            <div class="divider"></div>
+            
             <h2>🛠️ 技能特长</h2>
             
             <div class="skill-category">
