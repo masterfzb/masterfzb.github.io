@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目迭代时间线 · 方知定</title>
+<style>
+:root{--bg:#f8f9fb;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
+a{color:var(--b);text-decoration:none}
+.wrap{max-width:780px;margin:0 auto;padding:28px 16px 60px}
+.back{font-size:13px;color:var(--m);display:inline-block;margin-bottom:20px}
+.back:hover{color:var(--t)}
+h1{font-size:26px;font-weight:700;margin-bottom:4px}
+.sub{font-size:13px;color:var(--m);margin-bottom:28px}
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.legend .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.legend span{font-size:12px;color:var(--m)}
+/* Timeline */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:#e5e7eb}
+.tl-group{margin-bottom:8px}
+.tl-date{font-size:12px;font-weight:700;color:var(--m);padding:12px 0 4px;position:sticky;top:0;background:linear-gradient(180deg,var(--bg) 60%,transparent);z-index:1}
+.tl-item{position:relative;padding:10px 14px;margin-bottom:2px;border-radius:8px;transition:.2s;display:flex;gap:10px;align-items:flex-start}
+.tl-item:hover{background:rgba(0,0,0,.02)}
+.tl-item::before{content:'';position:absolute;left:-25px;top:14px;width:10px;height:10px;border-radius:50%;border:2px solid var(--bg)}
+.tl-item .icon{font-size:14px;flex-shrink:0;width:20px;text-align:center}
+.tl-item .repo{font-size:11px;font-weight:600;white-space:nowrap;padding:1px 6px;border-radius:6px;flex-shrink:0;margin-top:2px}
+.tl-item .msg{font-size:13px;color:#444;flex:1}
+.tl-item .sha{font-size:10px;color:#cbd5e1;font-family:monospace;flex-shrink:0;margin-top:3px}
+/* Stats */
+.stats{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.stat{background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.stat .num{font-size:24px;font-weight:700;color:var(--b)}
+.stat .label{font-size:11px;color:var(--m)}
+.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:40px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="index.html">← 返回主页</a>
+
+<h1>📊 项目迭代时间线</h1>
+<div class="sub">6 个仓库 · 61 次提交 · 2026.05 — 2026.06</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="legend" id="legend"></div>
+
+<div class="timeline" id="timeline"></div>
+
+<div class="foot"><a href="index.html">← 返回主页</a> · 数据来自 Gitea · 2026</div>
+</div>
+
+<script>
+const DATA = {"repos":{"messagecage":{"name":"MessageCage","emoji":"🔭","color":"#2563eb"},"cage_ghost":{"name":"cage_ghost","emoji":"👻","color":"#7c3aed"},"audiobook-generator-v2":{"name":"有声小说生成器","emoji":"🎙️","color":"#059669"},"Getbook":{"name":"Getbook","emoji":"📖","color":"#d97706"},"SkyWill":{"name":"SkyWill","emoji":"🌌","color":"#dc2626"},"ziwei-doushu":{"name":"紫微斗数","emoji":"🔮","color":"#0891b2"}},"commits":[{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"82f448c","date":"2026-06-06","msg":"feat: 云盘系统 - 文件预览/PDF生成/批量下载/移动端适配"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"eeedbba","date":"2026-06-06","msg":"style: 根据系统主题自动切换深色/浅色配色 + 移动端优化"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"1ffcace","date":"2026-06-06","msg":"feat: 全局深色主题 + 移动端适配"},{"repo":"SkyWill","repo_name":"SkyWill","emoji":"🌌","color":"#dc2626","sha":"7577fdf","date":"2026-06-06","msg":"初始化 SkyWill 项目 - 天意 V3 设计草稿"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"a7e221c","date":"2026-06-06","msg":"feat: TTS 有声书系统 - 章节提交/任务队列/有声书库/音频流"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"2582ad8","date":"2026-06-05","msg":"feat: 紫微斗数 - 八字排盘/命盘计算/每日运程/流年大限"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"6b37e71","date":"2026-06-04","msg":"feat: 内容实验室 - AI内容打分/盲预测/复盘/进化评分"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"ba3708b","date":"2026-06-04","msg":"docs: 项目总结 (2026-06-04)"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"849897d","date":"2026-06-04","msg":"docs: 项目总结 (2026-06-04) — 数据资产/架构/功能设计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"8efe7b4","date":"2026-05-31","msg":"feat: R1原始输出持久化到SQLite model_outputs表"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"0535962","date":"2026-05-30","msg":"feat: 8角色+1用户多轮对话调度 — 异步内容生成引擎"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"e290aa1","date":"2026-05-29","msg":"feat: 多角色人设系统 + 内容生成工厂基础架构"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"4512e74","date":"2026-05-28","msg":"feat: 主题状态机(双向追赶/巡航/冻结/枯竭) + 任务取消"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"4b94dbd","date":"2026-05-28","msg":"feat: 记忆系统(短期/长期/共享) + Redis状态管理"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"6edd9a8","date":"2026-05-27","msg":"feat: 异步任务调度 - 定时抓取新闻并生成AI评论"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"015cdba","date":"2026-05-27","msg":"init: cage_ghost — R1驱动的AI论坛内容生成器"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"c651845","date":"2026-06-03","msg":"feat: 动机商城系统 - 商品架/购买/背包/角色评审"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"66806ab","date":"2026-06-02","msg":"feat: 关键词分组 + 卡片裂变 + 话题解锁"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"02cddb7","date":"2026-06-01","msg":"feat: 书库翻译功能 + 读书笔记 + 多轮对话"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"dde5e76","date":"2026-05-31","msg":"feat: 书库上传管理 + 章节内容阅读 + 统计看板"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"5b20b9d","date":"2026-05-30","msg":"feat: GitHub探索 + Gitea仓库文件浏览"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"ee7f517","date":"2026-05-29","msg":"feat: 茧房强弱调节(专注/自动/多元) + 可视化仪表"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"ae67961","date":"2026-05-28","msg":"feat: 用户画像 + 数据导出 + 个人中心"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"389eddf","date":"2026-05-27","msg":"feat: 卡片翻转动画 + 订阅源配置 + 搜索增强"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"6c5e13e","date":"2026-05-27","msg":"feat: 帖子评论 + 赞/踩/收藏 + 阅读行为追踪"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"f77cf63","date":"2026-05-26","msg":"feat: 用户注册登录 + 角色卡片 + 画廊系统"},{"repo":"Getbook","repo_name":"Getbook","emoji":"📖","color":"#d97706","sha":"b19f62e","date":"2026-05-26","msg":"fix: TXTParser 兼容非Gutenberg格式 + Markdown章节识别"},{"repo":"Getbook","repo_name":"Getbook","emoji":"📖","color":"#d97706","sha":"7025a3f","date":"2026-05-26","msg":"feat: 多源电子书获取引擎 — 模块化书源插件架构"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"1eec519","date":"2026-05-26","msg":"refactor: 前后端分离 — FastAPI REST API + Vue3 SPA"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"8e3a7e0","date":"2026-05-25","msg":"init: MessageCage 信息茧房观察镜 — Django + Bootstrap"},{"repo":"ziwei-doushu","repo_name":"紫微斗数","emoji":"🔮","color":"#0891b2","sha":"dd4b3c8","date":"2026-05-25","msg":"feat: 每日运势输出大幅丰富 — 五行气场/流曜详解/三方四正/宫位逐条简评/今日关键词"},{"repo":"ziwei-doushu","repo_name":"紫微斗数","emoji":"🔮","color":"#0891b2","sha":"4b4b7bf","date":"2026-05-25","msg":"feat: 每日运势推送 - 自动生成当日运势JSON"},{"repo":"ziwei-doushu","repo_name":"紫微斗数","emoji":"🔮","color":"#0891b2","sha":"ef8fae1","date":"2026-05-25","msg":"feat: 命盘对应对冲合拱关系分析 + 三方四正宫位检测"},{"repo":"ziwei-doushu","repo_name":"紫微斗数","emoji":"🔮","color":"#0891b2","sha":"18997db","date":"2026-05-25","msg":"feat: 星曜分布 + 庙旺利陷计算"},{"repo":"ziwei-doushu","repo_name":"紫微斗数","emoji":"🔮","color":"#0891b2","sha":"9f463c8","date":"2026-05-25","msg":"feat: 十二宫排布 + 命宫定位算法"},{"repo":"ziwei-doushu","repo_name":"紫微斗数","emoji":"🔮","color":"#0891b2","sha":"184c3f7","date":"2026-05-25","msg":"feat: 八字计算 - 公历日期转天干地支"},{"repo":"ziwei-doushu","repo_name":"紫微斗数","emoji":"🔮","color":"#0891b2","sha":"9395659","date":"2026-05-25","msg":"init: 紫微斗数排盘工具"},{"repo":"Getbook","repo_name":"Getbook","emoji":"📖","color":"#d97706","sha":"25e3a42","date":"2026-05-25","msg":"refactor: 模块化书源架构 + 统一爬取接口"},{"repo":"Getbook","repo_name":"Getbook","emoji":"📖","color":"#d97706","sha":"e2b2c05","date":"2026-05-25","msg":"feat: TXT/Markdown解析器 + 章节自动识别"},{"repo":"Getbook","repo_name":"Getbook","emoji":"📖","color":"#d97706","sha":"855e78f","date":"2026-05-25","msg":"init: Getbook 多源电子书获取引擎"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"72a3333","date":"2026-05-25","msg":"feat: 茧房概念模块 - 搜索+结果页+立场/情绪分析"},{"repo":"messagecage","repo_name":"MessageCage","emoji":"🔭","color":"#2563eb","sha":"5bfbfd7","date":"2026-05-25","msg":"feat: 信息茧房观察镜初始版本"},{"repo":"SkyWill","repo_name":"SkyWill","emoji":"🌌","color":"#dc2626","sha":"61666d8","date":"2026-06-06","msg":"feat: 三国规则怪谈(天意V3) - 角色/阵营/事件/状态系统"},{"repo":"audiobook-generator-v2","repo_name":"有声小说生成器","emoji":"🎙️","color":"#059669","sha":"5f22b98","date":"2026-05-19","msg":"Initial commit: 有声小说生成器V2 — 泛化多角色声音克隆"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"041c8d2","date":"2026-06-14","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"d30cc6c","date":"2026-06-13","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"ed5d89a","date":"2026-06-12","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"cce2e1c","date":"2026-06-11","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"8f65f02","date":"2026-06-10","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"c5cdaa3","date":"2026-06-09","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"f918a1c","date":"2026-06-08","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"839ff30","date":"2026-06-07","msg":"docs: 更新AGENTS.md"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"b84ca73","date":"2026-06-07","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"4352b2b","date":"2026-06-06","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"23b8dc0","date":"2026-06-05","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"d6c7477","date":"2026-06-04","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"ed9e7f9","date":"2026-05-31","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"9cbc898","date":"2026-05-30","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"f686b47","date":"2026-05-29","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"},{"repo":"cage_ghost","repo_name":"cage_ghost","emoji":"👻","color":"#7c3aed","sha":"1188c93","date":"2026-05-28","msg":"docs: GitNexus 自动更新 AGENTS.md/CLAUDE.md 索引统计"}],"stats":{"commits":61,"repos":6,"start":"2026-05-19","end":"2026-06-06"}};
+
+// Stats
+document.getElementById('stats').innerHTML = `
+  <div class="stat"><div class="num">${DATA.stats.commits}</div><div class="label">总提交</div></div>
+  <div class="stat"><div class="num">${DATA.stats.repos}</div><div class="label">仓库</div></div>
+  <div class="stat"><div class="num">${DATA.stats.start}</div><div class="label">起始</div></div>
+  <div class="stat"><div class="num">${DATA.stats.end}</div><div class="label">最近</div></div>
+`;
+
+// Legend
+document.getElementById('legend').innerHTML = Object.entries(DATA.repos).map(([k,v]) => 
+  `<div class="dot" style="background:${v.color}"></div><span>${v.emoji} ${v.name}</span>`
+).join('');
+
+// Timeline grouped by date
+const byDate = {};
+DATA.commits.forEach(c => {
+  if (!byDate[c.date]) byDate[c.date] = [];
+  byDate[c.date].push(c);
+});
+
+let html = '';
+Object.keys(byDate).sort().reverse().forEach(date => {
+  html += `<div class="tl-date">${date}</div>`;
+  byDate[date].forEach(c => {
+    // 过滤掉 GitNexus 自动提交
+    if (c.msg.includes('GitNexus 自动更新')) return;
+    html += `<div class="tl-item" style="--c:${c.color}">
+      <span class="icon">${c.emoji}</span>
+      <span class="repo" style="color:${c.color};background:${c.color}15">${c.repo_name}</span>
+      <span class="msg">${c.msg}</span>
+    </div>`;
+  });
+});
+document.getElementById('timeline').innerHTML = html;
+</script>
+</body>
+</html>
