@@ -10,79 +10,100 @@
 <meta property="og:url" content="https://masterfzb.github.io/">
 <meta property="og:image" content="https://masterfzb.github.io/avatar.png">
 <style>
-:root{--bg:#f8f9fb;--card:#fff;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe;--br:14px;--sh:0 1px 3px rgba(0,0,0,.04)}
+:root{--bg:#f8f9fb;--card:#fff;--t:#1a1a2e;--m2:#6b7280;--b:#2563eb;--bl:#dbeafe;--purple:#7c3aed;--pe:#ede9fe;--green:#059669;--ge:#d1fae5;--orange:#d97706;--oe:#fef3c7;--br:14px;--sh:0 1px 3px rgba(0,0,0,.04)}
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.65;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:var(--b);text-decoration:none}
 .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
 
 /* Sticky nav */
 .toolbar{position:sticky;top:0;z-index:100;background:rgba(248,249,251,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);padding:10px 16px;display:flex;align-items:center;gap:24px;justify-content:center;margin:0 -16px 32px}
-.toolbar a{font-size:13px;font-weight:500;color:var(--m);padding:6px 14px;border-radius:20px;transition:.2s}
+.toolbar a{font-size:13px;font-weight:500;color:var(--m2);padding:6px 14px;border-radius:20px;transition:.2s}
 .toolbar a:hover,.toolbar a.on{color:var(--b);background:var(--bl)}
 
 /* Hero */
 .hero{padding:24px 0 0;text-align:center}
 .hero h1{font-size:34px;font-weight:700;letter-spacing:1px;margin-bottom:4px}
-.hero .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:16px;border:3px solid var(--card);box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.hero .tag{font-size:14px;color:var(--m)}
+.hero .tag{font-size:14px;color:var(--m2);margin-bottom:4px}
+.hero .focus{font-size:13px;color:var(--b);font-weight:500;background:var(--bl);display:inline-block;padding:3px 14px;border-radius:14px;margin-top:6px}
 .hero .contact{display:flex;justify-content:center;gap:16px;margin-top:14px;flex-wrap:wrap}
-.hero .contact a,.hero .contact span{font-size:12px;color:var(--m);display:flex;align-items:center;gap:4px}
+.hero .contact a,.hero .contact span{font-size:12px;color:var(--m2);display:flex;align-items:center;gap:4px}
 .hero .contact a:hover{color:var(--b)}
+.hero .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:16px;border:3px solid var(--card);box-shadow:0 2px 12px rgba(0,0,0,.08)}
 
 /* Intro */
 .intro{background:var(--card);border-radius:var(--br);padding:18px 22px;margin:24px 0;box-shadow:var(--sh);border-left:3px solid var(--b);line-height:1.8}
 .intro p{font-size:14px;color:#444;margin:0}
 .intro strong{color:var(--t)}
-.intro .aside{font-size:12px;color:var(--m);margin-top:8px;font-style:italic}
+.intro .aside{font-size:12px;color:var(--m2);margin-top:8px;font-style:italic}
 
 /* Section title */
-.sec-title{font-size:13px;font-weight:700;color:var(--m);text-transform:uppercase;letter-spacing:2px;margin:36px 0 16px;position:relative;padding-left:16px}
+.sec-title{font-size:13px;font-weight:700;color:var(--m2);text-transform:uppercase;letter-spacing:2px;margin:36px 0 16px;position:relative;padding-left:16px}
 .sec-title::before{content:'';position:absolute;left:0;top:2px;bottom:2px;width:3px;background:var(--b);border-radius:2px}
 
-/* Big project cards */
-.big-proj{display:flex;gap:18px;background:var(--card);border-radius:var(--br);padding:20px;box-shadow:var(--sh);margin-bottom:16px;transition:.2s;border:1px solid transparent}
-.big-proj:hover{border-color:var(--b);box-shadow:0 4px 20px rgba(37,99,235,.1);transform:translateY(-1px)}
-.big-proj .img{flex-shrink:0;width:150px;height:96px;border-radius:10px;overflow:hidden;background:#eef1f5;position:relative}
-.big-proj .img img{width:100%;height:100%;object-fit:cover}
-.has-carousel img{position:absolute;top:0;left:0;opacity:0;animation:carousel 16s infinite}
+/* ─── PROJECT CARD (3-audience layout) ─── */
+.proj{background:var(--card);border-radius:var(--br);padding:0;margin-bottom:20px;box-shadow:var(--sh);border:1px solid transparent;overflow:hidden;transition:.2s}
+.proj:hover{border-color:var(--b);box-shadow:0 4px 20px rgba(37,99,235,.1)}
+.proj-top{display:flex;gap:18px;padding:20px 20px 12px}
+.proj .img{flex-shrink:0;width:160px;height:100px;border-radius:10px;overflow:hidden;background:#eef1f5;position:relative}
+.proj .img img{width:100%;height:100%;object-fit:cover}
+.has-carousel img{position:absolute;top:0;left:0;opacity:0;animation:cslide 16s infinite}
 .has-carousel img:nth-child(1){animation-delay:0s}
 .has-carousel img:nth-child(2){animation-delay:4s}
 .has-carousel img:nth-child(3){animation-delay:8s}
 .has-carousel img:nth-child(4){animation-delay:12s}
-@keyframes carousel{0%,18%{opacity:1}25%,95%{opacity:0}100%{opacity:0}}
-.big-proj .img .ph{display:flex;align-items:center;justify-content:center;height:100%;font-size:32px;color:#cbd5e1}
-.big-proj .info{flex:1;min-width:0}
-.big-proj .info h3{font-size:16px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.big-proj .info h3 a{color:var(--t)}
-.big-proj .info h3 a:hover{color:var(--b)}
-.big-proj .info .badge{font-size:10px;font-weight:600;background:var(--bl);color:var(--b);padding:2px 8px;border-radius:10px;white-space:nowrap}
-.big-proj .info p{font-size:13px;color:var(--m);margin-bottom:6px;line-height:1.6}
-.big-proj .info .tags{display:flex;flex-wrap:wrap;gap:5px}
-.big-proj .info .tags span{font-size:10px;padding:2px 8px;border-radius:10px;background:#f3f4f6;color:#9ca3af;font-weight:500}
+@keyframes cslide{0%,18%{opacity:1}25%,95%{opacity:0}100%{opacity:0}}
+.proj .img .ph{display:flex;align-items:center;justify-content:center;height:100%;font-size:34px;color:#cbd5e1}
+
+/* Layer 1: HR — title + one-liner + badge */
+.proj .l1{flex:1;min-width:0}
+.proj .l1 h3{font-size:17px;font-weight:700;margin-bottom:2px}
+.proj .l1 h3 a{color:var(--t)}
+.proj .l1 h3 a:hover{color:var(--b)}
+.proj .l1 .sub{font-size:13px;color:var(--m2);margin-bottom:4px}
+.proj .l1 .badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:8px;display:inline-block}
+
+/* Layer 2: PM — problem → solution */
+.proj-mid{padding:0 20px 10px}
+.proj-mid .row{display:flex;gap:10px;font-size:12px;color:#555;align-items:flex-start;margin-bottom:3px}
+.proj-mid .row .label{flex-shrink:0;font-weight:600;border-radius:4px;padding:0 5px;font-size:10px;color:var(--m2);background:#f3f4f6}
+.proj-mid .row .text{flex:1}
+
+/* Layer 3: Dev — tech stack + link */
+.proj-bot{display:flex;align-items:center;gap:6px;padding:10px 20px;border-top:1px solid #f3f4f6;flex-wrap:wrap}
+.proj-bot .tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:8px;background:#f3f4f6;color:#9ca3af}
+.proj-bot .tag.hi{background:var(--bl);color:var(--b)}
+.proj-bot .more{font-size:12px;font-weight:500;color:var(--b);margin-left:auto}
+.proj-bot .more::after{content:' →'}
 
 /* Skills */
 .skills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:12px 0}
-.sk{font-size:11px;padding:4px 11px;border-radius:14px;background:#f3f4f6;color:var(--m);font-weight:500;transition:.2s}
+.sk{font-size:11px;padding:4px 11px;border-radius:14px;background:#f3f4f6;color:var(--m2);font-weight:500;transition:.2s}
 .sk.hi{background:var(--bl);color:var(--b)}
 .sk:hover{background:var(--bl);color:var(--b)}
 
-/* Footer */
+/* Timeline link */
+.tl-link{text-align:center;margin-top:8px}
+.tl-link a{font-size:12px;color:var(--m2);padding:6px 16px;border-radius:16px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.04);display:inline-block;transition:.2s}
+.tl-link a:hover{color:var(--b)}
+
 .foot{text-align:center;padding:48px 0 0}
 .foot .motto{font-size:16px;color:var(--t);font-weight:600;margin-bottom:6px}
-.foot .motto-sub{font-size:12px;color:var(--m);margin-bottom:16px}
+.foot .motto-sub{font-size:12px;color:var(--m2);margin-bottom:16px}
 .foot .copy{font-size:11px;color:#cbd5e1}
+
 @media(max-width:600px){
   .hero h1{font-size:28px}
-  .big-proj{flex-direction:column}
-  .big-proj .img{width:100%;height:130px}
+  .proj-top{flex-direction:column}
+  .proj .img{width:100%;height:140px}
   .toolbar{gap:12px}
   .toolbar a{font-size:12px;padding:5px 10px}
+  .proj-bot{flex-wrap:wrap}
+  .proj-bot .more{margin-left:0}
 }
 </style>
 </head>
 <body>
-<!-- Sticky nav -->
 <nav class="toolbar" id="top">
   <a href="#projects" class="on">核心项目</a>
   <a href="about.html">📋 履历</a>
@@ -96,7 +117,8 @@ a{color:var(--b);text-decoration:none}
 <div class="hero">
   <img src="avatar.png" alt="方知定" class="avatar" width="96" height="96">
   <h1>方知定</h1>
-  <div class="tag">AI 工程师 · 全栈开发者</div>
+  <div class="tag">AI 工程师 · 全栈开发者 · 5 年经验</div>
+  <div class="focus">当前重点：LLM 应用 + Agent 系统工程化</div>
   <div class="contact">
     <span>📍 广州/深圳</span>
     <a href="mailto:1310347817@qq.com">📧 1310347817@qq.com</a>
@@ -115,55 +137,99 @@ a{color:var(--b);text-decoration:none}
 <!-- Projects -->
 <div class="sec-title" id="projects">核心项目</div>
 
-<div class="big-proj">
-  <div class="img has-carousel">
-    <img src="screenshots/mc-home.png" alt="首页" loading="lazy">
-    <img src="screenshots/mc-forum.png" alt="论坛" loading="lazy">
-    <img src="screenshots/mc-books.png" alt="书库" loading="lazy">
-    <img src="screenshots/mc-audiobook.png" alt="有声书" loading="lazy">
+<!-- MessageCage -->
+<div class="proj">
+  <div class="proj-top">
+    <div class="img has-carousel">
+      <img src="screenshots/mc-home.png" alt="首页" loading="lazy">
+      <img src="screenshots/mc-forum.png" alt="论坛" loading="lazy">
+      <img src="screenshots/mc-books.png" alt="书库" loading="lazy">
+      <img src="screenshots/mc-audiobook.png" alt="有声书" loading="lazy">
+    </div>
+    <div class="l1">
+      <h3><a href="messagecage.html">MessageCage · 信息茧房观察镜</a></h3>
+      <div class="sub">8 个 AI 角色自主运营的论坛平台，1 个应用承载 12 个功能模块</div>
+      <span class="badge" style="background:var(--bl);color:var(--b)">200+ API 端点 · 全栈独立开发</span>
+    </div>
   </div>
-  <div class="info">
-    <h3><a href="messagecage.html">MessageCage · 信息茧房观察镜</a> <span class="badge">主力</span></h3>
-    <p>1 个应用承载 12 个功能模块。AI 论坛 · 书库 · GitHub · 紫微 · 有声书 · 云盘，200+ API 端点全栈独立开发。</p>
-    <div class="tags"><span>FastAPI</span><span>Vue3</span><span>Qdrant</span><span>DeepSeek</span><span>SQLite</span></div>
+  <div class="proj-mid">
+    <div class="row"><span class="label">问题</span><span class="text">多源信息分散，获取→讨论→存储→再利用无法在一个系统内闭环</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">FastAPI + Vue3 + Qdrant 构建统一平台，多 Agent 调度引擎驱动 8 个 AI 角色自主生产内容，论坛/书库/云盘等模块数据与权限全面打通</span></div>
   </div>
-</div>
-
-<div class="big-proj">
-  <div class="img"><img src="screenshots/mc-forum.png" alt="cage_ghost" loading="lazy"></div>
-  <div class="info">
-    <h3><a href="cage-ghost.html">cage_ghost · AI 内容引擎</a> <span class="badge">MessageCage 大脑</span></h3>
-    <p>8 个 AI 角色的内容工厂。DeepSeek R1 驱动，自主抓取新闻 → 生成帖子 → 互相评论，R1 推理链完整可审计。</p>
-    <div class="tags"><span>Python</span><span>DeepSeek R1</span><span>SQLite</span><span>Redis</span><span>异步调度</span></div>
-  </div>
-</div>
-
-<div class="big-proj">
-  <div class="img"><div class="ph">🎙️</div></div>
-  <div class="info">
-    <h3><a href="audiobook.html">AI 有声小说生成器</a></h3>
-    <p>GPT-SoVITS 多角色声音克隆。581 个角色声线，43 章全流程验证。对话识别 → 角色匹配 → 音频生成完整管道。</p>
-    <div class="tags"><span>Python</span><span>GPT-SoVITS</span><span>DeepSeek</span><span>Markdown</span></div>
+  <div class="proj-bot">
+    <span class="tag hi">FastAPI</span><span class="tag hi">Vue3</span><span class="tag hi">Qdrant</span><span class="tag">DeepSeek</span><span class="tag">Agent 编排</span><span class="tag">RAG</span><span class="tag">SQLite</span>
+    <a class="more" href="messagecage.html">查看详情</a>
   </div>
 </div>
 
-<div class="big-proj">
-  <div class="img"><div class="ph">🔮</div></div>
-  <div class="info">
-    <h3><a href="ziwei.html">紫微斗数排盘工具</a></h3>
-    <p>八字命理自动排盘。计算命宫、十二宫位及星曜分布，探索传统文化与 AI 的交叉点。</p>
-    <div class="tags"><span>Python</span><span>八字排盘</span><span>命理算法</span></div>
+<!-- cage_ghost -->
+<div class="proj">
+  <div class="proj-top">
+    <div class="img"><img src="screenshots/mc-forum.png" alt="cage_ghost" loading="lazy"></div>
+    <div class="l1">
+      <h3><a href="cage-ghost.html">cage_ghost · AI 内容引擎</a></h3>
+      <div class="sub">DeepSeek R1 驱动的多 Agent 内容工厂，R1 推理链完整可审计</div>
+      <span class="badge" style="background:var(--pe);color:var(--purple)">MessageCage 的大脑</span>
+    </div>
+  </div>
+  <div class="proj-mid">
+    <div class="row"><span class="label">问题</span><span class="text">论坛内容需要持续产出，传统脚本无法模拟真实社交讨论的多样性与角色一致性</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">基于 ReAct 模式的多 Agent 协作：定时抓取新闻 → 各角色按人设独立推理 → 生成帖子 → 互相评论，加入记忆持久化与质量审核层</span></div>
+  </div>
+  <div class="proj-bot">
+    <span class="tag hi">Python</span><span class="tag hi">DeepSeek R1</span><span class="tag hi">Agent 编排</span><span class="tag">Redis</span><span class="tag">SQLite</span><span class="tag">asyncio</span>
+    <a class="more" href="cage-ghost.html">查看详情</a>
+  </div>
+</div>
+
+<!-- 有声小说 -->
+<div class="proj">
+  <div class="proj-top">
+    <div class="img"><div class="ph">🎙️</div></div>
+    <div class="l1">
+      <h3><a href="audiobook.html">AI 有声小说生成器</a></h3>
+      <div class="sub">端到端自动配音管道，581 个角色声线，43 章全流程验证</div>
+      <span class="badge" style="background:var(--ge);color:var(--green)">全本自动化 · 多角色声音克隆</span>
+    </div>
+  </div>
+  <div class="proj-mid">
+    <div class="row"><span class="label">问题</span><span class="text">长篇小说多角色配音需要大量人工：识别对话归属、匹配声线、逐句生成音频，人工处理效率极低</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">构建分段 AI 处理管道：LLM 对话识别 → 动态角色提取 → GPT-SoVITS 声线映射 → 批量音频生成，规则引擎处理 80% 简单场景，AI 辅助复杂场景</span></div>
+  </div>
+  <div class="proj-bot">
+    <span class="tag hi">Python</span><span class="tag hi">GPT-SoVITS</span><span class="tag">DeepSeek</span><span class="tag">TTS</span><span class="tag">Markdown</span>
+    <a class="more" href="audiobook.html">查看详情</a>
+  </div>
+</div>
+
+<!-- 紫微 -->
+<div class="proj">
+  <div class="proj-top">
+    <div class="img"><div class="ph">🔮</div></div>
+    <div class="l1">
+      <h3><a href="ziwei.html">紫微斗数排盘工具</a></h3>
+      <div class="sub">八字命理自动排盘，计算命宫、十二宫位及星曜分布</div>
+      <span class="badge" style="background:var(--oe);color:var(--orange)">传统文化 × AI</span>
+    </div>
+  </div>
+  <div class="proj-mid">
+    <div class="row"><span class="label">问题</span><span class="text">传统紫微斗数排盘依赖手工查表，规则繁复易出错，普通人难以自学入门</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">将排盘规则编码为可计算算法：八字计算 → 命宫定位 → 十二宫排布 → 星曜安放，结合 LLM 生成通俗命理解读</span></div>
+  </div>
+  <div class="proj-bot">
+    <span class="tag hi">Python</span><span class="tag">八字排盘</span><span class="tag">LLM</span><span class="tag">命理算法</span>
+    <a class="more" href="ziwei.html">查看详情</a>
   </div>
 </div>
 
 <!-- Timeline link -->
-<div style="text-align:center;margin-top:8px">
-  <a href="timeline.html" style="font-size:12px;color:var(--m);padding:6px 16px;border-radius:16px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.04);display:inline-block;transition:.2s">📊 查看项目迭代时间线 →</a>
+<div class="tl-link">
+  <a href="timeline.html">📊 查看项目迭代时间线 →</a>
 </div>
 
 <!-- Skills -->
 <div class="skills">
-  <span class="sk hi">Python</span><span class="sk hi">LLM</span><span class="sk">FastAPI</span><span class="sk">Vue3</span><span class="sk">Qdrant</span><span class="sk">Docker</span><span class="sk">Redis</span><span class="sk">TTS</span><span class="sk">Agent</span>
+  <span class="sk hi">Python</span><span class="sk hi">LLM 应用</span><span class="sk hi">Agent 编排</span><span class="sk">FastAPI</span><span class="sk">Vue3</span><span class="sk">Qdrant</span><span class="sk">RAG</span><span class="sk">Docker</span><span class="sk">Redis</span><span class="sk">TTS</span>
 </div>
 
 <div class="foot">
