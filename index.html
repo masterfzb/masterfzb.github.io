@@ -27,11 +27,12 @@ a{color:var(--b);text-decoration:none}
 .big-proj{display:flex;gap:16px;background:var(--card);border-radius:var(--br);padding:18px;box-shadow:var(--sh);margin-bottom:14px;transition:.2s;border:1px solid transparent}
 .big-proj:hover{border-color:var(--b)}
 .big-proj .img{flex-shrink:0;width:140px;height:90px;border-radius:10px;overflow:hidden;background:#eef1f5;position:relative}
-.big-proj .img img{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0;animation:carousel 12s infinite;animation-delay:calc(var(--i)*3s)}
-.big-proj .img img:nth-child(1){--i:0}
-.big-proj .img img:nth-child(2){--i:1}
-.big-proj .img img:nth-child(3){--i:2}
-.big-proj .img img:nth-child(4){--i:3}
+.big-proj .img img{width:100%;height:100%;object-fit:cover}
+.has-carousel img{position:absolute;top:0;left:0;opacity:0;animation:carousel 12s infinite;animation-delay:calc(var(--i)*3s)}
+.has-carousel img:nth-child(1){--i:0;position:absolute}
+.has-carousel img:nth-child(2){--i:1;position:absolute}
+.has-carousel img:nth-child(3){--i:2;position:absolute}
+.has-carousel img:nth-child(4){--i:3;position:absolute}
 @keyframes carousel{0%,20%{opacity:1}25%,95%{opacity:0}100%{opacity:0}}
 .big-proj .img .ph{display:flex;align-items:center;justify-content:center;height:100%;font-size:30px;color:#cbd5e1}
 .big-proj .info{flex:1;min-width:0}
@@ -81,7 +82,7 @@ a{color:var(--b);text-decoration:none}
   <h2>核心项目</h2>
   
   <div class="big-proj">
-    <div class="img">
+    <div class="img has-carousel">
       <img src="screenshots/mc-home.png" alt="首页" loading="lazy">
       <img src="screenshots/mc-forum.png" alt="论坛" loading="lazy">
       <img src="screenshots/mc-books.png" alt="书库" loading="lazy">
