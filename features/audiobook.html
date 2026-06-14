@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有声书 — TTS 配音系统</title>
+<style>
+:root{--bg:#fafbfc;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe;--br:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+a{color:var(--b);text-decoration:none}
+.wrap{max-width:800px;margin:0 auto;padding:28px 16px 60px}
+.back{font-size:13px;color:var(--m);display:inline-block;margin-bottom:20px}
+h1{font-size:26px;font-weight:700;margin-bottom:4px}
+.sub{font-size:14px;color:var(--m);margin-bottom:24px}
+h2{font-size:17px;font-weight:600;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid #f0f0f0}
+p,li{font-size:14px;color:#444;margin-bottom:10px}
+img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:12px 0}
+.tech{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.tech span{font-size:11px;padding:3px 10px;border-radius:14px;background:var(--bl);color:var(--b);font-weight:500}
+.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:40px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../features.html">← 功能全景</a>
+<h1>有声书</h1>
+<div class="sub">章节管理 · 角色配音 · 音频生成</div>
+<div class="tech"><span>GPT-SoVITS</span> <span>TTS</span> <span>FastAPI</span></div>
+<img src="../screenshots/mc-audiobook.png" alt="截图" loading="lazy" onerror="this.style.display='none'">
+<p>将电子书章节自动转换为多角色有声书，支持任务队列管理与音频流播放。</p>
+<h2>功能说明</h2>
+<ul><li>上传书籍 → 自动章节拆分 → 角色识别 → 配音生成</li><li>任务队列：提交、进度追踪、状态查看</li><li>有声书库：浏览、播放、删除已生成音频</li><li>自定义声线：上传参考音频，定制专属音色</li></ul>
+
+<div class="foot"><a href="../index.html">← 返回主页</a> · 2026</div>
+</div>
+</body>
+</html>
