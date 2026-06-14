@@ -3,740 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>masterfzb - 个人主页</title>
+    <title>方知定 · 个人主页</title>
     <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         :root {
-            --primary: #3498db;
-            --secondary: #2ecc71;
-            --accent: #9b59b6;
-            --dark: #2c3e50;
-            --light: #ecf0f1;
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --bg: #f8f9fb;
+            --card: #fff;
+            --text: #2c3e50;
+            --muted: #7f8c8d;
+            --blue: #3498db;
+            --purple: #8e44ad;
+            --green: #27ae60;
+            --border: #e8ecf1;
+            --radius: 14px;
+            --shadow: 0 2px 12px rgba(0,0,0,.06);
         }
-        
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f0f2f5;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: var(--bg); color: var(--text); line-height:1.7;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            opacity: 0.05;
-            z-index: -1;
+        .wrapper { max-width: 720px; margin:0 auto; padding: 24px 16px 60px; }
+        .card {
+            background: var(--card); border-radius: var(--radius); padding: 24px;
+            margin-bottom: 16px; box-shadow: var(--shadow);
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
+        /* Hero */
+        .hero { text-align:center; padding: 32px 20px; }
+        .hero h1 { font-size:28px; font-weight:700; letter-spacing:2px; }
+        .hero .sub { color: var(--muted); font-size:14px; margin-top:4px; }
+        .hero .quote { color: var(--muted); font-size:13px; margin-top:12px; font-style:italic; }
+        .hero .contact { margin-top:16px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+        .hero .contact a { color: var(--blue); text-decoration:none; font-size:13px; }
+        /* Section header */
+        .sec-title {
+            font-size:15px; font-weight:700; color: var(--text);
+            margin-bottom: 16px; display:flex; align-items:center; gap:8px;
         }
-        
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
+        .sec-title::after {
+            content:''; flex:1; height:1px; background: var(--border);
         }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            font-weight: 700;
-            animation: fadeInUp 0.8s ease-out;
+        /* Skills */
+        .skills { display:flex; flex-wrap:wrap; gap:8px; }
+        .skill-tag {
+            font-size:12px; padding:4px 12px; border-radius:20px;
+            background: #f0f4f8; color: var(--text);
         }
-        
-        h2 {
-            font-size: 2rem;
-            margin: 2.5rem 0 1.5rem;
-            color: var(--dark);
-            padding-bottom: 0.8rem;
-            border-bottom: 3px solid var(--light);
-            position: relative;
-            animation: fadeInLeft 0.6s ease-out;
+        .skill-tag.hi { background: var(--blue); color:#fff; }
+        /* Timeline */
+        .timeline { border-left:2px solid var(--border); padding-left:20px; }
+        .tl-item { position:relative; margin-bottom:20px; }
+        .tl-item::before {
+            content:''; position:absolute; left:-27px; top:6px;
+            width:12px; height:12px; border-radius:50%; background: var(--blue);
+            border:2px solid var(--card);
         }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
+        .tl-item .tl-date { font-size:12px; color:var(--muted); }
+        .tl-item .tl-role { font-size:14px; font-weight:600; }
+        .tl-item .tl-company { font-size:13px; color:var(--muted); }
+        .tl-item .tl-desc { font-size:13px; color:#555; margin-top:4px; }
+        /* Cards with hover */
+        .proj-list { display:flex; flex-direction:column; gap:12px; }
+        .proj-card {
+            background: #fafbfc; border-radius:10px; padding:16px;
+            border:1px solid var(--border); transition: .2s;
         }
-        
-        h2:hover::after {
-            width: 120px;
+        .proj-card:hover { border-color: var(--blue); box-shadow: 0 2px 8px rgba(52,152,219,.12); }
+        .proj-card .proj-name { font-size:15px; font-weight:600; display:flex; align-items:center; gap:6px; }
+        .proj-card .proj-tag { font-size:11px; background:#e8f4fd; color:var(--blue); padding:1px 8px; border-radius:10px; white-space:nowrap; }
+        .proj-card .proj-desc { font-size:13px; color:#555; margin-top:6px; }
+        .proj-card .proj-tech { font-size:11px; color:var(--muted); margin-top:8px; }
+        /* Resume btn */
+        .resume-btn {
+            display:inline-block; padding:10px 24px; border-radius:24px;
+            background: var(--blue); color:#fff; text-decoration:none; font-size:14px; font-weight:600;
+            transition:.2s;
         }
-        
-        h3 {
-            font-size: 1.5rem;
-            margin: 1.8rem 0 0.8rem;
-            color: var(--dark);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        p {
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-            color: #555;
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.8rem;
-            color: var(--primary);
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-        
-        blockquote {
-            border-left: 4px solid var(--primary);
-            padding: 1.2rem 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: #666;
-            background-color: rgba(52, 152, 219, 0.05);
-            border-radius: 0 8px 8px 0;
-            animation: fadeIn 1s ease-out 0.4s both;
-        }
-        
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--light), transparent);
-            margin: 3rem 0;
-            position: relative;
-        }
-        
-        .divider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: white;
-            border: 2px solid var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .divider::after {
-            content: '✨';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.2rem;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
-        }
-        
-        .tech-item {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--dark);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .tech-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-            background: var(--gradient);
-            color: white;
-        }
-        
-        ul {
-            margin-left: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 0.5rem;
-        }
-        
-        li::before {
-            content: '▹';
-            position: absolute;
-            left: -1.2rem;
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .experience-item {
-            margin-bottom: 2.5rem;
-            padding: 1.5rem;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-        
-        .experience-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary);
-        }
-        
-        .experience-date {
-            color: var(--primary);
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            display: inline-block;
-            background-color: rgba(52, 152, 219, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-        }
-        
-        .project-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .project-item:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .project-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .project-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .project-title a {
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .project-title a:hover {
-            color: var(--primary);
-        }
-        
-        .project-title a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s ease;
-        }
-        
-        .project-title a:hover::after {
-            width: 100%;
-        }
-        
-        .project-tech {
-            font-size: 0.95rem;
-            color: #666;
-            margin-top: 1rem;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--light);
-            color: #777;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .token-easter-egg {
-            font-size: 0.8rem;
-            color: #999;
-            font-style: normal;
-        }
-        
-        .transparent-token {
-            color: transparent;
-            transition: color 0.1s ease;
-        }
-        
-        .transparent-token:hover {
-            color: #999;
-        }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 1px solid var(--light);
-            border-radius: 50%;
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        code {
-            background-color: #f8f9fa;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            color: var(--accent);
-        }
-        
-        .hero-section {
-            text-align: center;
-            padding: 2rem 0;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        .hero-section h1 {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-        
-        .skill-category {
-            margin-bottom: 1.5rem;
-        }
-        
-        .skill-category h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            color: var(--dark);
-        }
-        
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-            gap: 1rem;
-        }
-        
-        .page-btn {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            background-color: #f0f0f0;
-            color: var(--dark);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .page-btn:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-        }
-        
-        .page-btn.active {
-            background: var(--gradient);
-            color: white;
-        }
-        
-        .page-content {
-            display: none;
-        }
-        
-        .page-content.active {
-            display: block;
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            h3 {
-                font-size: 1.3rem;
-            }
-            
-            .experience-item,
-            .project-item {
-                padding: 1.2rem;
-            }
-            
-            .pagination {
-                gap: 0.5rem;
-            }
-            
-            .page-btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 1.2rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .tech-item {
-                font-size: 0.8rem;
-                padding: 0.4rem 0.8rem;
-            }
-            
-            .page-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
+        .resume-btn:hover { background:#2980b9; }
+        /* Footer */
+        .footer { text-align:center; color:var(--muted); font-size:12px; margin-top:8px; }
+        /* Mobile */
+        @media (max-width:480px) {
+            .wrapper { padding:12px 10px 40px; }
+            .card { padding:18px; border-radius:10px; }
+            .hero h1 { font-size:24px; }
+            .tl-item { padding-left:4px; }
         }
     </style>
 </head>
 <body>
-    <div class="bg-gradient"></div>
-    
-    <div class="container">
-        <div class="hero-section">
-            <h1>个人主页</h1>
-            <div class="subtitle">masterfzb</div>
-            
-            <blockquote>
-                <p>《林无静木，川无停流》</p>
-            </blockquote>
-            
-            <p>我是一名热爱前沿技术与专注于构建可靠、高效的后端系统与自动化工具的开发者。从金融大数据到安全测试，我在多个领域积累了丰富的实战经验。期待与您的交流与合作。</p>
-        </div>
-        
-        <div class="divider"></div>
-        
-        <!-- 分页导航 -->
-        <div class="pagination">
-            <button class="page-btn active" data-page="experience">工作经历</button>
-            <button class="page-btn" data-page="personal">个人项目</button>
-            <button class="page-btn" data-page="other">大学经历</button>
-        </div>
-        
-        <!-- 工作经历分页 -->
-        <div class="page-content active" id="experience">
-            <h2>💼 工作经验</h2>
-            
-            <div class="experience-item">
-                <h3>🏦 广发证券 | 金融大数据及后端研发</h3>
-                <div class="experience-date">2023.05 - 2026.03</div>
-                <ul>
-                    <li><strong>金融工程项目后端及大数据开发</strong>：设计并开发证券业务后端系统，基于Python+Django+redis实现高并发API接口。独立完成核心模块代码开发与系统维护，日均处理百万级数据请求。</li>
-                    <li><strong>SQL动态生成工具</strong>：研发SQL动态生成工具，结合ORM与原生SQL实现灵活数据库操作，强化数据库能力及计算精度。</li>
-                    <li><strong>技术攻关</strong>：通过源码级分析修复代码缺陷，优化第三方依赖包本地化，解决内存泄漏等性能瓶颈问题。</li>
-                    <li><strong>Git协作规范</strong>：制定Git协作规范并维护git项目，解决多团队并行开发的版本问题。</li>
-                    <li><strong>人工智能指数预测系统</strong>：设计提示词工程体系，基于本地通义灵码大模型构建泛用性提示词模板，自动化解析1734个指数文件，获取指数的指标需求与算法。</li>
-                    <li><strong>指标-数据库映射系统</strong>：通过大模型将模型输出的数据标准要求对接本地的Oracle/MySQL数据库，以获取对应要求数据。</li>
-                    <li><strong>计算预测引擎</strong>：基于指数算法与要求的数据，编写Python量化计算模块得出预测结果并与真实结果比对，在新版要求出现后自动生成预测结果。</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h3>🔧 畅春互联 | Python开发</h3>
-                <div class="experience-date">2021.10 - 2023.02</div>
-                <ul>
-                    <li><strong>中国电子官网智能爬虫系统</strong>：设计多线程分布式爬虫架构，突破反爬机制实现全部数据完整抓取。创新应用朴素贝叶斯算法实现网页信息自动分类（语义解析准确率90%，比人工准确率分析高70%）。</li>
-                    <li><strong>移动端安全检测体系</strong>：主导安卓动态检测工具重构以支持Android 13新权限机制与跨平台兼容(Android/HarmonyOS)。研发鸿蒙系统首款Fuzzing测试工具，通过指令变异引擎发现系统级漏洞。</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h3>📱 荣耀 | Python测试工程师</h3>
-                <div class="experience-date">2021.04 - 2021.08</div>
-                <ul>
-                    <li>根据需求修改手机测试的相关参数并得到对应能耗、性能反应等多项指标的测试报告，包括针对后续的荣耀手表测试的部分参数调整。</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h3>💻 宝信软件 | 组态工程师</h3>
-                <div class="experience-date">2019.01 - 2020.02</div>
-                <ul>
-                    <li><strong>苏州地铁三号线项目</strong>：画面制作，修改，核对；现场装机，配置icv环境及点位核对。对现场复杂环境的问题做判断并找解决方案。</li>
-                    <li><strong>乌鲁木齐地铁TCC项目</strong>：核对厂家点类表及现场部署工作，使用excel公式及bat简化工作流程。</li>
-                    <li><strong>上海地铁C3项目</strong>：制作十六号线地铁车站的程控卡片（包括画面及控制程序/点类表。作用是控制地铁来往时开关的打开闭合顺序）。</li>
-                </ul>
-            </div>
-            
-            <div class="divider"></div>
-            
-            <h2>📚 教育背景</h2>
-            <div class="experience-item">
-                <h3>上海海事大学 | 电气工程及其自动化专业</h3>
-                <div class="experience-date">2014.09 - 2018.06</div>
-                <ul>
-                    <li>专业成绩：GPA 3.66/5 (专业前50%)</li>
-                    <li>主修课程：计算机系统结构，C语言，电路原理，数字电子电路，深度学习</li>
-                </ul>
-            </div>
-        </div>
-        
+<div class="wrapper">
 
-        
-        <!-- 个人项目分页 -->
-        <div class="page-content" id="personal">
-            <h2>🌟 个人项目</h2>
-            
-            <a href="deepblue.html" style="text-decoration: none; color: inherit;">
-                <div class="project-item" style="cursor: pointer; transition: all 0.3s ease;">
-                    <div class="project-title" style="color: var(--primary);">DeepBlue - 智能体交流系统</div>
-                    <ul>
-                        <li><strong>描述</strong>：局域网内允许多用户使用ollama模型创建智能体交流的项目，包含完整的前端和后端。支持多用户共享和使用ollama模型，具备智能体创建和管理、临时权限管理、用户配置和设备信息管理等功能。</li>
-                        <li><strong>技术栈</strong>：前端（HTML5, CSS3, JavaScript）、后端（Python）、AI模型（Ollama）、网络（局域网通信）</li>
-                        <li><strong>项目链接</strong>：<a href="https://github.com/masterfzb/deepblue_theworld" target="_blank" style="color: var(--primary);">https://github.com/masterfzb/deepblue_theworld</a>（私人项目，未开放）</li>
-                    </ul>
-                </div>
-            </a>
-            
-            <a href="openclaw_ollama.html" style="text-decoration: none; color: inherit;">
-                <div class="project-item" style="cursor: pointer; transition: all 0.3s ease;">
-                    <div class="project-title" style="color: var(--primary);">OpenClaw Ollama - 本地AI模型API服务</div>
-                    <ul>
-                        <li><strong>描述</strong>：本地部署ollama为openclaw提供api的方案，提供用户注册和云端api校验功能。对话记录会被存在本地sql里，支持完整的用户管理和数据存储。</li>
-                        <li><strong>技术栈</strong>：Python、Ollama、OpenClaw、SQLite、API开发</li>
-                        <li><strong>项目链接</strong>：<a href="https://github.com/masterfzb/ollama_openclaw" target="_blank" style="color: var(--primary);">https://github.com/masterfzb/ollama_openclaw</a>（私人项目，无法直接访问）</li>
-                    </ul>
-                </div>
-            </a>
-        </div>
-        
-        <!-- 大学经历分页 -->
-        <div class="page-content" id="other">
-            <h2>🎓 实习经历</h2>
-            
-            <div class="experience-item">
-                <h3>🏭 INTAMSYS 3D打印公司 | 电气工程师</h3>
-                <div class="experience-date">2018.04 - 2018.06</div>
-                <ul>
-                    <li>拆卸与组装，维护电气设备，编写与维护3D打印技术设计文档。</li>
-                </ul>
-            </div>
-            
-            <div class="divider"></div>
-            
-            <h2>🏆 荣誉证书</h2>
-            
-            <div class="experience-item">
-                <ul>
-                    <li>英语六级，听说读写能力良好，能流利的用英语进行日常交流，能快速浏览英文文档和书籍。</li>
-                    <li>通过全国计算机二级考试，熟练运用office等常用的办公软件。</li>
-                    <li>大学物理及电路原理满分。</li>
-                    <li>大学物理竞赛上海赛区二等奖。</li>
-                </ul>
-                <p class="token-easter-egg"><span class="transparent-token">2077</span></p>
-            </div>
-        </div>
-        
-        <div class="divider"></div>
-        
-        <div class="footer">
-            <p>这份档案持续演进，正如代码与系统。<span class="token-easter-egg"> | 20260315</span></p>
-            <p><a href="resume-download.html">📄 下载简历</a></p>
+    <!-- Hero -->
+    <div class="card hero">
+        <h1>方知定</h1>
+        <div class="sub">AI 工程师 · 全栈开发者</div>
+        <div class="quote">林无静木，川无停流</div>
+        <div class="contact">
+            <span>📍 广州/深圳</span>
+            <a href="mailto:1310347817@qq.com">📧 1310347817@qq.com</a>
+            <a href="https://github.com/masterfzb">🔗 GitHub</a>
         </div>
     </div>
-    
-    <script>
-        // 分页功能
-        const pageBtns = document.querySelectorAll('.page-btn');
-        const pageContents = document.querySelectorAll('.page-content');
-        
-        pageBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const targetPage = this.getAttribute('data-page');
-                
-                // 更新按钮状态
-                pageBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // 更新内容显示
-                pageContents.forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(targetPage).classList.add('active');
-                
-                // 重新初始化观察器
-                initObserver();
-            });
-        });
-        
-        // 初始化观察器
-        function initObserver() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
-                    }
-                });
-            }, observerOptions);
-            
-            // 观察所有需要动画的元素
-            document.querySelectorAll('.experience-item, .project-item, .skill-category').forEach(el => {
-                el.style.opacity = '0';
-                observer.observe(el);
-            });
-        }
-        
-        // 初始化
-        initObserver();
-        
-        // 添加技术标签的交互效果
-        document.querySelectorAll('.tech-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.style.animation = 'pulse 0.5s ease-in-out';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 500);
-            });
-        });
-    </script>
+
+    <!-- 技能 -->
+    <div class="card">
+        <div class="sec-title">🛠 技术能力</div>
+        <div class="skills">
+            <span class="skill-tag hi">Python</span>
+            <span class="skill-tag hi">LLM 应用</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Vue3</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Scrapy</span>
+            <span class="skill-tag">TTS</span>
+            <span class="skill-tag">Ollama</span>
+            <span class="skill-tag">Agent 设计</span>
+        </div>
+    </div>
+
+    <!-- 工作经历 -->
+    <div class="card">
+        <div class="sec-title">💼 工作经历</div>
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-date">2023.05 — 2026.03</div>
+                <div class="tl-role">金融大数据及后端研发工程师</div>
+                <div class="tl-company">广发证券 · 广州</div>
+                <div class="tl-desc">
+                    设计 Djangos+Redis 高并发证券后端，日均百万级请求。基于 LLM 构建指数预测系统，自动化解析 1734 个指数文件。研发 SQL 动态生成工具与 Python 量化计算引擎。
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-date">2021.10 — 2023.02</div>
+                <div class="tl-role">Python 开发工程师</div>
+                <div class="tl-company">畅春互联 · 北京</div>
+                <div class="tl-desc">
+                    设计分布式爬虫架构 + 朴素贝叶斯分类（准确率 90%）。主导安卓安全检测工具重构，适配 Android 13 与 HarmonyOS，研发鸿蒙首款 Fuzzing 工具。
+                </div>
+            </div>
+            <div class="tl-item">
+                <div class="tl-date">2019.01 — 2020.02</div>
+                <div class="tl-role">组态软件工程师</div>
+                <div class="tl-company">宝信软件 · 上海</div>
+                <div class="tl-desc">
+                    参与苏州地铁 3 号线、乌鲁木齐地铁 TCC 综合监控系统，负责上位机组态开发与现场部署。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 个人项目 -->
+    <div class="card">
+        <div class="sec-title">🚀 个人项目</div>
+        <div class="proj-list">
+            <div class="proj-card">
+                <div class="proj-name">
+                    MessageCage · 信息茧房观察镜
+                    <span class="proj-tag">主力项目</span>
+                </div>
+                <div class="proj-desc">
+                    8 个 LLM 驱动的 AI 角色在论坛中自主阅读、讨论、发帖，形成闭环知识生态。自研 Agent 调度引擎与内容抓取系统，支持多角色并发交互与茧房效应可视化。
+                </div>
+                <div class="proj-tech">FastAPI · Vue3 · Qdrant · DeepSeek · SQLite</div>
+            </div>
+            <div class="proj-card">
+                <div class="proj-name">AI 有声小说生成器</div>
+                <div class="proj-desc">
+                    基于 GPT-SoVITS 的多角色声音克隆与自动配音工作流，覆盖 581 个角色声线。对话识别→角色提取→声线匹配→音频生成全流程自动化，完成 43 章全本配音。
+                </div>
+                <div class="proj-tech">Python · GPT-SoVITS · DeepSeek · Markdown</div>
+            </div>
+            <div class="proj-card">
+                <div class="proj-name">紫微斗数排盘工具</div>
+                <div class="proj-desc">
+                    基于八字命理的自动排盘算法，根据出生时辰计算命宫、十二宫位及星曜分布，结合高精度排盘引擎验证。
+                </div>
+                <div class="proj-tech">Python · 八字排盘 · 传统文化 AI 化</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 教育 -->
+    <div class="card">
+        <div class="sec-title">🎓 教育背景</div>
+        <div style="font-size:14px;">
+            <strong>上海海事大学</strong> · 电气工程及其自动化 · 工学学士
+            <span style="color:var(--muted); font-size:12px;">2014 — 2018</span>
+        </div>
+        <div style="font-size:12px; color:var(--muted); margin-top:6px;">
+            GPA 3.66 · 大学物理竞赛上海赛区二等奖 · 英语六级 · 计算机二级
+        </div>
+    </div>
+
+    <!-- Resume -->
+    <div class="card" style="text-align:center; padding:20px;">
+        <a class="resume-btn" href="resume-download.html">📄 下载简历</a>
+    </div>
+
+    <div class="footer">
+        持续演进，正如代码与系统 · 2026.06
+    </div>
+
+</div>
 </body>
 </html>
