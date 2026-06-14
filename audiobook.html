@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 有声小说生成器</title>
+<style>
+:root{--bg:#fafbfc;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--b);text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 60px}
+.back{font-size:13px;color:var(--m);margin-bottom:20px;display:inline-block}
+.back:hover{color:var(--t)}
+h1{font-size:26px;font-weight:700;margin-bottom:6px}
+.sub{font-size:14px;color:var(--m);margin-bottom:24px}
+h2{font-size:17px;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0}
+p{font-size:14px;color:#444;margin-bottom:12px}
+li{font-size:14px;color:#444;margin-bottom:6px}
+.tech{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.tech span{font-size:11px;padding:3px 10px;border-radius:14px;background:var(--bl);color:var(--b);font-weight:500}
+.pipeline{background:#f8f9fb;border-radius:10px;padding:20px;margin:16px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.step{background:var(--b);color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;text-align:center}
+.arrow{font-size:18px;color:var(--m)}
+.stat{display:inline-block;background:#f0fdf4;color:#16a34a;padding:2px 10px;border-radius:10px;font-size:12px;font-weight:600;margin:0 4px}
+.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:40px 0 0}
+.foot a{color:var(--b)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="index.html">← 返回主页</a>
+
+<h1>AI 有声小说生成器</h1>
+<div class="sub">多角色声音克隆 · 自动化配音工作流</div>
+
+<div class="tech">
+  <span>Python</span><span>GPT-SoVITS</span><span>DeepSeek</span><span>TTS</span><span>Markdown</span>
+</div>
+
+<h2>项目概述</h2>
+<p>这是一个泛化的有声小说自动生成系统。输入一部小说文本，系统自动识别对话角色、匹配声线、生成多角色配音音频，输出完整的有声小说。已完成小说《语冰人》43 章全流程验证。</p>
+
+<h2>处理流程</h2>
+<div class="pipeline">
+  <div class="step">📖 章节解析</div>
+  <div class="arrow">→</div>
+  <div class="step">💬 对话识别</div>
+  <div class="arrow">→</div>
+  <div class="step">👤 角色提取</div>
+  <div class="arrow">→</div>
+  <div class="step">🎭 声线匹配</div>
+  <div class="arrow">→</div>
+  <div class="step">🔊 音频生成</div>
+  <div class="arrow">→</div>
+  <div class="step">📻 章节合成</div>
+</div>
+
+<h2>关键技术点</h2>
+<ul style="padding-left:20px;">
+  <li><strong>动态角色提取</strong>：基于 LLM 自动识别对话归属角色，无需预定义角色列表</li>
+  <li><strong>声线映射引擎</strong>：覆盖 581 个角色声线（6 款游戏），自动匹配最优参考音频</li>
+  <li><strong>数据清洗策略</strong>：短句过滤（&lt;10字→旁白）、非对话内容识别、置信度评分</li>
+  <li><strong>分段 AI 管道</strong>：规则引擎处理 80%+ 简单情况，AI 辅助处理 20% 复杂场景</li>
+  <li><strong>双格式输出</strong>：Markdown 电子书（阅读）+ GPT-SoVITS 格式（批量音频生成）</li>
+</ul>
+
+<h2>实战数据</h2>
+<ul style="padding-left:20px;">
+  <li>处理规模：43 章节，3248 句原始对话 → <span class="stat">1554 句有效对话</span></li>
+  <li>角色数量：<span class="stat">10 个主要角色</span> + 动态配角</li>
+  <li>高置信度对话占比：<span class="stat">64.2%</span></li>
+  <li>声线覆盖率：6 款游戏的 581 个角色参考音频</li>
+</ul>
+
+<h2>技术栈</h2>
+<ul style="padding-left:20px;">
+  <li><strong>TTS 引擎</strong>：GPT-SoVITS v2 — 少样本声音克隆，支持中文</li>
+  <li><strong>AI 辅助</strong>：DeepSeek API — 角色识别与声线匹配</li>
+  <li><strong>后端</strong>：Python FastAPI — 任务管理、状态追踪、音频流</li>
+  <li><strong>输出格式</strong>：Markdown 电子书 + 分章节 WAV/MP3 音频</li>
+</ul>
+
+<h2>迭代经验</h2>
+<p>本项目经历了多次重构，核心教训：</p>
+<ul style="padding-left:20px;">
+  <li>❌ 预定义角色列表 → ✅ 动态角色提取（泛化）</li>
+  <li>❌ 大 chunk LLM 处理 → ✅ 小 chunk + 规则引擎优先</li>
+  <li>❌ 直接生成音频 → ✅ 先验证数据质量，再批量生成</li>
+  <li>❌ 纯 AI 驱动 → ✅ 规则引擎 80% + AI 20% 的分层策略</li>
+</ul>
+
+<div class="foot">
+  <a href="index.html">← 返回主页</a> · 2026
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫微斗数排盘工具</title>
+<style>
+:root{--bg:#fafbfc;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--b);text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 60px}
+.back{font-size:13px;color:var(--m);margin-bottom:20px;display:inline-block}
+.back:hover{color:var(--t)}
+h1{font-size:26px;font-weight:700;margin-bottom:6px}
+.sub{font-size:14px;color:var(--m);margin-bottom:24px}
+h2{font-size:17px;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid #f0f0f0}
+p{font-size:14px;color:#444;margin-bottom:12px}
+li{font-size:14px;color:#444;margin-bottom:6px}
+.tech{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.tech span{font-size:11px;padding:3px 10px;border-radius:14px;background:var(--bl);color:var(--b);font-weight:500}
+.demo{background:#1a1a2e;color:#e2e8f0;border-radius:12px;padding:24px;font-family:"PingFang SC",sans-serif;margin:16px 0}
+.demo .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.demo .palace{background:rgba(255,255,255,.06);border-radius:8px;padding:12px;text-align:center;font-size:13px}
+.demo .palace .name{font-size:11px;color:#94a3b8;margin-bottom:4px}
+.demo .palace .star{font-size:14px;font-weight:600;color:#fbbf24}
+.demo h3{color:#94a3b8;font-size:13px;font-weight:400;margin-bottom:4px}
+.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:40px 0 0}
+.foot a{color:var(--b)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="index.html">← 返回主页</a>
+
+<h1>紫微斗数排盘工具</h1>
+<div class="sub">八字命理 · 自动排盘 · 传统文化 AI 化探索</div>
+
+<div class="tech">
+  <span>Python</span><span>八字排盘</span><span>命理算法</span><span>传统文化 AI</span>
+</div>
+
+<h2>项目概述</h2>
+<p>基于八字命理的紫微斗数自动排盘工具。用户输入出生年月日时，系统自动计算命宫、十二宫位分布及星曜排列，生成完整的紫微斗数命盘。</p>
+<p>项目的核心价值在于：<strong>将传统命理学的复杂排盘规则编码为可计算的算法</strong>，并结合高精度排盘引擎进行验证，探索传统文化与 AI 辅助分析的交叉点。</p>
+
+<h2>示例输出</h2>
+<div class="demo">
+  <h3>命盘示例 — 甲子年 正月 初一日 子时</h3>
+  <div class="grid">
+    <div class="palace"><div class="name">命宫</div><div class="star">紫微</div></div>
+    <div class="palace"><div class="name">兄弟</div><div class="star">天机</div></div>
+    <div class="palace"><div class="name">夫妻</div><div class="star">—</div></div>
+    <div class="palace"><div class="name">子女</div><div class="star">太阳</div></div>
+    <div class="palace"><div class="name">财帛</div><div class="star">武曲</div></div>
+    <div class="palace"><div class="name">疾厄</div><div class="star">天同</div></div>
+    <div class="palace"><div class="name">迁移</div><div class="star">廉贞</div></div>
+    <div class="palace"><div class="name">交友</div><div class="star">—</div></div>
+    <div class="palace"><div class="name">官禄</div><div class="star">天府</div></div>
+    <div class="palace"><div class="name">田宅</div><div class="star">太阴</div></div>
+    <div class="palace"><div class="name">福德</div><div class="star">贪狼</div></div>
+    <div class="palace"><div class="name">父母</div><div class="star">巨门</div></div>
+  </div>
+</div>
+
+<h2>技术实现</h2>
+<ul style="padding-left:20px;">
+  <li><strong>八字计算</strong>：根据公历日期与时辰换算天干地支，确定四柱八字</li>
+  <li><strong>命宫定位</strong>：基于生月与生时推算命宫地支，映射到十二宫方位</li>
+  <li><strong>十二宫排布</strong>：从命宫起，逆时针排布十二人事宫位</li>
+  <li><strong>星曜安放</strong>：根据紫微斗数安星法则，计算紫微星系与天府星系各星位置</li>
+  <li><strong>数据验证</strong>：与高精度排盘引擎（v587）交叉验证结果准确性</li>
+</ul>
+
+<h2>后续方向</h2>
+<ul style="padding-left:20px;">
+  <li>命盘解读 LLM 集成：将排盘结果输入大模型，生成通俗易懂的命理分析</li>
+  <li>可视化图表：生成十二宫星曜分布的 SVG/Canvas 图表</li>
+  <li>Web API 化：提供在线排盘接口服务</li>
+</ul>
+
+<div class="foot">
+  <a href="index.html">← 返回主页</a> · 2026
+</div>
+</div>
+</body>
+</html>

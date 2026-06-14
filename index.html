@@ -1,215 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>方知定 · 个人主页</title>
-    <style>
-        :root {
-            --bg: #f8f9fb;
-            --card: #fff;
-            --text: #2c3e50;
-            --muted: #7f8c8d;
-            --blue: #3498db;
-            --purple: #8e44ad;
-            --green: #27ae60;
-            --border: #e8ecf1;
-            --radius: 14px;
-            --shadow: 0 2px 12px rgba(0,0,0,.06);
-        }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: var(--bg); color: var(--text); line-height:1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-        .wrapper { max-width: 720px; margin:0 auto; padding: 24px 16px 60px; }
-        .card {
-            background: var(--card); border-radius: var(--radius); padding: 24px;
-            margin-bottom: 16px; box-shadow: var(--shadow);
-        }
-        /* Hero */
-        .hero { text-align:center; padding: 32px 20px; }
-        .hero h1 { font-size:28px; font-weight:700; letter-spacing:2px; }
-        .hero .sub { color: var(--muted); font-size:14px; margin-top:4px; }
-        .hero .quote { color: var(--muted); font-size:13px; margin-top:12px; font-style:italic; }
-        .hero .contact { margin-top:16px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
-        .hero .contact a { color: var(--blue); text-decoration:none; font-size:13px; }
-        /* Section header */
-        .sec-title {
-            font-size:15px; font-weight:700; color: var(--text);
-            margin-bottom: 16px; display:flex; align-items:center; gap:8px;
-        }
-        .sec-title::after {
-            content:''; flex:1; height:1px; background: var(--border);
-        }
-        /* Skills */
-        .skills { display:flex; flex-wrap:wrap; gap:8px; }
-        .skill-tag {
-            font-size:12px; padding:4px 12px; border-radius:20px;
-            background: #f0f4f8; color: var(--text);
-        }
-        .skill-tag.hi { background: var(--blue); color:#fff; }
-        /* Timeline */
-        .timeline { border-left:2px solid var(--border); padding-left:20px; }
-        .tl-item { position:relative; margin-bottom:20px; }
-        .tl-item::before {
-            content:''; position:absolute; left:-27px; top:6px;
-            width:12px; height:12px; border-radius:50%; background: var(--blue);
-            border:2px solid var(--card);
-        }
-        .tl-item .tl-date { font-size:12px; color:var(--muted); }
-        .tl-item .tl-role { font-size:14px; font-weight:600; }
-        .tl-item .tl-company { font-size:13px; color:var(--muted); }
-        .tl-item .tl-desc { font-size:13px; color:#555; margin-top:4px; }
-        /* Cards with hover */
-        .proj-list { display:flex; flex-direction:column; gap:12px; }
-        .proj-card {
-            background: #fafbfc; border-radius:10px; padding:16px;
-            border:1px solid var(--border); transition: .2s;
-        }
-        .proj-card:hover { border-color: var(--blue); box-shadow: 0 2px 8px rgba(52,152,219,.12); }
-        .proj-card .proj-name { font-size:15px; font-weight:600; display:flex; align-items:center; gap:6px; }
-        .proj-card .proj-tag { font-size:11px; background:#e8f4fd; color:var(--blue); padding:1px 8px; border-radius:10px; white-space:nowrap; }
-        .proj-card .proj-desc { font-size:13px; color:#555; margin-top:6px; }
-        .proj-card .proj-tech { font-size:11px; color:var(--muted); margin-top:8px; }
-        /* Resume btn */
-        .resume-btn {
-            display:inline-block; padding:10px 24px; border-radius:24px;
-            background: var(--blue); color:#fff; text-decoration:none; font-size:14px; font-weight:600;
-            transition:.2s;
-        }
-        .resume-btn:hover { background:#2980b9; }
-        /* Footer */
-        .footer { text-align:center; color:var(--muted); font-size:12px; margin-top:8px; }
-        /* Mobile */
-        @media (max-width:480px) {
-            .wrapper { padding:12px 10px 40px; }
-            .card { padding:18px; border-radius:10px; }
-            .hero h1 { font-size:24px; }
-            .tl-item { padding-left:4px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方知定 · AI 工程师</title>
+<style>
+:root{--bg:#fafbfc;--card:#fff;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe;--br:12px;--sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--b);text-decoration:none}
+.wrap{max-width:800px;margin:0 auto;padding:32px 16px 60px}
+
+/* Hero */
+.hero{padding:40px 0 24px;text-align:center}
+.hero h1{font-size:32px;font-weight:700;letter-spacing:1px}
+.hero .tag{font-size:15px;color:var(--m);margin-top:4px}
+.hero .nav{margin-top:20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.hero .nav a{font-size:13px;color:var(--m);transition:.2s}
+.hero .nav a:hover{color:var(--b)}
+
+/* Project showcase */
+.sec-label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;margin-top:8px}
+.projects{display:flex;flex-direction:column;gap:16px}
+.proj{display:flex;gap:20px;background:var(--card);border-radius:var(--br);padding:20px;box-shadow:var(--sh);transition:.2s;border:1px solid transparent;align-items:flex-start}
+.proj:hover{border-color:var(--b);box-shadow:0 4px 16px rgba(37,99,235,.1)}
+.proj-img{flex-shrink:0;width:160px;height:100px;border-radius:8px;background:#e8ecf1;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.proj-img img{width:100%;height:100%;object-fit:cover}
+.proj-img .placeholder{font-size:32px;color:#cbd5e1}
+.proj-info{flex:1;min-width:0}
+.proj-info h3{font-size:17px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.proj-info h3 a{color:var(--t)}
+.proj-info h3 a:hover{color:var(--b)}
+.proj-info .badge{font-size:10px;font-weight:600;background:var(--bl);color:var(--b);padding:2px 8px;border-radius:10px;white-space:nowrap}
+.proj-info p{font-size:13px;color:var(--m);margin-bottom:6px;line-height:1.5}
+.proj-info .tech{font-size:11px;color:#9ca3af}
+
+/* Skills minimal */
+.skills-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0}
+.sk{font-size:12px;padding:3px 10px;border-radius:14px;background:#f3f4f6;color:var(--m)}
+.sk.hi{background:var(--bl);color:var(--b);font-weight:500}
+
+.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:32px 0 0}
+
+@media(max-width:600px){
+  .proj{flex-direction:column}
+  .proj-img{width:100%;height:140px}
+  .hero h1{font-size:26px}
+  .wrap{padding:20px 12px 40px}
+}
+</style>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrap">
 
-    <!-- Hero -->
-    <div class="card hero">
-        <h1>方知定</h1>
-        <div class="sub">AI 工程师 · 全栈开发者</div>
-        <div class="quote">林无静木，川无停流</div>
-        <div class="contact">
-            <span>📍 广州/深圳</span>
-            <a href="mailto:1310347817@qq.com">📧 1310347817@qq.com</a>
-            <a href="https://github.com/masterfzb">🔗 GitHub</a>
-        </div>
+<div class="hero">
+  <h1>方知定</h1>
+  <div class="tag">AI 工程师 · 全栈开发者 · 将前沿技术落地为工业级方案</div>
+  <nav class="nav">
+    <a href="about.html">📋 履历</a>
+    <a href="resume-download.html">📄 简历下载</a>
+    <a href="mailto:1310347817@qq.com">📧 联系</a>
+  </nav>
+</div>
+
+<div class="sec-label">核心项目</div>
+
+<div class="projects">
+  <!-- MessageCage -->
+  <div class="proj">
+    <div class="proj-img">
+      <img src="screenshots/mc-desktop.png" alt="MessageCage" loading="lazy">
     </div>
-
-    <!-- 技能 -->
-    <div class="card">
-        <div class="sec-title">🛠 技术能力</div>
-        <div class="skills">
-            <span class="skill-tag hi">Python</span>
-            <span class="skill-tag hi">LLM 应用</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">Django</span>
-            <span class="skill-tag">Vue3</span>
-            <span class="skill-tag">Redis</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Linux</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Scrapy</span>
-            <span class="skill-tag">TTS</span>
-            <span class="skill-tag">Ollama</span>
-            <span class="skill-tag">Agent 设计</span>
-        </div>
+    <div class="proj-info">
+      <h3><a href="messagecage.html">MessageCage · 信息茧房观察镜</a> <span class="badge">主力</span></h3>
+      <p>8 个 AI 角色在论坛中自主阅读、讨论、发帖，形成闭环知识生态。自研 Agent 调度引擎，支持多角色并发交互与茧房效应可视化。</p>
+      <div class="tech">FastAPI · Vue3 · Qdrant · DeepSeek · SQLite</div>
     </div>
+  </div>
 
-    <!-- 工作经历 -->
-    <div class="card">
-        <div class="sec-title">💼 工作经历</div>
-        <div class="timeline">
-            <div class="tl-item">
-                <div class="tl-date">2023.05 — 2026.03</div>
-                <div class="tl-role">金融大数据及后端研发工程师</div>
-                <div class="tl-company">广发证券 · 广州</div>
-                <div class="tl-desc">
-                    设计 Djangos+Redis 高并发证券后端，日均百万级请求。基于 LLM 构建指数预测系统，自动化解析 1734 个指数文件。研发 SQL 动态生成工具与 Python 量化计算引擎。
-                </div>
-            </div>
-            <div class="tl-item">
-                <div class="tl-date">2021.10 — 2023.02</div>
-                <div class="tl-role">Python 开发工程师</div>
-                <div class="tl-company">畅春互联 · 北京</div>
-                <div class="tl-desc">
-                    设计分布式爬虫架构 + 朴素贝叶斯分类（准确率 90%）。主导安卓安全检测工具重构，适配 Android 13 与 HarmonyOS，研发鸿蒙首款 Fuzzing 工具。
-                </div>
-            </div>
-            <div class="tl-item">
-                <div class="tl-date">2019.01 — 2020.02</div>
-                <div class="tl-role">组态软件工程师</div>
-                <div class="tl-company">宝信软件 · 上海</div>
-                <div class="tl-desc">
-                    参与苏州地铁 3 号线、乌鲁木齐地铁 TCC 综合监控系统，负责上位机组态开发与现场部署。
-                </div>
-            </div>
-        </div>
+  <!-- cage_ghost -->
+  <div class="proj">
+    <div class="proj-img">
+      <div class="placeholder">👻</div>
     </div>
-
-    <!-- 个人项目 -->
-    <div class="card">
-        <div class="sec-title">🚀 个人项目</div>
-        <div class="proj-list">
-            <div class="proj-card">
-                <div class="proj-name">
-                    MessageCage · 信息茧房观察镜
-                    <span class="proj-tag">主力项目</span>
-                </div>
-                <div class="proj-desc">
-                    8 个 LLM 驱动的 AI 角色在论坛中自主阅读、讨论、发帖，形成闭环知识生态。自研 Agent 调度引擎与内容抓取系统，支持多角色并发交互与茧房效应可视化。
-                </div>
-                <div class="proj-tech">FastAPI · Vue3 · Qdrant · DeepSeek · SQLite</div>
-            </div>
-            <div class="proj-card">
-                <div class="proj-name">AI 有声小说生成器</div>
-                <div class="proj-desc">
-                    基于 GPT-SoVITS 的多角色声音克隆与自动配音工作流，覆盖 581 个角色声线。对话识别→角色提取→声线匹配→音频生成全流程自动化，完成 43 章全本配音。
-                </div>
-                <div class="proj-tech">Python · GPT-SoVITS · DeepSeek · Markdown</div>
-            </div>
-            <div class="proj-card">
-                <div class="proj-name">紫微斗数排盘工具</div>
-                <div class="proj-desc">
-                    基于八字命理的自动排盘算法，根据出生时辰计算命宫、十二宫位及星曜分布，结合高精度排盘引擎验证。
-                </div>
-                <div class="proj-tech">Python · 八字排盘 · 传统文化 AI 化</div>
-            </div>
-        </div>
+    <div class="proj-info">
+      <h3><a href="cage-ghost.html">cage_ghost · AI 内容生成引擎</a></h3>
+      <p>基于 DeepSeek R1 的 AI 内容工厂，为 MessageCage 提供源源不断的智能内容。支持多角色并行生成、记忆持久化与质量审核。</p>
+      <div class="tech">Python · DeepSeek R1 · SQLite · Redis · 异步调度</div>
     </div>
+  </div>
 
-    <!-- 教育 -->
-    <div class="card">
-        <div class="sec-title">🎓 教育背景</div>
-        <div style="font-size:14px;">
-            <strong>上海海事大学</strong> · 电气工程及其自动化 · 工学学士
-            <span style="color:var(--muted); font-size:12px;">2014 — 2018</span>
-        </div>
-        <div style="font-size:12px; color:var(--muted); margin-top:6px;">
-            GPA 3.66 · 大学物理竞赛上海赛区二等奖 · 英语六级 · 计算机二级
-        </div>
+  <!-- 有声小说 -->
+  <div class="proj">
+    <div class="proj-img">
+      <div class="placeholder">🎙️</div>
     </div>
-
-    <!-- Resume -->
-    <div class="card" style="text-align:center; padding:20px;">
-        <a class="resume-btn" href="resume-download.html">📄 下载简历</a>
+    <div class="proj-info">
+      <h3><a href="audiobook.html">AI 有声小说生成器</a></h3>
+      <p>基于 GPT-SoVITS 的多角色声音克隆与自动配音工作流，覆盖 581 个角色声线，完成 43 章全本自动化配音。</p>
+      <div class="tech">Python · GPT-SoVITS · DeepSeek · Markdown</div>
     </div>
+  </div>
 
-    <div class="footer">
-        持续演进，正如代码与系统 · 2026.06
+  <!-- 紫微斗数 -->
+  <div class="proj">
+    <div class="proj-img">
+      <div class="placeholder">🔮</div>
     </div>
+    <div class="proj-info">
+      <h3><a href="ziwei.html">紫微斗数排盘工具</a></h3>
+      <p>基于八字命理的自动排盘算法，根据出生时辰计算命宫、十二宫位及星曜分布，探索传统文化与 AI 的结合。</p>
+      <div class="tech">Python · 八字排盘 · 命理算法</div>
+    </div>
+  </div>
+</div>
 
+<div class="sec-label" style="margin-top:32px">技术栈</div>
+<div class="skills-row">
+  <span class="sk hi">Python</span><span class="sk hi">LLM 应用</span>
+  <span class="sk">FastAPI</span><span class="sk">Django</span><span class="sk">Vue3</span>
+  <span class="sk">Redis</span><span class="sk">Qdrant</span><span class="sk">Docker</span>
+  <span class="sk">Scrapy</span><span class="sk">TTS</span><span class="sk">Ollama</span>
+  <span class="sk">Agent 设计</span><span class="sk">Git</span><span class="sk">Linux</span>
+</div>
+
+<div class="foot">林无静木，川无停流 · 2026</div>
 </div>
 </body>
 </html>
