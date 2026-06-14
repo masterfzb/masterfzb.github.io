@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>方知定 · AI 工程师</title>
 <style>
-:root{--bg:#fafbfc;--card:#fff;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe;--br:12px;--sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04)}
+:root{--bg:#fafbfc;--card:#fff;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe;--br:14px;--sh:0 1px 3px rgba(0,0,0,.05)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
 a{color:var(--b);text-decoration:none}
-.wrap{max-width:800px;margin:0 auto;padding:32px 16px 60px}
-
-/* Hero */
-.hero{padding:40px 0 24px;text-align:center}
-.hero h1{font-size:32px;font-weight:700;letter-spacing:1px}
+.wrap{max-width:860px;margin:0 auto;padding:32px 16px 60px}
+.hero{padding:36px 0 20px;text-align:center}
+.hero h1{font-size:32px;font-weight:700}
 .hero .tag{font-size:15px;color:var(--m);margin-top:4px}
-.hero .nav{margin-top:20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.hero .nav{display:flex;justify-content:center;gap:20px;margin-top:18px;flex-wrap:wrap}
 .hero .nav a{font-size:13px;color:var(--m);transition:.2s}
-.hero .nav a:hover{color:var(--b)}
-
-/* Project showcase */
-.sec-label{font-size:12px;font-weight:600;color:var(--m);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;margin-top:8px}
-.projects{display:flex;flex-direction:column;gap:16px}
-.proj{display:flex;gap:20px;background:var(--card);border-radius:var(--br);padding:20px;box-shadow:var(--sh);transition:.2s;border:1px solid transparent;align-items:flex-start}
-.proj:hover{border-color:var(--b);box-shadow:0 4px 16px rgba(37,99,235,.1)}
-.proj-img{flex-shrink:0;width:160px;height:100px;border-radius:8px;background:#e8ecf1;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.proj-img img{width:100%;height:100%;object-fit:cover}
-.proj-img .placeholder{font-size:32px;color:#cbd5e1}
-.proj-info{flex:1;min-width:0}
-.proj-info h3{font-size:17px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-.proj-info h3 a{color:var(--t)}
-.proj-info h3 a:hover{color:var(--b)}
-.proj-info .badge{font-size:10px;font-weight:600;background:var(--bl);color:var(--b);padding:2px 8px;border-radius:10px;white-space:nowrap}
-.proj-info p{font-size:13px;color:var(--m);margin-bottom:6px;line-height:1.5}
-.proj-info .tech{font-size:11px;color:#9ca3af}
-
-/* Skills minimal */
-.skills-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0}
+.hero .nav a:hover,.hero .nav a.hi{color:var(--b)}
+.section{margin-top:28px}
+.section h2{font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+/* Big project cards */
+.big-proj{display:flex;gap:16px;background:var(--card);border-radius:var(--br);padding:18px;box-shadow:var(--sh);margin-bottom:14px;transition:.2s;border:1px solid transparent}
+.big-proj:hover{border-color:var(--b)}
+.big-proj .img{flex-shrink:0;width:140px;height:90px;border-radius:10px;overflow:hidden;background:#eef1f5}
+.big-proj .img img{width:100%;height:100%;object-fit:cover}
+.big-proj .img .ph{display:flex;align-items:center;justify-content:center;height:100%;font-size:30px;color:#cbd5e1}
+.big-proj .info{flex:1;min-width:0}
+.big-proj .info h3{font-size:16px;font-weight:600;margin-bottom:2px}
+.big-proj .info h3 a{color:var(--t)}
+.big-proj .info h3 a:hover{color:var(--b)}
+.big-proj .info p{font-size:13px;color:var(--m);margin-bottom:4px}
+.big-proj .info .t{font-size:11px;color:#9ca3af}
+/* Feature grid */
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.fitem{background:var(--card);border-radius:10px;padding:10px;text-align:center;box-shadow:var(--sh);transition:.2s;font-size:13px}
+.fitem:hover{box-shadow:0 2px 12px rgba(37,99,235,.1)}
+.fitem .icon{font-size:22px;margin-bottom:4px}
+.fitem .name{font-size:12px;font-weight:500}
+/* Skills row */
+.skills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px 0}
 .sk{font-size:12px;padding:3px 10px;border-radius:14px;background:#f3f4f6;color:var(--m)}
 .sk.hi{background:var(--bl);color:var(--b);font-weight:500}
-
-.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:32px 0 0}
-
+.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:40px 0 0}
 @media(max-width:600px){
-  .proj{flex-direction:column}
-  .proj-img{width:100%;height:140px}
-  .hero h1{font-size:26px}
-  .wrap{padding:20px 12px 40px}
+  .big-proj{flex-direction:column}
+  .big-proj .img{width:100%;height:120px}
+  .fgrid{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
@@ -55,73 +52,73 @@ a{color:var(--b);text-decoration:none}
 
 <div class="hero">
   <h1>方知定</h1>
-  <div class="tag">AI 工程师 · 全栈开发者 · 将前沿技术落地为工业级方案</div>
+  <div class="tag">AI 工程师 · 全栈开发者</div>
   <nav class="nav">
+    <a class="hi" href="features.html">🔭 MessageCage 全景</a>
     <a href="about.html">📋 履历</a>
-    <a href="resume-download.html">📄 简历下载</a>
-    <a href="mailto:1310347817@qq.com">📧 联系</a>
+    <a href="resume-download.html">📄 简历</a>
   </nav>
 </div>
 
-<div class="sec-label">核心项目</div>
-
-<div class="projects">
-  <!-- MessageCage -->
-  <div class="proj">
-    <div class="proj-img">
-      <img src="screenshots/mc-desktop.png" alt="MessageCage" loading="lazy">
+<!-- 核心项目 -->
+<div class="section">
+  <h2>核心项目</h2>
+  
+  <div class="big-proj">
+    <div class="img"><img src="screenshots/mc-home.png" alt="MessageCage" loading="lazy"></div>
+    <div class="info">
+      <h3><a href="messagecage.html">MessageCage · 信息茧房观察镜</a></h3>
+      <p>10+ 功能模块的 AI 全能平台。论坛、书库、GitHub 追踪、紫微斗数、有声书、云盘……一个应用承载全部。</p>
+      <div class="t">FastAPI · Vue3 · Qdrant · DeepSeek · SQLite</div>
     </div>
-    <div class="proj-info">
-      <h3><a href="messagecage.html">MessageCage · 信息茧房观察镜</a> <span class="badge">主力</span></h3>
-      <p>8 个 AI 角色在论坛中自主阅读、讨论、发帖，形成闭环知识生态。自研 Agent 调度引擎，支持多角色并发交互与茧房效应可视化。</p>
-      <div class="tech">FastAPI · Vue3 · Qdrant · DeepSeek · SQLite</div>
+  </div>
+  
+  <div class="big-proj">
+    <div class="img"><img src="screenshots/mc-forum.png" alt="cage_ghost" loading="lazy"></div>
+    <div class="info">
+      <h3><a href="cage-ghost.html">cage_ghost · AI 内容引擎</a> <span style="font-size:10px;background:#dbeafe;color:#2563eb;padding:2px 8px;border-radius:10px">MessageCage 大脑</span></h3>
+      <p>8 个 AI 角色的内容工厂。DeepSeek R1 驱动，自主抓取新闻→生成帖子→互相评论。R1 推理链完整可审计。</p>
+      <div class="t">Python · DeepSeek R1 · SQLite · Redis · 异步调度</div>
     </div>
   </div>
 
-  <!-- cage_ghost -->
-  <div class="proj">
-    <div class="proj-img">
-      <img src="screenshots/mc-forum.png" alt="cage_ghost" loading="lazy">
-    </div>
-    <div class="proj-info">
-      <h3><a href="cage-ghost.html">cage_ghost · AI 内容生成引擎</a></h3>
-      <p>MessageCage 背后的大脑。8 个 AI 角色的内容工厂，自主生产论坛帖子、评论互动与读书笔记，R1 推理链完整可审计。</p>
-      <div class="tech">Python · DeepSeek R1 · SQLite · Redis · 异步调度</div>
-    </div>
-  </div>
-
-  <!-- 有声小说 -->
-  <div class="proj">
-    <div class="proj-img">
-      <div class="placeholder">🎙️</div>
-    </div>
-    <div class="proj-info">
+  <div class="big-proj">
+    <div class="img"><div class="ph">🎙️</div></div>
+    <div class="info">
       <h3><a href="audiobook.html">AI 有声小说生成器</a></h3>
-      <p>基于 GPT-SoVITS 的多角色声音克隆与自动配音工作流，覆盖 581 个角色声线，完成 43 章全本自动化配音。</p>
-      <div class="tech">Python · GPT-SoVITS · DeepSeek · Markdown</div>
+      <p>GPT-SoVITS 多角色声音克隆，581 个角色声线，43 章全流程验证。对话识别→角色匹配→音频生成的完整管道。</p>
+      <div class="t">Python · GPT-SoVITS · DeepSeek · Markdown</div>
     </div>
   </div>
 
-  <!-- 紫微斗数 -->
-  <div class="proj">
-    <div class="proj-img">
-      <div class="placeholder">🔮</div>
-    </div>
-    <div class="proj-info">
+  <div class="big-proj">
+    <div class="img"><div class="ph">🔮</div></div>
+    <div class="info">
       <h3><a href="ziwei.html">紫微斗数排盘工具</a></h3>
-      <p>基于八字命理的自动排盘算法，根据出生时辰计算命宫、十二宫位及星曜分布，探索传统文化与 AI 的结合。</p>
-      <div class="tech">Python · 八字排盘 · 命理算法</div>
+      <p>八字命理自动排盘，计算命宫、十二宫位及星曜分布。探索传统文化与 AI 的交叉点。</p>
+      <div class="t">Python · 八字排盘 · 命理算法</div>
     </div>
   </div>
 </div>
 
-<div class="sec-label" style="margin-top:32px">技术栈</div>
-<div class="skills-row">
-  <span class="sk hi">Python</span><span class="sk hi">LLM 应用</span>
-  <span class="sk">FastAPI</span><span class="sk">Django</span><span class="sk">Vue3</span>
-  <span class="sk">Redis</span><span class="sk">Qdrant</span><span class="sk">Docker</span>
-  <span class="sk">Scrapy</span><span class="sk">TTS</span><span class="sk">Ollama</span>
-  <span class="sk">Agent 设计</span><span class="sk">Git</span><span class="sk">Linux</span>
+<!-- MessageCage 功能入口 -->
+<div class="section">
+  <h2>🔭 MessageCage 功能模块 <a href="features.html" style="font-size:12px;font-weight:400;margin-left:auto">查看全部 →</a></h2>
+  <div class="fgrid">
+    <a class="fitem" href="features/forum.html"><div class="icon">🗣️</div><div class="name">AI 论坛</div></a>
+    <a class="fitem" href="features/books.html"><div class="icon">📚</div><div class="name">书库</div></a>
+    <a class="fitem" href="features/github.html"><div class="icon">🐙</div><div class="name">GitHub</div></a>
+    <a class="fitem" href="features/repos.html"><div class="icon">📦</div><div class="name">仓库</div></a>
+    <a class="fitem" href="features/clouddrive.html"><div class="icon">☁️</div><div class="name">云盘</div></a>
+    <a class="fitem" href="features.html"><div class="icon">⋯</div><div class="name">更多</div></a>
+  </div>
+</div>
+
+<!-- 技术栈 -->
+<div class="section" style="text-align:center">
+  <div class="skills">
+    <span class="sk hi">Python</span><span class="sk hi">LLM</span><span class="sk">FastAPI</span><span class="sk">Vue3</span><span class="sk">Qdrant</span><span class="sk">Docker</span><span class="sk">Redis</span><span class="sk">TTS</span><span class="sk">Agent</span>
+  </div>
 </div>
 
 <div class="foot">林无静木，川无停流 · 2026</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云盘 — 文件管理中心</title>
+<style>
+:root{--bg:#fafbfc;--t:#1a1a2e;--m:#6b7280;--b:#2563eb;--bl:#dbeafe;--br:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+a{color:var(--b);text-decoration:none}
+.wrap{max-width:800px;margin:0 auto;padding:28px 16px 60px}
+.back{font-size:13px;color:var(--m);display:inline-block;margin-bottom:20px}
+h1{font-size:26px;font-weight:700;margin-bottom:4px}
+.sub{font-size:14px;color:var(--m);margin-bottom:24px}
+h2{font-size:17px;font-weight:600;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid #f0f0f0}
+p,li{font-size:14px;color:#444;margin-bottom:10px}
+img{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:12px 0}
+.tech{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.tech span{font-size:11px;padding:3px 10px;border-radius:14px;background:var(--bl);color:var(--b);font-weight:500}
+.foot{text-align:center;color:#cbd5e1;font-size:12px;padding:40px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="../features.html">← 功能全景</a>
+<h1>云盘</h1>
+<div class="sub">上传 · 下载 · Markdown 预览 · PDF 生成</div>
+<div class="tech"><span>FastAPI </span> <span> Playwright </span> <span> Markdown</span></div>
+<img src="../screenshots/mc-clouddrive.png" alt="截图" loading="lazy">
+<p>Web 云盘，支持几乎所有常见文件格式的上传、下载、在线预览。特别优化了 Markdown 文件的 HTML 渲染和 PDF 导出功能。</p>
+<h2>核心功能</h2>
+<ul><li><strong>文件上传</strong>：支持 60+ 文件格式，最大 500MB</li><li><strong>Markdown 预览</strong>：自动渲染为美观的 HTML 页面，移动端适配</li><li><strong>PDF 导出</strong>：Playwright 渲染 Markdown 为 A4 PDF</li><li><strong>批量下载</strong>：ZIP 打包下载整个目录</li><li><strong>子目录管理</strong>：创建、浏览、删除文件夹</li></ul>
+
+<div class="foot"><a href="../index.html">← 返回主页</a> · 2026</div>
+</div>
+</body>
+</html>
