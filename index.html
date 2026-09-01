@@ -2,10 +2,10 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>方知定 · AI 工程师 | 全栈开发者</title>
-<meta name="description" content="方知定，5年全栈开发经验的AI工程师。专注LLM应用开发、Agent系统设计与多角色AI协作。独立开发MessageCage信息茧房观察镜、cage_ghost内容引擎、AI有声小说生成器等项目。">
-<meta property="og:title" content="方知定 · AI 工程师">
-<meta property="og:description" content="5年全栈经验，专注AI工程化。MessageCage / cage_ghost / AI有声小说等独立项目。">
+<title>方知定 · AI 工程师 | 一人 + AI 团队 · vibecoding 爆发</title>
+<meta name="description" content="方知定，5年Python/Django后端出身，近4个月用AI辅助编程(vibecoding)以一人+AI团队形态产出50+项目、400+提交。核心作品：cc-haha、cage_ghost、MessageCage、ambercore、AIce。专注AI Agent改造爬虫与数据采集。">
+<meta property="og:title" content="方知定 · AI 工程师 | vibecoding 爆发">
+<meta property="og:description" content="5年全栈后端，近4个月一人+AI团队产出50+项目。AI Agent × 爬虫/数据采集方向。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://masterfzb.github.io/">
 <meta property="og:image" content="https://masterfzb.github.io/avatar.png">
@@ -17,7 +17,7 @@ a{color:var(--b);text-decoration:none}
 .wrap{max-width:860px;margin:0 auto;padding:20px 16px 60px}
 
 /* Sticky nav */
-.toolbar{position:sticky;top:0;z-index:100;background:rgba(248,249,251,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);padding:10px 16px;display:flex;align-items:center;gap:24px;justify-content:center;margin:0 -16px 32px}
+.toolbar{position:sticky;top:0;z-index:100;background:rgba(248,249,251,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06);padding:10px 16px;display:flex;align-items:center;gap:24px;justify-content:center;margin:0 -16px 32px;flex-wrap:wrap}
 .toolbar a{font-size:13px;font-weight:500;color:var(--m2);padding:6px 14px;border-radius:20px;transition:.2s}
 .toolbar a:hover,.toolbar a.on{color:var(--b);background:var(--bl)}
 
@@ -37,9 +37,19 @@ a{color:var(--b);text-decoration:none}
 .intro strong{color:var(--t)}
 .intro .aside{font-size:12px;color:var(--m2);margin-top:8px;font-style:italic}
 
+/* ─── Stats banner (vibecoding data) ─── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 24px}
+.stat{background:var(--card);border-radius:var(--br);padding:14px 8px;text-align:center;box-shadow:var(--sh);border-top:3px solid var(--b)}
+.stat .num{font-size:24px;font-weight:800;color:var(--b);line-height:1.2}
+.stat .lbl{font-size:11px;color:var(--m2);margin-top:2px}
+.stat.purple{border-top-color:var(--purple)}.stat.purple .num{color:var(--purple)}
+.stat.green{border-top-color:var(--green)}.stat.green .num{color:var(--green)}
+.stat.orange{border-top-color:var(--orange)}.stat.orange .num{color:var(--orange)}
+
 /* Section title */
 .sec-title{font-size:13px;font-weight:700;color:var(--m2);text-transform:uppercase;letter-spacing:2px;margin:36px 0 16px;position:relative;padding-left:16px}
 .sec-title::before{content:'';position:absolute;left:0;top:2px;bottom:2px;width:3px;background:var(--b);border-radius:2px}
+.sec-title .hint{float:right;font-size:11px;font-weight:500;color:#cbd5e1;text-transform:none;letter-spacing:0;line-height:20px}
 
 /* ─── PROJECT CARD (3-audience layout) ─── */
 .proj{background:var(--card);border-radius:var(--br);padding:0;margin-bottom:20px;box-shadow:var(--sh);border:1px solid transparent;overflow:hidden;transition:.2s}
@@ -61,7 +71,7 @@ a{color:var(--b);text-decoration:none}
 .proj .l1 h3 a{color:var(--t)}
 .proj .l1 h3 a:hover{color:var(--b)}
 .proj .l1 .sub{font-size:13px;color:var(--m2);margin-bottom:4px}
-.proj .l1 .badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:8px;display:inline-block}
+.proj .l1 .badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 8px;border-radius:8px;display:inline-block;margin-right:4px}
 
 /* Layer 2: PM — problem → solution */
 .proj-mid{padding:0 20px 10px}
@@ -75,6 +85,18 @@ a{color:var(--b);text-decoration:none}
 .proj-bot .tag.hi{background:var(--bl);color:var(--b)}
 .proj-bot .more{font-size:12px;font-weight:500;color:var(--b);margin-left:auto}
 .proj-bot .more::after{content:' →'}
+
+/* ─── A-grade compact grid ─── */
+.grid-a{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:8px}
+.mini{background:var(--card);border-radius:var(--br);padding:14px 16px;box-shadow:var(--sh);border:1px solid transparent;transition:.2s}
+.mini:hover{border-color:var(--b);box-shadow:0 4px 20px rgba(37,99,235,.1)}
+.mini h4{font-size:14px;font-weight:700;margin-bottom:2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mini h4 .c{font-size:10px;font-weight:700;color:var(--m2);background:#f3f4f6;padding:1px 6px;border-radius:6px}
+.mini p{font-size:12px;color:#555;margin:4px 0 8px}
+.mini .tags{display:flex;flex-wrap:wrap;gap:4px}
+.mini .tags span{font-size:9px;font-weight:600;padding:1px 6px;border-radius:6px;background:#f3f4f6;color:#9ca3af}
+.mini .tags span.hi{background:var(--bl);color:var(--b)}
+.mini .tags span.ga{background:var(--ge);color:var(--green)}
 
 /* Skills */
 .skills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:12px 0}
@@ -100,12 +122,15 @@ a{color:var(--b);text-decoration:none}
   .toolbar a{font-size:12px;padding:5px 10px}
   .proj-bot{flex-wrap:wrap}
   .proj-bot .more{margin-left:0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid-a{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 <nav class="toolbar" id="top">
   <a href="#projects" class="on">核心项目</a>
+  <a href="#vibecoding">vibecoding 成果</a>
   <a href="about.html">📋 履历</a>
   <a href="features.html">🔭 MessageCage 全景</a>
   <a href="mailto:1310347817@qq.com">📧 联系</a>
@@ -117,8 +142,8 @@ a{color:var(--b);text-decoration:none}
 <div class="hero">
   <img src="avatar.png" alt="方知定" class="avatar" width="96" height="96">
   <h1>方知定</h1>
-  <div class="tag">AI 工程师 · 全栈开发者 · 5 年经验</div>
-  <div class="focus">当前重点：LLM 应用 + Agent 系统工程化</div>
+  <div class="tag">5 年全栈后端出身 · 一人 + AI 团队 · vibecoding 爆发</div>
+  <div class="focus">正在把「AI Agent 改造爬虫 / 数据采集」做成差异化方向</div>
   <div class="contact">
     <span>📍 广州/深圳</span>
     <a href="mailto:1310347817@qq.com">📧 1310347817@qq.com</a>
@@ -127,21 +152,76 @@ a{color:var(--b);text-decoration:none}
   </div>
 </div>
 
+<!-- Stats banner -->
+<div class="stats" id="vibecoding">
+  <div class="stat"><div class="num">50+</div><div class="lbl">近 4 个月项目产出</div></div>
+  <div class="stat purple"><div class="num">400+</div><div class="lbl">commits（2026.05 起）</div></div>
+  <div class="stat green"><div class="num">56</div><div class="lbl">自托管仓库（Gitea）</div></div>
+  <div class="stat orange"><div class="num">8 部门</div><div class="lbl">30+ AI 员工团队</div></div>
+</div>
+
 <!-- About -->
 <div class="intro">
   <p>
-    <strong>5 年全栈开发经验</strong>，从轨道交通监控到金融大数据，再到 AI Agent 系统——一直在做<strong>把复杂系统跑起来</strong>这件事。目前专注 AI 工程化：LLM 应用开发、Agent 系统设计、多角色 AI 协作。
+    <strong>5 年 Python/Django 全栈后端</strong>（广发证券 + 宝信地铁自动化），近 4 个月全面转向
+    <strong>vibecoding（AI 辅助编程）</strong>：以一人 + AI 团队形态产出 50+ 项目、多个成熟系统。
+    有<strong>真实爬虫实战</strong>——中国电子官网定向爬虫（Scrapy + 数据清洗入库 + 朴素贝叶斯分类）、
+    pixiv-crawler 双神协作增量同步爬虫、爽文书库网文榜单爬虫。
   </p>
   <p style="margin-top:10px;font-size:13px;color:var(--m2)">
-    我以 <strong style="color:var(--purple)">神原（SHENYUAN）</strong> 的形态运作——一个人 + 一支 AI 团队（研发/数据/前端/创意/效率/人事/内容八个专业方向），以工程化协作产出公司级作品。团队官网：<a href="https://shenyuancn.com" style="color:var(--purple)">shenyuancn.com →</a>
+    我以 <strong style="color:var(--purple)">神原（SHENYUAN）</strong> 的形态运作——一个人 + 一支 AI 团队
+    （研发/数据/前端/创意/效率/人事/女仆/古典文学八个部门），用 OpenClaw 组织 30+ AI 员工，
+    以「派活-验收-落盘 + 证据追责」工作流产出公司级作品。团队官网：<a href="https://shenyuancn.com" style="color:var(--purple)">shenyuancn.com →</a>
   </p>
   <p class="aside">「林无静木，川无停流」—— 林中没有静止的树木，江河没有停滞的水流。技术和人，都该持续演进。</p>
 </div>
 
-<!-- Projects -->
-<div class="sec-title" id="projects">核心项目</div>
+<!-- S-level projects -->
+<div class="sec-title" id="projects">S 级 · 代表作品 <span class="hint">按含金量排序</span></div>
 
-<!-- MessageCage -->
+<!-- cc-haha -->
+<div class="proj">
+  <div class="proj-top">
+    <div class="img"><div class="ph">⚒️</div></div>
+    <div class="l1">
+      <h3><a href="https://github.com/masterfzb">cc-haha · Claude Code 桌面版深度魔改</a></h3>
+      <div class="sub">fork NanmiCoder，多模型适配 + 代理层 + sub-agent 编排</div>
+      <span class="badge" style="background:var(--pe);color:var(--purple)">1594 commits</span>
+      <span class="badge" style="background:var(--bl);color:var(--b)">AI 编程工具链</span>
+    </div>
+  </div>
+  <div class="proj-mid">
+    <div class="row"><span class="label">问题</span><span class="text">AI 编程工具受限于单一模型/厂商，无法按任务灵活切换推理引擎</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">对 Claude Code 桌面版深度魔改：多 Provider 适配（DeepSeek/Kimi/NVIDIA 等）、代理翻译层、sub-agent 编排，形成个人 AI 编程中台</span></div>
+  </div>
+  <div class="proj-bot">
+    <span class="tag hi">TypeScript</span><span class="tag hi">Tauri</span><span class="tag hi">Agent 编排</span><span class="tag">多模型适配</span><span class="tag">1594 commits</span>
+    <a class="more" href="https://github.com/masterfzb">GitHub</a>
+  </div>
+</div>
+
+<!-- cage_ghost -->
+<div class="proj">
+  <div class="proj-top">
+    <div class="img"><img src="screenshots/mc-forum.png" alt="cage_ghost" loading="lazy"></div>
+    <div class="l1">
+      <h3><a href="cage-ghost.html">cage_ghost · AI 角色论坛自治系统</a></h3>
+      <div class="sub">8 个 AI 角色自主运营，多代引擎（R1a→R2b），积分原子自增减</div>
+      <span class="badge" style="background:var(--pe);color:var(--purple)">409 commits</span>
+      <span class="badge" style="background:var(--bl);color:var(--b)">多 Agent 自治</span>
+    </div>
+  </div>
+  <div class="proj-mid">
+    <div class="row"><span class="label">问题</span><span class="text">论坛内容需要持续产出，传统脚本无法模拟真实社交讨论的多样性与角色一致性</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">LLM 解析内容 + ReAct 模式多 Agent 协作：定时抓取新闻 → 各角色按人设独立推理 → 生成帖子 → 互相评论，含记忆持久化与质量审核层</span></div>
+  </div>
+  <div class="proj-bot">
+    <span class="tag hi">Python</span><span class="tag hi">Redis</span><span class="tag hi">Qdrant</span><span class="tag">Ollama</span><span class="tag">Agent 编排</span><span class="tag">LLM 页面解析</span>
+    <a class="more" href="cage-ghost.html">查看详情</a>
+  </div>
+</div>
+
+<!-- messagecage -->
 <div class="proj">
   <div class="proj-top">
     <div class="img has-carousel">
@@ -152,13 +232,14 @@ a{color:var(--b);text-decoration:none}
     </div>
     <div class="l1">
       <h3><a href="messagecage.html">MessageCage · 信息茧房观察镜</a></h3>
-      <div class="sub">8 个 AI 角色自主运营的论坛平台，1 个应用承载 12 个功能模块</div>
-      <span class="badge" style="background:var(--bl);color:var(--b)">200+ API 端点 · 全栈独立开发</span>
+      <div class="sub">AI 角色论坛 + 书库 + 云盘 + 画廊综合平台，1 个应用 12 个功能模块</div>
+      <span class="badge" style="background:var(--pe);color:var(--purple)">348 commits</span>
+      <span class="badge" style="background:var(--bl);color:var(--b)">全栈独立开发</span>
     </div>
   </div>
   <div class="proj-mid">
     <div class="row"><span class="label">问题</span><span class="text">多源信息分散，获取→讨论→存储→再利用无法在一个系统内闭环</span></div>
-    <div class="row"><span class="label">方案</span><span class="text">FastAPI + Vue3 + Qdrant 构建统一平台，多 Agent 调度引擎驱动 8 个 AI 角色自主生产内容，论坛/书库/云盘等模块数据与权限全面打通</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">FastAPI + Vue3 + Qdrant 构建统一平台，多 Agent 调度引擎驱动 8 个 AI 角色自主生产内容，模块间数据与权限全面打通</span></div>
   </div>
   <div class="proj-bot">
     <span class="tag hi">FastAPI</span><span class="tag hi">Vue3</span><span class="tag hi">Qdrant</span><span class="tag">DeepSeek</span><span class="tag">Agent 编排</span><span class="tag">RAG</span><span class="tag">SQLite</span>
@@ -166,80 +247,129 @@ a{color:var(--b);text-decoration:none}
   </div>
 </div>
 
-<!-- cage_ghost -->
+<!-- ambercore -->
 <div class="proj">
   <div class="proj-top">
-    <div class="img"><img src="screenshots/mc-forum.png" alt="cage_ghost" loading="lazy"></div>
+    <div class="img"><div class="ph">💎</div></div>
     <div class="l1">
-      <h3><a href="cage-ghost.html">cage_ghost · AI 内容引擎</a></h3>
-      <div class="sub">DeepSeek R1 驱动的多 Agent 内容工厂，R1 推理链完整可审计</div>
-      <span class="badge" style="background:var(--pe);color:var(--purple)">MessageCage 的大脑</span>
+      <h3><a href="https://shenyuancn.com">ambercore · 琥珀加密格式规范</a></h3>
+      <div class="sub">数据主权核心：Ed25519 双算法、权限门控、T5' 双端互测、27 错误码</div>
+      <span class="badge" style="background:var(--ge);color:var(--green)">主线产品 · spec 冻结</span>
+      <span class="badge" style="background:var(--bl);color:var(--b)">Agent 框架 demo</span>
     </div>
   </div>
   <div class="proj-mid">
-    <div class="row"><span class="label">问题</span><span class="text">论坛内容需要持续产出，传统脚本无法模拟真实社交讨论的多样性与角色一致性</span></div>
-    <div class="row"><span class="label">方案</span><span class="text">基于 ReAct 模式的多 Agent 协作：定时抓取新闻 → 各角色按人设独立推理 → 生成帖子 → 互相评论，加入记忆持久化与质量审核层</span></div>
+    <div class="row"><span class="label">问题</span><span class="text">个人数据散落在各平台，缺乏「数据主权」级的加密存储与权限控制规范</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">定义琥珀（.amber）加密格式规范：Ed25519 双算法签名验证、权限门控三道门、双端互测 trusted、27 错误码对拍，spec 冻结交付</span></div>
   </div>
   <div class="proj-bot">
-    <span class="tag hi">Python</span><span class="tag hi">DeepSeek R1</span><span class="tag hi">Agent 编排</span><span class="tag">Redis</span><span class="tag">SQLite</span><span class="tag">asyncio</span>
-    <a class="more" href="cage-ghost.html">查看详情</a>
+    <span class="tag hi">Python</span><span class="tag hi">Ed25519</span><span class="tag">加密规范</span><span class="tag">权限门控</span><span class="tag">spec 冻结</span>
+    <a class="more" href="https://shenyuancn.com">神原官网</a>
   </div>
 </div>
 
-<!-- 有声小说 -->
+<!-- AIce -->
 <div class="proj">
   <div class="proj-top">
-    <div class="img"><div class="ph">🎙️</div></div>
+    <div class="img"><div class="ph">📱</div></div>
     <div class="l1">
-      <h3><a href="audiobook.html">AI 有声小说生成器</a></h3>
-      <div class="sub">端到端自动配音管道，581 个角色声线，43 章全流程验证</div>
-      <span class="badge" style="background:var(--ge);color:var(--green)">全本自动化 · 多角色声音克隆</span>
+      <h3><a href="https://github.com/masterfzb">AIce · Android 私人终端</a></h3>
+      <div class="sub">日记 / 通信 / 知识库 / 云盘一体，数据主权在本地</div>
+      <span class="badge" style="background:var(--pe);color:var(--purple)">173 commits</span>
+      <span class="badge" style="background:var(--oe);color:var(--orange)">Android 原生</span>
     </div>
   </div>
   <div class="proj-mid">
-    <div class="row"><span class="label">问题</span><span class="text">长篇小说多角色配音需要大量人工：识别对话归属、匹配声线、逐句生成音频，人工处理效率极低</span></div>
-    <div class="row"><span class="label">方案</span><span class="text">构建分段 AI 处理管道：LLM 对话识别 → 动态角色提取 → GPT-SoVITS 声线映射 → 批量音频生成，规则引擎处理 80% 简单场景，AI 辅助复杂场景</span></div>
+    <div class="row"><span class="label">问题</span><span class="text">个人终端应用碎片化，隐私数据依赖第三方云服务</span></div>
+    <div class="row"><span class="label">方案</span><span class="text">Kotlin 原生 Android 应用 + FastAPI 后端，日记/通信/知识库/云盘四大模块，数据主权自持</span></div>
   </div>
   <div class="proj-bot">
-    <span class="tag hi">Python</span><span class="tag hi">GPT-SoVITS</span><span class="tag">DeepSeek</span><span class="tag">TTS</span><span class="tag">Markdown</span>
-    <a class="more" href="audiobook.html">查看详情</a>
+    <span class="tag hi">Kotlin</span><span class="tag hi">FastAPI</span><span class="tag">Android</span><span class="tag">数据主权</span>
+    <a class="more" href="https://github.com/masterfzb">GitHub</a>
   </div>
 </div>
 
-<!-- 紫微 -->
-<div class="proj">
-  <div class="proj-top">
-    <div class="img"><div class="ph">🔮</div></div>
-    <div class="l1">
-      <h3><a href="ziwei.html">紫微斗数排盘工具</a></h3>
-      <div class="sub">八字命理自动排盘，计算命宫、十二宫位及星曜分布</div>
-      <span class="badge" style="background:var(--oe);color:var(--orange)">传统文化 × AI</span>
-    </div>
+<!-- A-grade -->
+<div class="sec-title">A 级 · 成熟可用 <span class="hint">爬虫/数据采集方向高亮</span></div>
+<div class="grid-a">
+
+  <div class="mini">
+    <h4>🎫 明星演出票务系统 <span class="c">25 commits</span></h4>
+    <p>库存事务锁 / 支付窗口 / 状态机，通过文旅部《演出票务系统服务及技术规范》外部评审</p>
+    <div class="tags"><span class="hi">SPA</span><span class="hi">Express</span><span class="ga">过文旅部评审</span></div>
   </div>
-  <div class="proj-mid">
-    <div class="row"><span class="label">问题</span><span class="text">传统紫微斗数排盘依赖手工查表，规则繁复易出错，普通人难以自学入门</span></div>
-    <div class="row"><span class="label">方案</span><span class="text">将排盘规则编码为可计算算法：八字计算 → 命宫定位 → 十二宫排布 → 星曜安放，结合 LLM 生成通俗命理解读</span></div>
+
+  <div class="mini">
+    <h4>🕸️ deepblue · 织网者 <span class="c">73 commits</span></h4>
+    <p>情感智能体 + 工具调用 + 记忆压缩，多角色内容生产底座</p>
+    <div class="tags"><span class="hi">Python</span><span class="hi">DeepSeek</span><span>Agent</span></div>
   </div>
-  <div class="proj-bot">
-    <span class="tag hi">Python</span><span class="tag">八字排盘</span><span class="tag">LLM</span><span class="tag">命理算法</span>
-    <a class="more" href="ziwei.html">查看详情</a>
+
+  <div class="mini">
+    <h4>🐦 pixiv-crawler <span class="c">63 commits</span></h4>
+    <p>双神协作增量同步爬虫：14 画师作品持续追踪，断点续爬</p>
+    <div class="tags"><span class="hi">Python</span><span class="ga">爬虫实战</span><span>增量同步</span></div>
   </div>
+
+  <div class="mini">
+    <h4>📰 seer-daily · 预言家日报 <span class="c">55 commits</span></h4>
+    <p>A 股量化日报流水线：数据采集 → 双引擎分析 → 定时发布</p>
+    <div class="tags"><span class="hi">Python</span><span class="hi">FastAPI</span><span>量化</span></div>
+  </div>
+
+  <div class="mini">
+    <h4>📚 蓬莱书库 · book-reader <span class="c">71 commits</span></h4>
+    <p>AI 创作-编辑-出版流水线前端 + 48 commits 的 Android 客户端 Penglai</p>
+    <div class="tags"><span class="hi">FastAPI</span><span class="hi">Kotlin</span><span>AI 出版</span></div>
+  </div>
+
+  <div class="mini">
+    <h4>🎙️ 有声小说生产线 <span class="c">迭代中</span></h4>
+    <p>任意小说多角色有声化：LLM 对话识别 → GPT-SoVITS 581 声线 → 批量生成</p>
+    <div class="tags"><span class="hi">Python</span><span class="hi">GPT-SoVITS</span><span>FFmpeg</span></div>
+  </div>
+
+  <div class="mini">
+    <h4>🎬 KillDuMate <span class="c">9 commits</span></h4>
+    <p>文本→视频流水线：TTS 配音 + Remotion 逐字高亮动画</p>
+    <div class="tags"><span class="hi">Python</span><span>FFmpeg</span><span>Remotion</span></div>
+  </div>
+
+  <div class="mini">
+    <h4>🔮 紫微斗数数据集 <span class="c">13 commits</span></h4>
+    <p>51.8 万命盘数据集 + 60 年周期 100% 历法一致的排盘引擎</p>
+    <div class="tags"><span class="hi">Python</span><span>数据工程</span><span>历法算法</span></div>
+  </div>
+
+  <div class="mini">
+    <h4>⚡ 爽文书库 · shuangwen <span class="c">11 commits</span></h4>
+    <p>网文榜单爬虫 + 数据分析，持续跟踪热门作品趋势</p>
+    <div class="tags"><span class="hi">Python</span><span class="ga">爬虫实战</span><span>数据分析</span></div>
+  </div>
+
+  <div class="mini">
+    <h4>🏰 魔法 NAS 有求必应屋 <span class="c">42 commits</span></h4>
+    <p>霍格沃茨主题 NAS + 生活系统，FastAPI + SQLite</p>
+    <div class="tags"><span class="hi">FastAPI</span><span>SQLite</span><span>NAS</span></div>
+  </div>
+
 </div>
 
 <!-- Timeline link -->
 <div class="tl-link">
-  <a href="timeline.html">📊 查看项目迭代时间线 →</a>
+  <a href="timeline.html">📊 查看早期项目迭代时间线 →</a>
 </div>
 
 <!-- Skills -->
+<div class="sec-title">技术栈</div>
 <div class="skills">
-  <span class="sk hi">Python</span><span class="sk hi">LLM 应用</span><span class="sk hi">Agent 编排</span><span class="sk">FastAPI</span><span class="sk">Vue3</span><span class="sk">Qdrant</span><span class="sk">RAG</span><span class="sk">Docker</span><span class="sk">Redis</span><span class="sk">TTS</span>
+  <span class="sk hi">Python（主力）</span><span class="sk hi">FastAPI</span><span class="sk hi">Django</span><span class="sk hi">Agent 编排</span><span class="sk hi">爬虫</span><span class="sk">Scrapy</span><span class="sk">Playwright</span><span class="sk">TypeScript</span><span class="sk">Kotlin</span><span class="sk">Vue3</span><span class="sk">React</span><span class="sk">SQL</span><span class="sk">Redis</span><span class="sk">Qdrant</span><span class="sk">RAG</span><span class="sk">GPT-SoVITS</span><span class="sk">FFmpeg</span><span class="sk">Docker</span><span class="sk">Gitea</span><span class="sk">Cloudflare</span><span class="sk">Tailscale</span>
 </div>
 
 <div class="foot">
   <div class="motto">林无静木，川无停流</div>
   <div class="motto-sub">林中没有静止的树木，江河没有停滞的水流。持续演进，正如代码与系统。</div>
-  <div class="copy">© 2026 方知定 · <a href="https://github.com/masterfzb">GitHub</a></div>
+  <div class="copy">© 2026 方知定 · <a href="https://github.com/masterfzb">GitHub</a> · <a href="https://shenyuancn.com">神原 AI 团队</a></div>
 </div>
 </div>
 </body>
